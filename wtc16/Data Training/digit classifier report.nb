@@ -1,0 +1,161 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4763,        152]
+NotebookOptionsPosition[      3898,        119]
+NotebookOutlinePosition[      4449,        139]
+CellTagsIndexPosition[      4406,        136]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ "Digit Classifier Report | ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"DateString[]","General",TextData},
+    "NotebookTemplateExpression"], TextForm]]]
+}], "Section",
+ CellChangeTimes->{{3.617555403502452*^9, 3.617555403958193*^9}, {
+  3.619789077066668*^9, 3.619789079645239*^9}, {3.619789417783497*^9, 
+  3.619789429118375*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"cfunc", "=", Cell[BoxData[
+    FormBox[
+     TemplateBox[{"\"Classifier\"","","Named",BoxData},
+      "NotebookTemplateSlot"], TextForm]]]}], ";"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.619789454108266*^9, 3.619789475861253*^9}, {
+  3.619790068931963*^9, 3.61979008252798*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ClassifierInformation", "[", "cfunc", "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{
+  3.619789519014647*^9, {3.619789630267034*^9, 3.61978963706094*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ FormBox[
+  TemplateBox[{"\"Thumb\"","\"Thumb\"","Named",TextData},
+   "NotebookTemplateSlot"], TextForm]]]], "Subsection",
+ CellBracketOptions->{"Color"->RGBColor[0.1574, 0.8708, 1.]},
+ CellFrameLabels->{{None, None}, {None, 
+    Cell[
+     BoxData[
+      TemplateBox[{"\"Images\"", "NotebookTemplateSlot", True}, 
+       "NotebookRepeatingBlock"]]]}},
+ CellChangeTimes->{{3.617555423416212*^9, 3.617555436878763*^9}, {
+   3.617555656938648*^9, 3.617555659948122*^9}, {3.6175557260420313`*^9, 
+   3.6175557305734663`*^9}, 3.617555781909822*^9, {3.617556409970274*^9, 
+   3.617556426663599*^9}, {3.6175565058148413`*^9, 3.6175565115188007`*^9}, {
+   3.617558136746657*^9, 3.617558141034651*^9}, {3.6175588310953007`*^9, 
+   3.617558873139165*^9}, {3.618787441572811*^9, 3.618787450747449*^9}, {
+   3.61978678270916*^9, 3.619786794484137*^9}, {3.619789084552669*^9, 
+   3.6197890868223886`*^9}, {3.61978969590135*^9, 3.6197897404099703`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Classification", "Subsubsection",
+ CellChangeTimes->{{3.6197898696695538`*^9, 3.619789874062017*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cfunc", "[", Cell[BoxData[
+   FormBox[
+    TemplateBox[{"\"Image\"","\"Image\"","Named",BoxData},
+     "NotebookTemplateSlot"], TextForm]]], "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.6197897481617527`*^9, 3.619789764383703*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Top probabilities", "Subsubsection",
+ CellChangeTimes->{{3.619789878317081*^9, 3.619789887372829*^9}}],
+
+Cell[BoxData[
+ RowBox[{"cfunc", "[", 
+  RowBox[{Cell[BoxData[
+    FormBox[
+     TemplateBox[{"\"Image\"","\"Image\"","Named",BoxData},
+      "NotebookTemplateSlot"], TextForm]]], ",", "\"\<TopProbabilities\>\""}],
+   "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.619789774237381*^9, 3.619789797317058*^9}, 
+   3.619790318301436*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{838, 856},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 350, 9, 75, "Section"],
+Cell[933, 33, 457, 12, 40, "Input"],
+Cell[1393, 47, 318, 8, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1736, 59, 969, 17, 113, "Subsection"],
+Cell[CellGroupData[{
+Cell[2730, 80, 107, 1, 35, "Subsubsection"],
+Cell[2840, 83, 397, 10, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3274, 98, 108, 1, 35, "Subsubsection"],
+Cell[3385, 101, 473, 13, 40, "Input"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,531 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     18980,        522]
+NotebookOptionsPosition[     17628,        475]
+NotebookOutlinePosition[     18180,        495]
+CellTagsIndexPosition[     18137,        492]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Init", "Subsection",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellID->269],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+  "$url", "=", 
+   "\"\<https://docs.google.com/spreadsheet/pub?key=0An-\
+lvWEXFqTvdElnLUNEOG5QTUJJaUh2aEpabUdIbEE&single=true&gid=0&output=csv\>\""}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.61798436088466*^9, 3.617984371061537*^9}, {
+  3.617984491373476*^9, 3.617984496194776*^9}}],
+
+Cell[BoxData[
+ RowBox[{"raw", "=", 
+  RowBox[{"SemanticImport", "[", "$url", "]"}]}]], "Input",
+ CellChangeTimes->{{3.617984374651465*^9, 3.6179843819533978`*^9}, {
+  3.617984510890347*^9, 3.617984513596322*^9}}],
+
+Cell["There is a duplicate row where a billing error occurred:", "Text",
+ CellChangeTimes->{{3.617984761123887*^9, 3.617984779870467*^9}}],
+
+Cell[BoxData[
+ RowBox[{"raw", "[", 
+  RowBox[{"[", 
+   RowBox[{"10", ";;", "11"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.617984793895411*^9, 3.61798482083545*^9}}],
+
+Cell["Exclude row from import:", "Text",
+ CellChangeTimes->{{3.617984830430276*^9, 3.6179848375390043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"med", "=", 
+  RowBox[{"SemanticImport", "[", 
+   RowBox[{"$url", ",", 
+    RowBox[{"ExcludedLines", "\[Rule]", 
+     RowBox[{"{", "11", "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.617984374651465*^9, 3.6179843819533978`*^9}, {
+  3.617984510890347*^9, 3.617984513596322*^9}, {3.617984650745762*^9, 
+  3.61798465802101*^9}, {3.617984725669413*^9, 3.617984734584793*^9}, {
+  3.617984961624854*^9, 3.617984963048534*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"windowStr", "=", 
+  RowBox[{"ToString", "@", 
+   RowBox[{"StringForm", "[", 
+    RowBox[{"\"\<``-``\>\"", ",", 
+     RowBox[{
+      RowBox[{"med", "[", 
+       RowBox[{"First", ",", "\"\<date\>\""}], "]"}], "[", "\"\<Year\>\"", 
+      "]"}], ",", 
+     RowBox[{
+      RowBox[{"med", "[", 
+       RowBox[{"Last", ",", "\"\<date\>\""}], "]"}], "[", "\"\<Year\>\"", 
+      "]"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.617991930790326*^9, 3.617992056805244*^9}}],
+
+Cell[BoxData["\<\"2009-2014\"\>"], "Output",
+ CellID->314]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"season", "[", "d_DateObject", "]"}], ":=", 
+  RowBox[{"Which", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"d", "[", "\"\<Month\>\"", "]"}], "\[GreaterEqual]", "4"}], "&&", 
+     RowBox[{
+      RowBox[{"d", "[", "\"\<Month\>\"", "]"}], "\[LessEqual]", "9"}]}], ",", 
+    "\"\<summer\>\"", ",", "\[IndentingNewLine]", "True", ",", 
+    "\"\<winter\>\""}], "\[IndentingNewLine]", "]"}]}]], "Input",
+ CellChangeTimes->{{3.617988122360911*^9, 3.6179881458360567`*^9}, {
+  3.617988187784004*^9, 3.617988225259351*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Usage History", "Section",
+ CellChangeTimes->{{3.617991104968822*^9, 3.617991120721714*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DateListPlot", "[", 
+    RowBox[{
+     RowBox[{"med", "[", 
+      RowBox[{"All", ",", 
+       RowBox[{"{", 
+        RowBox[{"\"\<date\>\"", ",", "\"\<elec ($)\>\""}], "}"}]}], "]"}], 
+     ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"SwatchLegend", "[", 
+       RowBox[{"{", "\"\<electricity\>\"", "}"}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"DateListPlot", "[", 
+    RowBox[{
+     RowBox[{"med", "[", 
+      RowBox[{"All", ",", 
+       RowBox[{"{", 
+        RowBox[{"\"\<date\>\"", ",", "\"\<gas ($)\>\""}], "}"}]}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"Lighter", "@", "Orange"}]}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"SwatchLegend", "[", 
+       RowBox[{"{", "\"\<gas\>\"", "}"}], "]"}]}]}], "]"}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"All", ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "200"}], "}"}]}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"\"\<Monthly Utilities Use, \>\"", "<>", "windowStr"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "\"\<USD\>\""}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ImageSize", "\[Rule]", "500"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQLflskcWhL68cDTk3gekoljP2IPqYb6gLiC464+sN
+ok+9OxgIor1PbY8A0T5Lc+NBdHm6aBqIvujzHEzzqUrngmiuwsB8EG2zuK4M
+RG9Xt60C0aVP/7eC6F0/5NtBdGRM9S0QDXTBbRAtqql3H0RfW2n/AETPOvTr
+KYj+sCf+GYhO0v31HUTLlfv8AtHr9IxtDgPpN+3ljiBaeK6oG4i+tLU0AERn
+3ZwRBqJTymoiQXSZWEESiOZSbM4E0QZZPXkgWl1/czOIvln5YiKYVk2ZBKKd
+FEMWgugb8fvANMf3GRuOAuk5K2I3gmgAnybCIQ==
+  "]],
+
+Cell[BoxData[
+ RowBox[{"Row", "[", 
+  RowBox[{"{", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Histogram", "[", 
+     RowBox[{
+      RowBox[{"med", "[", 
+       RowBox[{"All", ",", "\"\<elec (kWh)\>\""}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"400", ",", "1800", ",", "50"}], "}"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"\"\<Monthly kWh Distribution, \>\"", "<>", "windowStr"}]}], 
+      ",", "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", "300"}]}], "\[IndentingNewLine]", "]"}],
+     ",", "\[IndentingNewLine]", 
+    RowBox[{"Histogram", "[", 
+     RowBox[{
+      RowBox[{"med", "[", 
+       RowBox[{"All", ",", "\"\<gas (therms)\>\""}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", "200", ",", "5"}], "}"}], ",", 
+      RowBox[{"PlotLabel", "\[Rule]", 
+       RowBox[{"\"\<Monthly therms Distribution, \>\"", "<>", "windowStr"}]}],
+       ",", "\[IndentingNewLine]", 
+      RowBox[{"ImageSize", "\[Rule]", "300"}]}], "\[IndentingNewLine]", 
+     "]"}]}], "\[IndentingNewLine]", "}"}], "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQLflskcWhL68cDTk3gekoljP2IPqYb6gLiC464+sN
+ok+9OxgIor1PbY8A0T5Lc+NBdHm6aBqIvujzHEzzqUrngmiuwsB8EG2zuK4M
+RG9Xt60C0aVP/7eC6F0/5NtBdGRM9S0QDXTBbRAtqql3H0RfW2n/AETPOvTr
+KYj+sCf+GYhO0v31HUTLlfv8AtHr9IxtDgPpN+3ljiBaeK6oG4i+tLU0AERn
+3ZwRBqJTymoiQXSZWEESiOZSbM4E0QZZPXkgWl1/czOIvln5YiKYVk2ZBKK9
+3hdOA9HBG1LWg2gRH95tIPrB3vJ9IHq+l+amo0BaKkB7C4gGAArAyrc=
+  "]],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"summer", "=", 
+      RowBox[{"Normal", "@", 
+       RowBox[{
+        RowBox[{"med", "[", 
+         RowBox[{"Select", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"season", "[", "#date", "]"}], "===", "\"\<summer\>\""}], 
+           "&"}], "]"}], "]"}], "[", 
+        RowBox[{"All", ",", "\"\<elec (kWh)\>\""}], "]"}]}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"winter", "=", 
+      RowBox[{"Normal", "@", 
+       RowBox[{
+        RowBox[{"med", "[", 
+         RowBox[{"Select", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"season", "[", "#date", "]"}], "===", "\"\<winter\>\""}], 
+           "&"}], "]"}], "]"}], "[", 
+        RowBox[{"All", ",", "\"\<elec (kWh)\>\""}], "]"}]}]}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"PairedHistogram", "[", 
+    RowBox[{"summer", ",", "winter", ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1800", ",", "100"}], "}"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{
+      "\"\<Monthly kWh Distribution, summer vs. winter, \>\"", "<>", 
+       "windowStr"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ChartLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"\"\<summer\>\"", ",", "\"\<winter\>\""}], "}"}], "}"}]}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"ChartStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"24", ",", "None", ",", "None"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617989125079376*^9, 3.617989132977888*^9}, {
+  3.617989250354371*^9, 3.617989283275473*^9}, {3.617989338431095*^9, 
+  3.6179893508937798`*^9}, {3.617989510204035*^9, 3.6179896390447397`*^9}, {
+  3.6179896694573917`*^9, 3.617989705565057*^9}, {3.617989795462316*^9, 
+  3.617989830329377*^9}, {3.6179898621303177`*^9, 3.6179899134617443`*^9}, {
+  3.617992104773671*^9, 3.6179921131777697`*^9}, {3.617993674875742*^9, 
+  3.617993680643283*^9}, {3.617993745686736*^9, 3.617993746114979*^9}, {
+  3.6179939370756063`*^9, 3.617993954138369*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"summer", "=", 
+      RowBox[{"Normal", "@", 
+       RowBox[{
+        RowBox[{"med", "[", 
+         RowBox[{"Select", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"season", "[", "#date", "]"}], "===", "\"\<summer\>\""}], 
+           "&"}], "]"}], "]"}], "[", 
+        RowBox[{"All", ",", "\"\<gas (therms)\>\""}], "]"}]}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"winter", "=", 
+      RowBox[{"Normal", "@", 
+       RowBox[{
+        RowBox[{"med", "[", 
+         RowBox[{"Select", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"season", "[", "#date", "]"}], "===", "\"\<winter\>\""}], 
+           "&"}], "]"}], "]"}], "[", 
+        RowBox[{"All", ",", "\"\<gas (therms)\>\""}], "]"}]}]}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"PairedHistogram", "[", 
+    RowBox[{"summer", ",", "winter", ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "200", ",", "10"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"PlotLabel", "\[Rule]", 
+      RowBox[{
+      "\"\<Monthly therms Distribution, summer vs. winter, \>\"", "<>", 
+       "windowStr"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ChartLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"{", 
+        RowBox[{"\"\<summer\>\"", ",", "\"\<winter\>\""}], "}"}], "}"}]}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{"ChartStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"24", ",", "None", ",", "None"}], "}"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617989125079376*^9, 3.617989132977888*^9}, {
+  3.617989250354371*^9, 3.617989283275473*^9}, {3.617989338431095*^9, 
+  3.6179893508937798`*^9}, {3.617989510204035*^9, 3.6179896390447397`*^9}, {
+  3.6179896694573917`*^9, 3.617989705565057*^9}, {3.617989795462316*^9, 
+  3.617989830329377*^9}, {3.6179898621303177`*^9, 3.6179899134617443`*^9}, {
+  3.617989976616721*^9, 3.617990040246179*^9}, {3.6179921218719177`*^9, 
+  3.617992129370463*^9}, {3.617993685992114*^9, 3.617993735190236*^9}, {
+  3.617993811181612*^9, 3.617993923506915*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Forecasting", "Section",
+ CellChangeTimes->{{3.6179909268051167`*^9, 3.617990932820787*^9}, {
+  3.617991153369999*^9, 3.617991155274115*^9}}],
+
+Cell[BoxData[
+ RowBox[{"totaledSet", "=", 
+  RowBox[{"med", "[", 
+   RowBox[{"All", ",", 
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"\"\<date\>\"", "\[Rule]", "\"\<date\>\""}], ",", 
+      RowBox[{"\"\<sum\>\"", "\[Rule]", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"#", "[", "\"\<elec ($)\>\"", "]"}], "+", 
+          RowBox[{"#", "[", "\"\<gas ($)\>\"", "]"}]}], "&"}], ")"}]}]}], 
+     "|>"}]}], "]"}]}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.6179901625626574`*^9, 3.6179901871762667`*^9}, {
+  3.617990224970379*^9, 3.617990314934195*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Show", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"DateListPlot", "[", 
+    RowBox[{
+     RowBox[{"totaledSet", "[", 
+      RowBox[{"All", ",", 
+       RowBox[{"{", 
+        RowBox[{"\"\<date\>\"", ",", "\"\<sum\>\""}], "}"}]}], "]"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "Full"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"SwatchLegend", "[", 
+       RowBox[{"{", "\"\<electricity + gas\>\"", "}"}], "]"}]}]}], "]"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"PlotLabel", "\[Rule]", 
+    RowBox[{"\"\<Monthly Utilities Use, Summed, \>\"", "<>", "windowStr"}]}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"FrameLabel", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"None", ",", "\"\<USD\>\""}], "}"}]}], ",", 
+   "\[IndentingNewLine]", 
+   RowBox[{"ImageSize", "\[Rule]", "500"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQLflskcWhL68cDTk3gekoljP2IPqYb6gLiC464+sN
+ok+9OxgIor1PbY8A0T5Lc+NBdHm6aBqIvujzHEzzqUrngmiuwsB8EG2zuK4M
+RG9Xt60C0aVP/7eC6F0/5NtBdGRM9S0QDXTBbRAtqql3H0RfW2n/AETPOvTr
+KYj+sCf+GYhO0v31HUTLlfv8AtHr9IxtDgPpN+3ljiBaeK6oG4i+tLU0AERn
+3ZwRBqJTymoiQXSZWEESiOZSbM4E0QZZPXkgWl1/czOIvln5YiKYVk2ZBKKd
+FEMWgugb8fvA9CbbZ4+OAOm6z2dfgGj3ZuWdR4H0ok6uXSAaAC38zME=
+  "]],
+
+Cell["\<\
+tsm=TimeSeriesModelFit[Normal@totaledSet[All,\"sum\"]];
+ListLinePlot[{tsm[\"TemporalData\"],Legended[TimeSeriesForecast[tsm,{12}],\"\
+12 month forecast\"]},\[IndentingNewLine]PlotLabel\[Rule]\"Monthly Utilities \
+Use, Summed, \"<>windowStr\[IndentingNewLine]]\
+\>", "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617990744846483*^9, 3.61799082316393*^9}, {
+  3.6179921631457167`*^9, 3.6179922149996967`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"With", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"yr", "=", 
+      RowBox[{
+       RowBox[{"totaledSet", "[", 
+        RowBox[{"Last", ",", "\"\<date\>\""}], "]"}], "[", "\"\<Year\>\"", 
+       "]"}]}], ",", 
+     RowBox[{"mo", "=", 
+      RowBox[{
+       RowBox[{"totaledSet", "[", 
+        RowBox[{"Last", ",", "\"\<date\>\""}], "]"}], "[", "\"\<Month\>\"", 
+       "]"}]}]}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Style", "[", 
+    RowBox[{
+     RowBox[{"TableForm", "[", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"Table", "[", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"{", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"DatePlus", "[", 
+            RowBox[{
+             RowBox[{"DateObject", "[", 
+              RowBox[{
+               RowBox[{"{", 
+                RowBox[{"yr", ",", "mo"}], "}"}], ",", 
+               RowBox[{"DateFormat", "\[Rule]", 
+                RowBox[{"{", 
+                 RowBox[{
+                 "\"\<MonthNameShort\>\"", ",", "\"\< \>\"", ",", 
+                  "\"\<Year\>\""}], "}"}]}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"i", ",", "\"\<Month\>\""}], "}"}]}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"NumberForm", "[", 
+            RowBox[{
+             RowBox[{"TimeSeriesForecast", "[", 
+              RowBox[{"tsm", ",", 
+               RowBox[{"i", "+", "1"}]}], "]"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"Infinity", ",", "2"}], "}"}]}], "]"}]}], 
+          "\[IndentingNewLine]", "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "0", ",", "6"}], "}"}]}], "\[IndentingNewLine]", 
+        "]"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"TableHeadings", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"None", ",", 
+          RowBox[{"{", 
+           RowBox[{"\"\<Month\>\"", ",", "\"\<Forecast ($)\>\""}], "}"}]}], 
+         "}"}]}]}], "\[IndentingNewLine]", "]"}], ",", 
+     RowBox[{"FontFamily", "\[Rule]", "\"\<Verdana\>\""}]}], "]"}]}], 
+  "\[IndentingNewLine]", "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateHideInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.6179911704429483`*^9, 3.617991207025646*^9}, {
+  3.617991269186289*^9, 3.617991305656934*^9}, {3.617991350226735*^9, 
+  3.617991413866105*^9}, {3.617991446002116*^9, 3.617991461489571*^9}, {
+  3.617991502141135*^9, 3.617991562139629*^9}, {3.617991593641885*^9, 
+  3.617991707065928*^9}, {3.6179922487877693`*^9, 3.6179923309811363`*^9}, {
+  3.617992441295755*^9, 3.617992536706353*^9}, {3.617992688027409*^9, 
+  3.617992700383458*^9}}]
+}, Open  ]]
+},
+WindowSize->{838, 1006},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (June 27, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 188, 6, 44, "Subsection",
+ CellID->269],
+Cell[771, 30, 320, 8, 63, "Input"],
+Cell[1094, 40, 212, 4, 28, "Input"],
+Cell[1309, 46, 138, 1, 30, "Text"],
+Cell[1450, 49, 171, 4, 28, "Input"],
+Cell[1624, 55, 108, 1, 30, "Text"],
+Cell[1735, 58, 449, 9, 28, "Input"],
+Cell[CellGroupData[{
+Cell[2209, 71, 489, 13, 46, "Input"],
+Cell[2701, 86, 58, 1, 28, "Output",
+ CellID->314]
+}, Open  ]],
+Cell[2774, 90, 586, 13, 80, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3397, 108, 98, 1, 64, "Section"],
+Cell[3498, 111, 2107, 55, 182, "Input"],
+Cell[5608, 168, 1623, 38, 182, "Input"],
+Cell[7234, 208, 2372, 57, 182, "Input"],
+Cell[9609, 267, 2369, 56, 182, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12015, 328, 147, 2, 64, "Section"],
+Cell[12165, 332, 721, 20, 31, "Input"],
+Cell[12889, 354, 1438, 35, 131, "Input"],
+Cell[14330, 391, 550, 12, 74, "Input"],
+Cell[14883, 405, 2729, 67, 216, "Input"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

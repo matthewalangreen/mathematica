@@ -1,0 +1,191 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5970,        182]
+NotebookOptionsPosition[      5018,        146]
+NotebookOutlinePosition[      5573,        166]
+CellTagsIndexPosition[      5530,        163]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"\"theCity\"","\"Champaign\"","Named",TextData},
+    "NotebookTemplateSlot"], TextForm]]],
+ " Weather | ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{"DateString[]","General",TextData},
+    "NotebookTemplateExpression"], TextForm]]]
+}], "Section",
+ CellChangeTimes->{{3.617555423416212*^9, 3.617555436878763*^9}, {
+   3.617555656938648*^9, 3.617555659948122*^9}, {3.6175557260420313`*^9, 
+   3.6175557305734663`*^9}, 3.617555781909822*^9, {3.617556409970274*^9, 
+   3.617556426663599*^9}, {3.6175565058148413`*^9, 3.6175565115188007`*^9}, {
+   3.617558136746657*^9, 3.617558141034651*^9}, {3.6175588310953007`*^9, 
+   3.617558873139165*^9}, {3.618787441572811*^9, 3.618787450747449*^9}, {
+   3.61978678270916*^9, 3.619786794484137*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Temperature", "Subsubsection",
+ CellChangeTimes->{{3.617556643121279*^9, 3.617556646267169*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WeatherData", "[", 
+  RowBox[{Cell[BoxData[
+    FormBox[
+     TemplateBox[{"\"theCity\"","\"Champaign\"","Named",BoxData},
+      "NotebookTemplateSlot"], TextForm]]], ",", "\"\<Temperature\>\""}], 
+  "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617556489509614*^9, 3.6175565275238323`*^9}, {
+  3.61762574797957*^9, 3.6176257504157743`*^9}, {3.618787370292315*^9, 
+  3.618787380721198*^9}, {3.61878741141987*^9, 3.618787422808188*^9}, {
+  3.619786798467067*^9, 3.6197868123205976`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Wind", "Subsubsection",
+ CellChangeTimes->{{3.617556649436386*^9, 3.617556650653494*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Row", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"WeatherData", "[", 
+     RowBox[{Cell[BoxData[
+       FormBox[
+        TemplateBox[{"\"theCity\"","\"Champaign\"","Named",BoxData},
+         "NotebookTemplateSlot"], TextForm]]], ",", "\"\<WindSpeed\>\""}], 
+     "]"}], ",", "\"\< \>\"", ",", 
+    RowBox[{"WeatherData", "[", 
+     RowBox[{Cell[BoxData[
+       FormBox[
+        TemplateBox[{"\"theCity\"","\"Champaign\"","Named",BoxData},
+         "NotebookTemplateSlot"], TextForm]]], ",", "\"\<WindDirection\>\""}],
+      "]"}]}], "}"}], "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617556489509614*^9, 3.6175565275238323`*^9}, {
+  3.6175566528436117`*^9, 3.617556707731243*^9}, {3.618787487077368*^9, 
+  3.618787492180303*^9}, {3.619786764581862*^9, 3.619786767996531*^9}, {
+  3.619786814478911*^9, 3.619786850922168*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Humidity", "Subsubsection",
+ CellChangeTimes->{{3.6175568445016537`*^9, 3.617556846563641*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WeatherData", "[", 
+  RowBox[{Cell[BoxData[
+    FormBox[
+     TemplateBox[{"\"theCity\"","\"Champaign\"","Named",BoxData},
+      "NotebookTemplateSlot"], TextForm]]], ",", "\"\<Humidity\>\""}], 
+  "]"}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617556489509614*^9, 3.6175565275238323`*^9}, {
+  3.6175566528436117`*^9, 3.617556726329583*^9}, {3.617556792226071*^9, 
+  3.617556794796742*^9}, {3.61878749486357*^9, 3.618787502653296*^9}, {
+  3.6197868529888906`*^9, 3.619786857510803*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Conditions", "Subsubsection",
+ CellChangeTimes->{{3.6175568520467176`*^9, 3.617556854848475*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"WeatherData", "[", 
+   RowBox[{Cell[BoxData[
+     FormBox[
+      TemplateBox[{"\"theCity\"","\"Champaign\"","Named",BoxData},
+       "NotebookTemplateSlot"], TextForm]]], ",", "\"\<Conditions\>\""}], 
+   "]"}], "/.", 
+  RowBox[{
+   RowBox[{"{", "}"}], "\[Rule]", "\"\<n/a\>\""}]}]], "Input",
+ CellFrameLabels->{{
+    Cell[
+     BoxData[
+      TemplateBox[{"EvaluateDeleteInput"}, "NotebookTemplateCellBehavior"]]], 
+    None}, {None, None}},
+ CellChangeTimes->{{3.617556489509614*^9, 3.6175565275238323`*^9}, {
+   3.6175566528436117`*^9, 3.617556726329583*^9}, {3.617556792226071*^9, 
+   3.617556801163273*^9}, {3.6175568574113626`*^9, 3.617556864558959*^9}, 
+   3.618787509125029*^9, {3.619786859527671*^9, 3.6197868683415947`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{838, 856},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+DockedCells->FEPrivate`FrontEndResource[
+ "NotebookTemplatingExpressions", "AuthoringDockedCell"],
+TaggingRules->{"NotebookTemplateVersion" -> 1., "NotebookTemplate" -> True},
+CellContext->Notebook,
+FrontEndVersion->"10.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September 9, \
+2014)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 793, 17, 75, "Section"],
+Cell[CellGroupData[{
+Cell[1398, 43, 102, 1, 35, "Subsubsection"],
+Cell[1503, 46, 653, 15, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2193, 66, 95, 1, 35, "Subsubsection"],
+Cell[2291, 69, 996, 24, 69, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3324, 98, 101, 1, 35, "Subsubsection"],
+Cell[3428, 101, 651, 15, 40, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4116, 121, 103, 1, 35, "Subsubsection"],
+Cell[4222, 124, 768, 18, 40, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
