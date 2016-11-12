@@ -1,0 +1,211 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7152,        203]
+NotebookOptionsPosition[      6790,        185]
+NotebookOutlinePosition[      7142,        201]
+CellTagsIndexPosition[      7099,        198]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "Dependent", " ", "systems", " ", "based", " ", "on", " ", "pythagorean",
+       " ", "thm", " ", "and", " ", "a"}], "+", "b", "+", "c"}], "=", 
+    "1000"}], "  ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"a", "^", "2"}], "+", 
+     RowBox[{"b", "^", "2"}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1000", "-", "a", "-", "b"}], ")"}], "^", "2"}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g", "[", 
+     RowBox[{"b_", ",", "c_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1000", "-", "b", "-", "c"}], ")"}], "^", "2"}], "+", 
+     RowBox[{"b", "^", "2"}], "-", 
+     RowBox[{"c", "^", "2"}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Find", " ", "the", " ", "b", " ", "value", " ", "associated", " ", 
+     "with", " ", "give", " ", "a", " ", "value"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"aGivesB", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"f", "[", 
+           RowBox[{"n", ",", "b"}], "]"}], "\[Equal]", "0"}], ",", "b"}], 
+        "]"}], "]"}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"Key", "[", "b", "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Find", " ", "the", " ", "c", " ", "value", " ", "associated", " ", 
+     "with", " ", "give", " ", "a", " ", "value", " ", 
+     RowBox[{"(", 
+      RowBox[{"by", " ", "first", " ", "finding", " ", "b"}], ")"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bGivesC", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"Association", "[", 
+      RowBox[{"Flatten", "[", 
+       RowBox[{"Solve", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"g", "[", 
+           RowBox[{"n", ",", "c"}], "]"}], "\[Equal]", "0"}], ",", "c"}], 
+        "]"}], "]"}], "]"}], "[", 
+     RowBox[{"[", 
+      RowBox[{"Key", "[", "c", "]"}], "]"}], "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Error", " ", "check"}], ",", " ", 
+     RowBox[{"helps", " ", "eliminate", " ", "values", " ", "that", " ", 
+      RowBox[{"aren", "'"}], "t", " ", "integers"}], ",", " ", 
+     RowBox[{
+     "since", " ", "each", " ", "value", "\[IndentingNewLine]", " ", 
+      "generated", " ", "with", " ", "fit", " ", "both", " ", "rules", " ", 
+      "because", " ", "of", " ", "how", " ", 
+      RowBox[{"we", "'"}], "ve", " ", "generated", " ", "them"}]}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"bothInts", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"IntegerQ", "[", 
+      RowBox[{"aGivesB", "[", "n", "]"}], "]"}], " ", "&&", " ", 
+     RowBox[{"IntegerQ", "[", 
+      RowBox[{"bGivesC", "[", "n", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Find", " ", "the", " ", "product", " ", "a", "*", "b", "*", "c", " ", 
+     "so", " ", "we", " ", "can", " ", "submit", " ", "solution", " ", "to", 
+     " ", 
+     RowBox[{"projecteuler", ".", "net"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"pProd", "[", "n_", "]"}], ":=", 
+    RowBox[{"n", "*", 
+     RowBox[{"aGivesB", "[", "n", "]"}], "*", 
+     RowBox[{"bGivesC", "[", 
+      RowBox[{"aGivesB", "[", "n", "]"}], "]"}]}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"Table", " ", "iterates", " ", "over", " ", "values"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "but", " ", "they", " ", "only", " ", "show", " ", "up", " ", "if", 
+        " ", "b"}], " ", "&"}], " ", "c", " ", "are", " ", "integers"}]}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"WinningNumbers", "[", "a_", "]"}], ":=", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{"bothInts", "[", "n", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"n", ",", " ", 
+          RowBox[{"aGivesB", "[", "n", "]"}], ",", " ", 
+          RowBox[{"bGivesC", "[", "n", "]"}], ",", 
+          RowBox[{"pProd", "[", "n", "]"}]}], "}"}], ",", "Nothing"}], "]"}], 
+      ",", 
+      RowBox[{"{", 
+       RowBox[{"n", ",", "1", ",", "a"}], "}"}]}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6879115925917788`*^9, 3.687911640345186*^9}, {
+  3.6879119668125896`*^9, 3.68791197853127*^9}, {3.687912430179181*^9, 
+  3.687912512675568*^9}, {3.6879125459644117`*^9, 3.687912669991349*^9}, {
+  3.68791329999025*^9, 3.6879133619812183`*^9}, {3.6879133943930883`*^9, 
+  3.687913395303734*^9}, {3.687913460945591*^9, 3.687913461880969*^9}, {
+  3.68791351536738*^9, 3.687913519255018*^9}, {3.687913582773588*^9, 
+  3.6879136230715113`*^9}, {3.687913962672043*^9, 3.6879140102595863`*^9}, {
+  3.687914045547885*^9, 3.687914062225922*^9}, {3.6879141801199102`*^9, 
+  3.687914252249402*^9}, {3.687914327107052*^9, 3.687914537473271*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+     "Two", " ", "identical", " ", "solutions", " ", "show", " ", "up", " ", 
+      "due", " ", "to", " ", "input", " ", "value", " ", "with", " ", "a"}], 
+     " ", "&"}], " ", "b", " ", "values", " ", 
+    RowBox[{"interchanged", "."}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"WinningNumbers", "[", "499", "]"}]}]], "Input",
+ CellChangeTimes->{{3.687914229982567*^9, 3.687914234289447*^9}, {
+  3.68791454128032*^9, 3.687914592406755*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"200", ",", "375", ",", "425", ",", "31875000"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"375", ",", "200", ",", "425", ",", "31875000"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.687914234585578*^9, 3.687914242437777*^9}, 
+   3.6879143309964867`*^9, 3.687914575791586*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5297, 135, 474, "Input"],
+Cell[CellGroupData[{
+Cell[5880, 159, 535, 12, 75, "Input"],
+Cell[6418, 173, 356, 9, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+

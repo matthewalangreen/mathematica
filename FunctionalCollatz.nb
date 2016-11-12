@@ -1,0 +1,848 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     24366,        840]
+NotebookOptionsPosition[     24002,        822]
+NotebookOutlinePosition[     24354,        838]
+CellTagsIndexPosition[     24311,        835]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Collatz", "[", 
+   RowBox[{"x_", "?", "EvenQ"}], "]"}], ":=", 
+  RowBox[{"x", "/", "2"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Collatz", "[", 
+   RowBox[{"x_", "?", "OddQ"}], "]"}], ":=", 
+  RowBox[{
+   RowBox[{"3", "x"}], "+", "1"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Collatz", "[", "1", "]"}], "=", "1"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"CalcCollatz", "[", 
+   RowBox[{"x_", ",", "l_"}], "]"}], ":=", 
+  RowBox[{"CalcCollatz", "[", 
+   RowBox[{
+    RowBox[{"Collatz", "[", "x", "]"}], ",", 
+    RowBox[{"l", "+", "1"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"CalcCollatz", "[", "1", "]"}], "=", "1"}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Trace", "[", 
+   RowBox[{"CalcCollatz", "[", "13", "]"}], "]"}], "//", 
+  "TableForm"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.686341556245666*^9, 3.686341644018113*^9}, 
+   3.68635327872127*^9, {3.686353445218844*^9, 3.6863534857680283`*^9}, {
+   3.686354058652927*^9, 3.6863540951744432`*^9}, 3.6863542823490343`*^9, {
+   3.686354476301299*^9, 3.686354600726811*^9}, {3.686354667086627*^9, 
+   3.686354756913083*^9}, {3.6863547869732523`*^9, 3.6863548296310673`*^9}, {
+   3.686354921081437*^9, 3.68635499931896*^9}, {3.6863550326171503`*^9, 
+   3.686355038069005*^9}, {3.686355087038477*^9, 3.686355115691596*^9}, {
+   3.686355269461462*^9, 3.6863553180946217`*^9}, {3.6863553574637938`*^9, 
+   3.686355382051886*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "13", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "13", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "13", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "13", "]"}],
+         HoldForm]},
+       {
+        TagBox["False",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"OddQ", "[", "13", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{
+       RowBox[{"3", " ", "13"}], "+", "1"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"3", " ", "13"}],
+         HoldForm]},
+       {
+        TagBox["39",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"39", "+", "1"}],
+      HoldForm], 
+     TagBox["40",
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "40", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "40", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "40", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "40", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["40", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["40", "2"],
+      HoldForm], 
+     TagBox["20",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "20", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "20", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "20", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "20", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["20", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["20", "2"],
+      HoldForm], 
+     TagBox["10",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "10", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "10", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "10", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "10", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["10", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["10", "2"],
+      HoldForm], 
+     TagBox["5",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "5", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "5", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "5", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "5", "]"}],
+         HoldForm]},
+       {
+        TagBox["False",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], GridBox[{
+       {
+        TagBox[
+         RowBox[{"OddQ", "[", "5", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{
+       RowBox[{"3", " ", "5"}], "+", "1"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"3", " ", "5"}],
+         HoldForm]},
+       {
+        TagBox["15",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      RowBox[{"15", "+", "1"}],
+      HoldForm], 
+     TagBox["16",
+      HoldForm]},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "16", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "16", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "16", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "16", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["16", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["16", "2"],
+      HoldForm], 
+     TagBox["8",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "8", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "8", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "8", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "8", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["8", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["8", "2"],
+      HoldForm], 
+     TagBox["4",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "4", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "4", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "4", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "4", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["4", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["4", "2"],
+      HoldForm], 
+     TagBox["2",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "2", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", 
+       RowBox[{"Collatz", "[", "2", "]"}], "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"Collatz", "[", "2", "]"}],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         RowBox[{"EvenQ", "[", "2", "]"}],
+         HoldForm]},
+       {
+        TagBox["True",
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["2", "2"],
+      HoldForm], GridBox[{
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]},
+       {
+        TagBox[
+         FractionBox["1", "2"],
+         HoldForm]}
+      },
+      GridBoxAlignment->{
+       "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+        "RowsIndexed" -> {}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}, "RowsIndexed" -> {}}], 
+     TagBox[
+      FractionBox["2", "2"],
+      HoldForm], 
+     TagBox["1",
+      HoldForm], "\<\"\"\>"},
+    {
+     TagBox[
+      RowBox[{"CalcCollatz", "[", "1", "]"}],
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"},
+    {
+     TagBox["1",
+      HoldForm], "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", \
+"\<\"\"\>"}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  TableForm[{
+    HoldForm[
+     $CellContext`CalcCollatz[13]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[13]]], {
+     HoldForm[
+      $CellContext`Collatz[13]], {
+      HoldForm[
+       EvenQ[13]], 
+      HoldForm[False]}, {
+      HoldForm[
+       OddQ[13]], 
+      HoldForm[True]}, 
+     HoldForm[3 13 + 1], {
+      HoldForm[3 13], 
+      HoldForm[39]}, 
+     HoldForm[39 + 1], 
+     HoldForm[40]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[40]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[40]]], {
+     HoldForm[
+      $CellContext`Collatz[40]], {
+      HoldForm[
+       EvenQ[40]], 
+      HoldForm[True]}, 
+     HoldForm[40/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[40 Rational[1, 2]], 
+     HoldForm[20]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[20]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[20]]], {
+     HoldForm[
+      $CellContext`Collatz[20]], {
+      HoldForm[
+       EvenQ[20]], 
+      HoldForm[True]}, 
+     HoldForm[20/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[20 Rational[1, 2]], 
+     HoldForm[10]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[10]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[10]]], {
+     HoldForm[
+      $CellContext`Collatz[10]], {
+      HoldForm[
+       EvenQ[10]], 
+      HoldForm[True]}, 
+     HoldForm[10/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[10 Rational[1, 2]], 
+     HoldForm[5]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[5]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[5]]], {
+     HoldForm[
+      $CellContext`Collatz[5]], {
+      HoldForm[
+       EvenQ[5]], 
+      HoldForm[False]}, {
+      HoldForm[
+       OddQ[5]], 
+      HoldForm[True]}, 
+     HoldForm[3 5 + 1], {
+      HoldForm[3 5], 
+      HoldForm[15]}, 
+     HoldForm[15 + 1], 
+     HoldForm[16]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[16]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[16]]], {
+     HoldForm[
+      $CellContext`Collatz[16]], {
+      HoldForm[
+       EvenQ[16]], 
+      HoldForm[True]}, 
+     HoldForm[16/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[16 Rational[1, 2]], 
+     HoldForm[8]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[8]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[8]]], {
+     HoldForm[
+      $CellContext`Collatz[8]], {
+      HoldForm[
+       EvenQ[8]], 
+      HoldForm[True]}, 
+     HoldForm[8/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[8 Rational[1, 2]], 
+     HoldForm[4]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[4]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[4]]], {
+     HoldForm[
+      $CellContext`Collatz[4]], {
+      HoldForm[
+       EvenQ[4]], 
+      HoldForm[True]}, 
+     HoldForm[4/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[4 Rational[1, 2]], 
+     HoldForm[2]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[2]], 
+    HoldForm[
+     $CellContext`CalcCollatz[
+      $CellContext`Collatz[2]]], {
+     HoldForm[
+      $CellContext`Collatz[2]], {
+      HoldForm[
+       EvenQ[2]], 
+      HoldForm[True]}, 
+     HoldForm[2/2], {
+      HoldForm[2^(-1)], 
+      HoldForm[
+       Rational[1, 2]]}, 
+     HoldForm[2 Rational[1, 2]], 
+     HoldForm[1]}, 
+    HoldForm[
+     $CellContext`CalcCollatz[1]], 
+    HoldForm[1]}]]], "Output",
+ CellChangeTimes->{{3.686354936125217*^9, 3.6863549487090397`*^9}, {
+   3.686354981174012*^9, 3.6863549998032923`*^9}, 3.686355038489097*^9, {
+   3.6863550916930637`*^9, 3.686355117106604*^9}, {3.686355311320716*^9, 
+   3.686355318573745*^9}, {3.68635537021069*^9, 3.68635538237236*^9}}]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.6863543640364637`*^9}]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 1596, 39, 201, "Input"],
+Cell[2179, 63, 21715, 753, 836, "Output"]
+}, Open  ]],
+Cell[23909, 819, 89, 1, 54, "Input"]
+}
+]
+*)
+

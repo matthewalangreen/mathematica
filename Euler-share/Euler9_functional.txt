@@ -1,0 +1,34 @@
+(* Dependent systems based on pythagorean thm and a+b+c=1000  *)
+
+f[a_, b_] := a^2 + b^2 - (1000 - a - b)^2
+g[b_, c_] := (1000 - b - c)^2 + b^2 - c^2
+
+(* Find the b value associated with give a value *)
+
+aGivesB[n_] := Association[Flatten[Solve[f[n, b] == 0, b]]][[Key[b]]]
+
+(* Find the c value associated with give a value (by first finding b) \
+*)
+bGivesC[n_] := 
+ Association[Flatten[Solve[g[n, c] == 0, c]]][[Key[c]]]
+
+(* Error check, helps eliminate values that aren't integers, since \
+each value
+ generated with fit both rules because of how we've generated them *)
+
+bothInts[n_] := IntegerQ[aGivesB[n]] && IntegerQ[bGivesC[n]]
+
+(* Find the product a*b*c so we can submit solution to \
+projecteuler.net *)
+pProd[n_] := n*aGivesB[n]*bGivesC[aGivesB[n]]
+
+(* Table iterates over values, but they only show up if b & c are \
+integers *)
+
+WinningNumbers[a_] := 
+ Table[If[bothInts[n], {n, aGivesB[n], bGivesC[n], pProd[n]}, 
+   Nothing], {n, 1, a}]
+
+(* Two identical solutions show up due to input value with a & b \
+values interchanged. *)
+WinningNumbers[499]
