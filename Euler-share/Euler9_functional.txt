@@ -32,3 +32,16 @@ WinningNumbers[a_] :=
 (* Two identical solutions show up due to input value with a & b \
 values interchanged. *)
 WinningNumbers[499]
+
+
+(* THIS IS ME TRYING TO DO CHRIS' SOLUTION: https://github.com/ciwchris/project-euler/blob/master/elixir/pythagorean_triplet.exs#L5
+
+findTriple[a0_, b0_] := findTriple[a0, b0] =
+  Module[
+   {a = a0, b = b0, c = Sqrt[a0^2 + b0^2]},
+   If[a + b + c == 1000, Print["yes"],
+    While[b < 500, findTriple[a, b + 1]];
+    While[ a < 500, findTriple[a + 1, a + 2]]
+    ]
+   ]
+findTriple[1, 2]
