@@ -1,0 +1,138 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4373,        130]
+NotebookOptionsPosition[      4012,        112]
+NotebookOutlinePosition[      4364,        128]
+CellTagsIndexPosition[      4321,        125]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Calculate", " ", "the", " ", "nth", " ", "triangular", " ", "number"}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"TriNum", "[", "n_", "]"}], ":=", 
+     RowBox[{"n", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}], "/", "2"}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Count", " ", "how", " ", "many", " ", "divisors", " ", "x", " ", "has"}],
+     " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"LDiv", "[", "x_", "]"}], ":=", 
+     RowBox[{"Length", "[", 
+      RowBox[{"Divisors", "[", "x", "]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.695821507397189*^9, 3.6958215263243217`*^9}, {
+  3.6958217236468782`*^9, 3.695821773693056*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Make", " ", "a", " ", "table", " ", "of", " ", "the", " ", "first", " ", 
+    "15000", " ", "triangle", " ", "numbers"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"Timing", "[", 
+   RowBox[{
+    RowBox[{"vals", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"LDiv", "[", 
+        RowBox[{"TriNum", "[", "n", "]"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"n", ",", "1", ",", "15000"}], "}"}]}], "]"}]}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"(*", " ", 
+     RowBox[{
+      RowBox[{
+      "go", " ", "through", " ", "the", " ", "list", " ", "in", " ", 
+       "order"}], ",", " ", 
+      RowBox[{
+      "dropping", " ", "the", " ", "first", " ", "item", " ", "and", " ", 
+       "keeping", " ", "track", " ", "of", " ", "how", " ", "many", " ", 
+       "items", " ", 
+       RowBox[{"we", "'"}], "ve", " ", "looked", " ", "at", " ", "so", " ", 
+       "far"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+    RowBox[{"i", "=", "1"}], ";", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"vals", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "<", "500"}], ",", 
+      RowBox[{
+       RowBox[{"Drop", "[", 
+        RowBox[{"vals", ",", "1"}], "]"}], ";", 
+       RowBox[{"i", "++"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"TriNum", "[", "i", "]"}]}], "]"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{
+   "find", " ", "the", " ", "triangular", " ", "number", " ", "that", " ", 
+    "corresponds"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.695821687595476*^9, 3.695821722332933*^9}, {
+  3.695821788523995*^9, 3.695821926870611*^9}, {3.695822023769285*^9, 
+  3.695822040711824*^9}, {3.695822141506536*^9, 3.695822201669601*^9}, {
+  3.695822263069125*^9, 3.6958223064119587`*^9}, {3.6958223414828*^9, 
+  3.695822435080564*^9}, {3.69583649662446*^9, 3.6958365307358427`*^9}, {
+  3.6958366804982357`*^9, 3.695836693850803*^9}, {3.6958367262840652`*^9, 
+  3.6958367326488667`*^9}, {3.695836815702581*^9, 3.6958368678593807`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.864998`", ",", "76576500"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.695821806185235*^9, {3.6958218537819*^9, 3.6958218819824944`*^9}, {
+   3.695821913216653*^9, 3.6958219274733887`*^9}, 3.6958220427486467`*^9, 
+   3.695822168542789*^9, {3.6958223035751*^9, 3.695822385442342*^9}, {
+   3.695822425477103*^9, 3.695822435936616*^9}, {3.695836501444847*^9, 
+   3.6958365320445623`*^9}, 3.695836695708152*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 903, 26, 138, "Input"],
+Cell[CellGroupData[{
+Cell[1486, 50, 2058, 49, 159, "Input"],
+Cell[3547, 101, 449, 8, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
