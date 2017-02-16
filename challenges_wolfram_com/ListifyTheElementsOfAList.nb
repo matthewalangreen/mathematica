@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     24903,        652]
-NotebookOptionsPosition[     13104,        400]
-NotebookOutlinePosition[     23963,        616]
-CellTagsIndexPosition[     23920,        613]
+NotebookDataLength[     26785,        715]
+NotebookOptionsPosition[     14807,        456]
+NotebookOutlinePosition[     25693,        673]
+CellTagsIndexPosition[     25650,        670]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -231,8 +231,22 @@ Cell[BoxData[
  RowBox[{
   RowBox[{"Listify", "[", 
    RowBox[{"l_List", ",", 
-    RowBox[{"n_Integer", "?", "Positive"}]}], "]"}], ":="}]], "Input"]
+    RowBox[{"n_Integer", "?", "Positive"}]}], "]"}], ":=", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"l", "[", 
+       RowBox[{"[", "j", "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"i", ",", "n"}], "}"}]}], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"j", ",", 
+      RowBox[{"Length", "[", "l", "]"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.696265972444562*^9, 3.696265976067342*^9}}]
 }, Open  ]],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[
  TemplateBox[{
@@ -396,10 +410,52 @@ f11a7a0d89ab/wc/api/check"], {"Listify"}, "204c2060a7ab563b"]]];
           "your work on challenges and keep track of progress.", "SigninText",
             Background -> None]]}, Alignment -> Left, Spacings -> 0], 
        Invisible[""]], UpdateInterval -> 1], StandardForm]]},
-  "RowDefault"]], "SubmitRow"]
+  "RowDefault"]], "SubmitRow"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"Range", "[", "5", "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"val", "=", "3"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"l", "[", 
+      RowBox[{"[", "j", "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "val"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"j", ",", 
+     RowBox[{"Length", "[", "l", "]"}]}], "}"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.696265179075883*^9, 3.696265261646798*^9}, {
+  3.696265679421327*^9, 3.696265702200478*^9}, {3.6962659480279617`*^9, 
+  3.69626596090317*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "3", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "4", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "5", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.696265213398696*^9, 3.696265239607813*^9}, {
+  3.696265681234632*^9, 3.696265702508366*^9}, {3.6962659355625973`*^9, 
+  3.696265961267747*^9}}]
+}, Open  ]]
+}, Open  ]]
 },
-WindowSize->{808, 862},
-WindowMargins->{{436, Automatic}, {Automatic, 50}},
+WindowSize->{840, 962},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 DockedCells->{
   Cell[
    BoxData[
@@ -509,6 +565,7 @@ vxIbfE2C3zFl9CUv5BtN8pvApftS1nKRuPpuybZHXP6X+dvWUuh/YTQHOQ==
    CellElementSpacings -> {"CellMinHeight" -> 5}, CellFrameMargins -> 3, 
    FontSize -> 1, CellFrame -> 0, Background -> 
    RGBColor[1., 0.8862745098039215, 0.35294117647058826`]]},
+Magnification:>1.5 Inherited,
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 21, 2016)",
 StyleDefinitions->Notebook[{
@@ -616,44 +673,50 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 47, 0, 69, "Title"],
-Cell[630, 24, 129, 3, 28, "Text"],
+Cell[580, 22, 47, 0, 103, "Title"],
+Cell[630, 24, 129, 3, 77, "Text"],
 Cell[CellGroupData[{
-Cell[784, 31, 31, 0, 61, "Section"],
-Cell[818, 33, 210, 8, 51, "Text"]
+Cell[784, 31, 31, 0, 91, "Section"],
+Cell[818, 33, 210, 8, 77, "Text"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1065, 46, 47, 0, 61, "Section"],
-Cell[1115, 48, 374, 12, 51, "Text"],
+Cell[1065, 46, 47, 0, 91, "Section"],
+Cell[1115, 48, 374, 12, 111, "Text"],
 Cell[CellGroupData[{
-Cell[1514, 64, 181, 6, 32, "Input",
+Cell[1514, 64, 181, 6, 48, "Input",
  CellID->70],
-Cell[1698, 72, 400, 14, 32, "Output"]
+Cell[1698, 72, 400, 14, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2135, 91, 35, 0, 29, "Subsection"],
+Cell[2135, 91, 35, 0, 43, "Subsection"],
 Cell[CellGroupData[{
-Cell[2195, 95, 227, 8, 32, "Input",
+Cell[2195, 95, 227, 8, 48, "Input",
  CellID->263148180],
-Cell[2425, 105, 381, 12, 32, "Output"]
+Cell[2425, 105, 381, 12, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2843, 122, 353, 10, 32, "Input"],
-Cell[3199, 134, 828, 24, 32, "Output"]
+Cell[2843, 122, 353, 10, 48, "Input"],
+Cell[3199, 134, 828, 24, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[4064, 163, 300, 10, 32, "Input"],
-Cell[4367, 175, 760, 23, 32, "Output"]
+Cell[4064, 163, 300, 10, 48, "Input"],
+Cell[4367, 175, 760, 23, 48, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5200, 206, 598, 19, 65, "WCIntroDivider"],
-Cell[5801, 227, 39, 0, 70, "WCIntroDividerLine"],
-Cell[5843, 229, 148, 4, 32, "Input"]
+Cell[5200, 206, 598, 19, 96, "WCIntroDivider"],
+Cell[5801, 227, 39, 0, 104, "WCIntroDividerLine"],
+Cell[5843, 229, 538, 16, 48, "Input"]
 }, Open  ]],
-Cell[6006, 236, 7094, 162, 122, "SubmitRow"]
+Cell[CellGroupData[{
+Cell[6418, 250, 7094, 162, 192, "SubmitRow"],
+Cell[CellGroupData[{
+Cell[13537, 416, 675, 19, 111, "Input"],
+Cell[14215, 437, 564, 15, 48, "Output"]
+}, Open  ]]
+}, Open  ]]
 }
 ]
 *)
