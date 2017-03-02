@@ -1,0 +1,420 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13899,        412]
+NotebookOptionsPosition[     12987,        375]
+NotebookOutlinePosition[     13344,        391]
+CellTagsIndexPosition[     13301,        388]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Built-in Functions", "Section",
+ CellChangeTimes->{{3.697458185271455*^9, 3.697458195747464*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["EmbedCode:",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["The following is an easy way to embed (almost) any Mathematica \
+content inside a web page",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.697456404605856*^9, 3.6974564304304733`*^9}, 
+   3.6974581771123962`*^9, {3.697458289980942*^9, 3.697458301523041*^9}, {
+   3.697458343306942*^9, 3.6974583459854116`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"EmbedCode", "[", 
+  RowBox[{"CloudDeploy", "[", "\"\<hello, world\>\"", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.697455898779814*^9, 3.697455898780732*^9}, {
+  3.697456396592969*^9, 3.6974564240756083`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\n\nFormFunction:",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" ",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["automatically creates a web form connected to the function you\
+\[CloseCurlyQuote]ve created.  The function below takes the number the user \
+inputs into a web page, then computes the factorial of that number. ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["CloudDeploy ",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["makes that ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["FormFunction",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" available on the web.  You\[CloseCurlyQuote]ll see ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["CloudDeploy",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" used a lot with other functions when we are putting stuff on the \
+web.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\nFor example:  5! = 5 * 4 * 3 * 2 * 1 = 120.\n\nTry it out!",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.69745644678522*^9, 3.6974565102766848`*^9}, {
+   3.697456543713526*^9, 3.697456575684629*^9}, {3.697456850889597*^9, 
+   3.69745688998521*^9}, {3.6974573149175158`*^9, 3.697457315187437*^9}, {
+   3.697458284390646*^9, 3.697458285989489*^9}, 3.6974583297931013`*^9, {
+   3.697458427054078*^9, 3.697458428539514*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{
+   RowBox[{"FormFunction", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"\"\<x\>\"", "\[Rule]", "\"\<Integer\>\""}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"#x", "!"}], "&"}]}], "]"}], ",", "\"\<myform\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.697456432241531*^9, 3.697456445054696*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\n\n\n",
+ StyleBox["CloudDeploy: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["The following example is extremely powerful.  It is a combination \
+of ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["CloudDeploy",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" and ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["APIFunction",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[".  We\[CloseCurlyQuote]ve built one that we can use to calculate \
+the length of the hypotenuse in a right triangle, using the Pythagorean \
+Theorem, if we know the lengths of the two legs.  \n\nHere\[CloseCurlyQuote]s \
+how it works:  ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["myFunction ",
+  FontWeight->"Bold",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["is defined below to calculate: ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ Cell[BoxData[
+  FormBox[
+   SqrtBox[
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     SuperscriptBox["b", "2"]}]], TraditionalForm]],
+  FormatType->"TraditionalForm",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[" notice that below there are # in front of the a and b.  The \
+reason is that we are using Pure Functions.  They are super powerful, but \
+kinda confusing to start.  Please take some time to read more about them in \
+the documentation.",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Here\[CloseCurlyQuote]s how to use the URL generated below:\n\n1.  \
+Run the code block below ( to generate the URL)\n2.  Copy the URL by right \
+clicking (two-finger clicking on the mac) and selecting, \
+\[OpenCurlyDoubleQuote]Copy Address\[CloseCurlyDoubleQuote]\n3.  Go to a web \
+browser and paste the URL into the address bar.\n4.  BEFORE YOU HIT ENTER, \
+add the following to the end of the URL:  \[OpenCurlyDoubleQuote]?a=3&b=4\
+\[CloseCurlyDoubleQuote]\n5.  Hit enter.  You\[CloseCurlyQuote]ll see a super \
+boring web page load that shows only a \[OpenCurlyDoubleQuote]5\
+\[CloseCurlyDoubleQuote] int the top left corner.\n6.  Now, go back to the \
+original URL (remove the \[OpenCurlyDoubleQuote]?a=3&b=4\
+\[CloseCurlyDoubleQuote] from the end) and run it again.  What you\
+\[CloseCurlyQuote]ll see now is a webpage generated by Wolfram to explain the \
+API you\[CloseCurlyQuote]ve created and how it works.  \
+You\[CloseCurlyQuote]ll also notice that you can manually enter values for \
+\[OpenCurlyDoubleQuote]a\[CloseCurlyDoubleQuote] and \[OpenCurlyDoubleQuote]b\
+\[CloseCurlyDoubleQuote] here.  ",
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ "\n"
+}], "Subsubsection",
+ CellChangeTimes->{{3.6974567981588097`*^9, 3.697456844941333*^9}, {
+   3.6974568994607363`*^9, 3.697456924575952*^9}, {3.6974570712547607`*^9, 
+   3.697457149528631*^9}, {3.697457257909214*^9, 3.697457548930389*^9}, 
+   3.697458275934256*^9, {3.697458353029256*^9, 3.6974583772413692`*^9}, {
+   3.697458419935161*^9, 3.6974584321988*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"myFunction", " ", "=", " ", 
+   RowBox[{"APIFunction", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"\"\<a\>\"", "\[Rule]", "\"\<Integer\>\""}], ",", 
+       RowBox[{"\"\<b\>\"", "\[Rule]", "\"\<Integer\>\""}]}], "}"}], ",", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{
+        RowBox[{"#a", "^", "2"}], "+", 
+        RowBox[{"#b", "^", "2"}]}]], "&"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"api", " ", "=", " ", 
+  RowBox[{"CloudDeploy", "[", "myFunction", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.6974569263666487`*^9, 3.697457049028241*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ StyleBox["\n\nThe ",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["FormPage ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["function creates an interactive web page, rendered by Wolfram \
+Language code.  The example here asks the user for a country and then the \
+Wolfram Language servers interpret the input and return an image of that \
+country.  ",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Subsubsection",
+ CellChangeTimes->{{3.697457593635751*^9, 3.6974576066488323`*^9}, {
+  3.697457669425659*^9, 3.697457732155342*^9}, {3.697458396306568*^9, 
+  3.6974584344942703`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{"FormPage", "[", 
+   RowBox[{
+    RowBox[{"\"\<country\>\"", " ", "\[Rule]", " ", "\"\<Country\>\""}], ",", 
+    " ", 
+    RowBox[{
+     RowBox[{"GeoGraphics", "[", "#country", "]"}], "&"}]}], "]"}], 
+  "]"}]], "Input"],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.6974584143342237`*^9, 3.697458417296879*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "How-To Guides -- ",
+ StyleBox["This stuff is REALLY HELPFUL",
+  FontSlant->"Italic"]
+}], "Section",
+ CellChangeTimes->{{3.6974582208013144`*^9, 3.6974582389117613`*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\nHere are guides from Wolfram that really help explain all this \
+in much greater detail:",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["How to create an instant web form: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+CreateInstantWebForms.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/CreateInstantWebForms.\
+html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/CreateInstantWebForms.html"],
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Set up Instant Web Computation: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+SetUpAnInstantWebComputation.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/\
+SetUpAnInstantWebComputation.html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/SetUpAnInstantWebComputation.\
+html"],
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Create form-based mobile apps: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+CreateFormBasedMobileApps.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/\
+CreateFormBasedMobileApps.html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/CreateFormBasedMobileApps.\
+html"],
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Create Embeddable code: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+CreateEmbeddableCode.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/CreateEmbeddableCode.\
+html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/CreateEmbeddableCode.html"],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Set Cloud Object Permissions: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+SetCloudObjectPermissions.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/\
+SetCloudObjectPermissions.html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/SetCloudObjectPermissions.\
+html"],
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Deploy web page in Wolfram Cloud: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+DeployAWebPageInTheWolframCloud.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/\
+DeployAWebPageInTheWolframCloud.html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/\
+DeployAWebPageInTheWolframCloud.html"],
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["\n\n",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox["Deploy interactive content in Wolfram Cloud: ",
+  FontWeight->"Bold",
+  FontColor->RGBColor[0, 0, 1]],
+ StyleBox[ButtonBox["http://reference.wolfram.com/language/howto/\
+DeployInteractiveContentInTheWolframCloud.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["http://reference.wolfram.com/language/howto/\
+DeployInteractiveContentInTheWolframCloud.html"], None},
+  ButtonNote->
+   "http://reference.wolfram.com/language/howto/\
+DeployInteractiveContentInTheWolframCloud.html"],
+  FontSlant->"Italic",
+  FontColor->RGBColor[0, 0, 1]]
+}], "Text",
+ CellChangeTimes->{{3.697457826420782*^9, 3.6974578424331293`*^9}, {
+  3.697457879558693*^9, 3.697458004756174*^9}, {3.697458057839595*^9, 
+  3.6974580689262733`*^9}, {3.6974581022932167`*^9, 3.6974581702229958`*^9}}]
+}, Open  ]]
+},
+WindowSize->{808, 860},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 103, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[708, 27, 516, 13, 59, "Subsubsection"],
+Cell[1227, 42, 236, 4, 32, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1500, 51, 1597, 42, 251, "Subsubsection"],
+Cell[3100, 95, 359, 10, 32, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3496, 110, 3172, 74, 619, "Subsubsection"],
+Cell[6671, 186, 622, 17, 67, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7330, 208, 608, 14, 131, "Subsubsection"],
+Cell[7941, 224, 273, 8, 32, "Input"],
+Cell[8217, 234, 94, 1, 32, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8360, 241, 187, 5, 64, "Section"],
+Cell[8550, 248, 4421, 124, 467, "Text"]
+}, Open  ]]
+}
+]
+*)
+
