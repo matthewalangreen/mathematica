@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13899,        412]
-NotebookOptionsPosition[     12987,        375]
-NotebookOutlinePosition[     13344,        391]
-CellTagsIndexPosition[     13301,        388]
+NotebookDataLength[     14127,        422]
+NotebookOptionsPosition[     13144,        382]
+NotebookOutlinePosition[     13501,        398]
+CellTagsIndexPosition[     13458,        395]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -93,6 +93,8 @@ web.",
    3.697458284390646*^9, 3.697458285989489*^9}, 3.6974583297931013`*^9, {
    3.697458427054078*^9, 3.697458428539514*^9}}],
 
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"CloudDeploy", "[", 
   RowBox[{
@@ -103,7 +105,12 @@ Cell[BoxData[
      RowBox[{
       RowBox[{"#x", "!"}], "&"}]}], "]"}], ",", "\"\<myform\>\""}], 
   "]"}]], "Input",
- CellChangeTimes->{{3.697456432241531*^9, 3.697456445054696*^9}}]
+ CellChangeTimes->{{3.697456432241531*^9, 3.697456445054696*^9}, {
+  3.697463825365919*^9, 3.69746383185177*^9}}],
+
+Cell[BoxData["720"], "Output",
+ CellChangeTimes->{3.697463831399873*^9}]
+}, Open  ]]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -373,8 +380,8 @@ DeployInteractiveContentInTheWolframCloud.html"],
   3.6974580689262733`*^9}, {3.6974581022932167`*^9, 3.6974581702229958`*^9}}]
 }, Open  ]]
 },
-WindowSize->{808, 860},
-WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowSize->{840, 960},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
 21, 2016)",
 StyleDefinitions->"Default.nb"
@@ -398,21 +405,24 @@ Cell[1227, 42, 236, 4, 32, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[1500, 51, 1597, 42, 251, "Subsubsection"],
-Cell[3100, 95, 359, 10, 32, "Input"]
-}, Open  ]],
 Cell[CellGroupData[{
-Cell[3496, 110, 3172, 74, 619, "Subsubsection"],
-Cell[6671, 186, 622, 17, 67, "Input"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[7330, 208, 608, 14, 131, "Subsubsection"],
-Cell[7941, 224, 273, 8, 32, "Input"],
-Cell[8217, 234, 94, 1, 32, "Input"]
+Cell[3122, 97, 407, 11, 32, "Input"],
+Cell[3532, 110, 72, 1, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8360, 241, 187, 5, 64, "Section"],
-Cell[8550, 248, 4421, 124, 467, "Text"]
+Cell[3653, 117, 3172, 74, 571, "Subsubsection"],
+Cell[6828, 193, 622, 17, 67, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7487, 215, 608, 14, 131, "Subsubsection"],
+Cell[8098, 231, 273, 8, 32, "Input"],
+Cell[8374, 241, 94, 1, 32, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8517, 248, 187, 5, 64, "Section"],
+Cell[8707, 255, 4421, 124, 467, "Text"]
 }, Open  ]]
 }
 ]
