@@ -1,0 +1,65 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      1485,         57]
+NotebookOptionsPosition[      1127,         39]
+NotebookOutlinePosition[      1484,         55]
+CellTagsIndexPosition[      1441,         52]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
+What is the sum of the digits of the number 2^1000?\
+\>", "Input",
+ CellChangeTimes->{{3.6979110955511208`*^9, 3.697911114094562*^9}},
+ FormatType->"TextForm"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Total", "[", 
+  RowBox[{"IntegerDigits", "[", 
+   RowBox[{"2", "^", "1000"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.697911116636332*^9, 3.6979111411165943`*^9}}],
+
+Cell[BoxData["1366"], "Output",
+ CellChangeTimes->{{3.697911124992384*^9, 3.697911142921156*^9}}]
+}, Open  ]]
+},
+WindowSize->{840, 960},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 235, 5, 44, "Input"],
+Cell[CellGroupData[{
+Cell[818, 29, 193, 4, 32, "Input"],
+Cell[1014, 35, 97, 1, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
