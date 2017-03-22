@@ -1,0 +1,217 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      7512,        209]
+NotebookOptionsPosition[      7073,        188]
+NotebookOutlinePosition[      7430,        204]
+CellTagsIndexPosition[      7387,        201]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"function", " ", "to", " ", "check", " ", "abundance"}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"abundantQ", "[", "n_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Total", "[", 
+       RowBox[{"Divisors", "[", "n", "]"}], "]"}], "-", "n"}], ">", "n"}]}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "fill", " ", "list", " ", "from", " ", "1", " ", "to", " ", "limit"}], 
+    " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"limit", "=", "28123"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"a", "=", 
+     RowBox[{"Range", "[", "limit", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "create", " ", "a", " ", "list", " ", "of", " ", "only", " ", "abundant", 
+     " ", "numbers", " ", "in", " ", "list", " ", "a"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"b", "=", 
+     RowBox[{"Cases", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", "limit", "]"}], ",", 
+       RowBox[{"_", "?", "abundantQ"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{"create", " ", "list", " ", "of", " ", "values"}], ",", " ", 
+     RowBox[{
+     "filled", " ", "with", " ", "zeros", " ", "big", " ", "enough", " ", 
+      "to", " ", "contain", " ", "the", " ", "calcuations"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Table", "[", 
+      RowBox[{"0", ",", 
+       RowBox[{"Binomial", "[", 
+        RowBox[{"limit", ",", "2"}], "]"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "Fill", " ", "up", " ", "res", " ", "with", " ", "all", " ", "sums", " ", 
+     "of", " ", "abundant", " ", "number", " ", "pairs"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"count", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "<", 
+      RowBox[{"Length", "[", "b", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"j", "=", "i"}], ",", 
+       RowBox[{"j", "<", 
+        RowBox[{"Length", "[", "b", "]"}]}], ",", 
+       RowBox[{"j", "++"}], ",", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"res", "[", 
+          RowBox[{"[", "count", "]"}], "]"}], "=", 
+         RowBox[{
+          RowBox[{"b", "[", 
+           RowBox[{"[", "i", "]"}], "]"}], "+", 
+          RowBox[{"b", "[", 
+           RowBox[{"[", "j", "]"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+        RowBox[{"count", "++"}]}]}], "\[IndentingNewLine]", "]"}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "delete", " ", "duplicate", " ", "values", " ", "and", " ", "just", " ", 
+     "take", " ", "those", " ", "under", " ", "the", " ", "limit"}], " ", 
+    "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Select", "[", 
+      RowBox[{
+       RowBox[{"DeleteDuplicates", "[", "res", "]"}], ",", 
+       RowBox[{
+        RowBox[{"#", "\[LessEqual]", "limit"}], "&"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "add", " ", "up", " ", "list", " ", "a", " ", "and", " ", "list", " ", 
+      "res"}], ",", " ", 
+     RowBox[{
+     "the", " ", "difference", " ", "will", " ", "be", " ", "the", " ", 
+      "solution"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Total", "[", "a", "]"}], "-", 
+    RowBox[{"Total", "[", "res", "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.698854571757577*^9, 3.698854674046937*^9}, {
+   3.6988547124182253`*^9, 3.698854789750388*^9}, {3.698854831576661*^9, 
+   3.698854874084228*^9}, {3.6988549091287107`*^9, 3.698854979454103*^9}, {
+   3.6988550401323137`*^9, 3.698855076068231*^9}, {3.698855125292861*^9, 
+   3.698855134952135*^9}, {3.6988551702534637`*^9, 3.698855198016944*^9}, {
+   3.698855305973757*^9, 3.698855512497355*^9}, {3.698855582793048*^9, 
+   3.698855603721209*^9}, {3.698855957333642*^9, 3.698855968023612*^9}, {
+   3.6988560092129507`*^9, 3.6988560598633347`*^9}, {3.698856565072439*^9, 
+   3.698856570221971*^9}, {3.6988574493255777`*^9, 3.698857482111084*^9}, {
+   3.6988596539354973`*^9, 3.6988596596141357`*^9}, {3.698859800601458*^9, 
+   3.698859819672852*^9}, 3.69885998482066*^9, {3.698860085039163*^9, 
+   3.698860101447928*^9}, {3.6988602959801407`*^9, 3.6988603692147303`*^9}, {
+   3.698860537976253*^9, 3.698860538637085*^9}, 3.698860637677346*^9, {
+   3.698860794780993*^9, 3.698860826608623*^9}, {3.698860888656801*^9, 
+   3.6988609843474092`*^9}, {3.698861017087447*^9, 3.698861030935316*^9}, {
+   3.698861154548401*^9, 3.698861211492342*^9}}],
+
+Cell[BoxData["4179871"], "Output",
+ CellChangeTimes->{3.698860630891819*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{
+   RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6991919436917467`*^9, 3.699191959230918*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TagBox[
+    ButtonBox[
+     PaneSelectorBox[{
+      False->"\<\"https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-\
+8f33-6fbb99bf7b2c\"\>", True->
+      StyleBox["\<\"https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-\
+8f33-6fbb99bf7b2c\"\>", "HyperlinkActive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      BaseStyle->{"Hyperlink"},
+      FrameMargins->0,
+      ImageSize->Automatic],
+     BaseStyle->"Hyperlink",
+     ButtonData->{
+       URL[
+       "https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-8f33-\
+6fbb99bf7b2c"], None},
+     ButtonNote->
+      "https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-8f33-\
+6fbb99bf7b2c"],
+    Annotation[#, 
+     "https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-8f33-\
+6fbb99bf7b2c", "Hyperlink"]& ], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/b6a9c1da-c8a1-43a4-8f33-6fbb99bf7b2c"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.699191964195695*^9}]
+}, Open  ]]
+},
+WindowSize->{840, 960},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+21, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 5076, 120, 621, "Input"],
+Cell[5659, 144, 76, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5772, 150, 249, 5, 32, "Input"],
+Cell[6024, 157, 1033, 28, 69, "Output"]
+}, Open  ]]
+}
+]
+*)
+

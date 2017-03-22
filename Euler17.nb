@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     96889,       1704]
-NotebookOptionsPosition[     96512,       1686]
-NotebookOutlinePosition[     96869,       1702]
-CellTagsIndexPosition[     96826,       1699]
+NotebookDataLength[     98428,       1748]
+NotebookOptionsPosition[     97957,       1728]
+NotebookOutlinePosition[     98314,       1744]
+CellTagsIndexPosition[     98271,       1741]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1442,8 +1442,6 @@ rdf:about=xmlns:exif=http://ns.adobe.com/exif/1.0/> \
   ImageSizeRaw->{2056, 512},
   PlotRange->{{0, 2056}, {0, 512}}]], "Input"],
 
-Cell[CellGroupData[{
-
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
@@ -1675,13 +1673,57 @@ MFH1GYr0phKiCsMKtFISpjOrkuFKkGJBx9FtGpSbY3hQZbSVwNm/Jzk8NPgH
 8/Q=
   "]],
 
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"0.027919`", ",", 
+    RowBox[{"11", "+", 
+     RowBox[{"21113", " ", "Null"}]}]}], "}"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"CloudDeploy", "[", 
+  RowBox[{
+   RowBox[{"EvaluationNotebook", "[", "]"}], ",", 
+   RowBox[{"Permissions", "\[Rule]", "\"\<Public\>\""}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.698583367168795*^9, 3.6985833774128227`*^9}}],
+
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"0.026242`", ",", 
+  RowBox[{"0.027919`", ",", 
    RowBox[{"11", "+", 
     RowBox[{"21113", " ", "Null"}]}]}], "}"}]], "Output",
- CellChangeTimes->{
-  3.697917429993885*^9, {3.698065442888921*^9, 3.698065488895397*^9}}]
+ CellChangeTimes->{3.69858337893338*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"CloudObject", "[", 
+   TagBox[
+    ButtonBox[
+     PaneSelectorBox[{
+      False->"\<\"https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-\
+8979-3bc105e9e67f\"\>", True->
+      StyleBox["\<\"https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-\
+8979-3bc105e9e67f\"\>", "HyperlinkActive"]}, Dynamic[
+       CurrentValue["MouseOver"]],
+      BaseStyle->{"Hyperlink"},
+      FrameMargins->0,
+      ImageSize->Automatic],
+     BaseStyle->"Hyperlink",
+     ButtonData->{
+       URL[
+       "https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-8979-\
+3bc105e9e67f"], None},
+     ButtonNote->
+      "https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-8979-\
+3bc105e9e67f"],
+    Annotation[#, 
+     "https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-8979-\
+3bc105e9e67f", "Hyperlink"]& ], "]"}],
+  CloudObject[
+  "https://www.wolframcloud.com/objects/3d5b71cb-c0c8-4d4f-8979-3bc105e9e67f"],
+  SelectWithContents->True]], "Output",
+ CellChangeTimes->{3.6985833854077797`*^9}]
 }, Open  ]]
 },
 WindowSize->{840, 960},
@@ -1702,9 +1744,11 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 86212, 1422, 180, "Input"],
+Cell[86773, 1444, 9469, 229, 1041, "Input"],
 Cell[CellGroupData[{
-Cell[86795, 1446, 9469, 229, 1041, "Input"],
-Cell[96267, 1677, 229, 6, 66, "Output"]
+Cell[96267, 1677, 454, 11, 96, InheritFromParent],
+Cell[96724, 1690, 179, 5, 32, "Output"],
+Cell[96906, 1697, 1035, 28, 69, "Output"]
 }, Open  ]]
 }
 ]
