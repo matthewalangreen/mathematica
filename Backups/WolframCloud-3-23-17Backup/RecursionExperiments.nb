@@ -1,0 +1,2 @@
+Notebook[{},WindowSize->{808,717},WindowMargins->{{68,Automatic},{Automatic,44}},
+StyleDefinitions->"Default.nb",FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

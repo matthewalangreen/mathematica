@@ -1,0 +1,209 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6885,        201]
+NotebookOptionsPosition[      6432,        180]
+NotebookOutlinePosition[      6785,        196]
+CellTagsIndexPosition[      6742,        193]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A palindromic number reads the same both ways. The largest palindrome made \
+from the product of two 2-digit numbers is 9009 = 91 \[Times] 99.
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+range
+100 x 100 = 10,000   to 998,001   so... 5 to 6 digits, two cases\
+\>", "Text",
+ CellChangeTimes->{
+  3.673882583057618*^9, {3.673882617798953*^9, 3.673882653724493*^9}}],
+
+Cell["\<\
+biggest = 1
+for(int i = 100, i<999, i++)
+{
+\tfor(j = 100, j<999, j++)
+\t{
+\t\tif(isPalendrome[i*j] && (i*j)>biggest]
+\t\t{
+\t\t\tbiggest = i*j
+\t\t}
+\t\[LineSeparator]\t}
+}
+
+\
+\>", "Text",
+ CellChangeTimes->{{3.6738826767942944`*^9, 3.6738828848011503`*^9}, {
+  3.673883116127639*^9, 3.673883144766016*^9}, {3.673892954639954*^9, 
+  3.673892955239994*^9}, {3.673892987040139*^9, 3.673893003062903*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"isPalindrome", "[", "x0_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"x", "=", "x0"}], ",", "a", ",", "b", ",", "c", ",", "d", ",",
+         "e"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"mine", "=", 
+        RowBox[{"IntegerDigits", "[", "x", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"a", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"b", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"c", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"d", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "4", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"e", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "5", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "\[Equal]", "e"}], "&&", 
+          RowBox[{"b", "\[Equal]", "d"}]}], ",", "True", ",", "False"}], 
+        "]"}]}]}], "]"}], "/;", 
+    RowBox[{
+     RowBox[{"DigitCount", "[", "mine", "]"}], "\[Equal]", "5"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"isPalindrome", "[", "x0_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"x", "=", "x0"}], ",", "a", ",", "b", ",", "c", ",", "d", ",",
+         "e", ",", "f"}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"mine", "=", 
+        RowBox[{"IntegerDigits", "[", "x", "]"}]}], ";", 
+       "\[IndentingNewLine]", 
+       RowBox[{"a", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"b", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "2", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"c", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "3", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"d", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "4", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"e", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "5", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"f", "=", 
+        RowBox[{"mine", "[", 
+         RowBox[{"[", "6", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "\[Equal]", "f"}], "&&", 
+          RowBox[{"b", "\[Equal]", "e"}], "&&", 
+          RowBox[{"c", "\[Equal]", "d"}]}], ",", "True", ",", "False"}], 
+        "]"}]}]}], "]"}], "/;", 
+    RowBox[{
+     RowBox[{"DigitCount", "[", "mine", "]"}], "\[Equal]", "6"}]}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"pals", "=", 
+  RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "100"}], ",", 
+   RowBox[{"i", "<", "999"}], ",", 
+   RowBox[{"i", "++"}], ",", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"j", "=", "i"}], ",", 
+     RowBox[{"j", "<", "999"}], ",", 
+     RowBox[{"j", "++"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"isPalindrome", "[", 
+        RowBox[{"i", "*", "j"}], "]"}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"pals", ",", 
+         RowBox[{"i", "*", "j"}]}], "]"}]}], "]"}]}], "]"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Max", "[", "pals", "]"}]}], "Input",
+ CellChangeTimes->{{3.673888710838352*^9, 3.673888711476687*^9}, {
+   3.673888744207128*^9, 3.673888824715869*^9}, {3.6738889287909307`*^9, 
+   3.673888939172987*^9}, {3.673889104649613*^9, 3.673889293657939*^9}, {
+   3.673889781783298*^9, 3.6738898170438337`*^9}, {3.673889860397161*^9, 
+   3.673889860907961*^9}, {3.673889904155423*^9, 3.6738900768315897`*^9}, {
+   3.6738901178812323`*^9, 3.673890120799677*^9}, {3.673891191176436*^9, 
+   3.67389120565449*^9}, {3.6738912534633923`*^9, 3.673891423244351*^9}, {
+   3.673891471630178*^9, 3.673891734878242*^9}, {3.673891806384487*^9, 
+   3.673891923250408*^9}, {3.673891968711218*^9, 3.673892069594337*^9}, {
+   3.673892258763678*^9, 3.673892271881806*^9}, {3.673892494964258*^9, 
+   3.673892518276883*^9}, {3.6738925498535967`*^9, 3.673892564536318*^9}, {
+   3.673892650774537*^9, 3.6738927246407347`*^9}, 3.673892788614134*^9, {
+   3.6738928243651257`*^9, 3.673892914218155*^9}, 3.673893332378351*^9, {
+   3.673895076894155*^9, 3.6738951056431723`*^9}},
+ CellID->14550],
+
+Cell[BoxData[
+ RowBox[{"{", "}"}]], "Output",
+ CellChangeTimes->{
+  3.6738933410469713`*^9, {3.673895079954557*^9, 3.6738951082225533`*^9}}],
+
+Cell[BoxData["906609"], "Output",
+ CellChangeTimes->{3.6738933410469713`*^9, 3.673895079954557*^9, 
+  3.673895118042025*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 403, 9, 125, "Text"],
+Cell[964, 31, 412, 17, 277, "Text"],
+Cell[CellGroupData[{
+Cell[1401, 52, 4745, 116, 403, "Input",
+ CellID->14550],
+Cell[6149, 170, 140, 3, 28, "Output"],
+Cell[6292, 175, 124, 2, 62, "Output"]
+}, Open  ]]
+}
+]
+*)
+

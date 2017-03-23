@@ -1,0 +1,108 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+"\<Project Euler #18 Solutions\>","Title",CellChangeTimes->{{3.690719083552883*^9,3.6907190921115503`*^9}}],Cell[
+CellGroupData[
+{Cell[
+"\<Solution 1 - Dynamic Programming (credit: my new BFF Malcolm)\>","Section",
+CellChangeTimes->{{3.6907190960882397`*^9,3.690719141893962*^9},3.6907191781813593`*^9}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"create"," ","the"," ","triangle"," ","as"," ","a"," ","list"," ","of"," ","lists"," ",RowBox[
+{"(","matrix",")"}]}]," ","*)"}],"\[IndentingNewLine]",RowBox[{RowBox[{RowBox[{"triangle","=",RowBox[
+{"{","\[IndentingNewLine]",RowBox[{RowBox[{"{","75","}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"95",",","64"}],"}"}],",","\[IndentingNewLine]",RowBox[{"{",RowBox[{"17",",","47",",","82"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"18",",","35",",","87",",","10"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"20",",","04",",","82",",","47",",","65"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"19",",","01",",","23",",","75",",","03",",","34"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"88",",","02",",","77",",","73",",","07",",","63",",","67"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"99",",","65",",","04",",","28",",","06",",","16",",","70",",","92"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"41",",","41",",","26",",","56",",","83",",","40",",","80",",","70",",","33"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"41",",","48",",","72",",","33",",","47",",","32",",","37",",","16",",","94",",","29"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"53",",","71",",","44",",","65",",","25",",","43",",","91",",","52",",","97",",","51",",","14"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"70",",","11",",","33",",","28",",","77",",","73",",","17",",","78",",","39",",","68",",","17",",","57"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"91",",","71",",","52",",","38",",","17",",","14",",","91",",","43",",","58",",","50",",","27",",","29",",","48"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"63",",","66",",","04",",","68",",","89",",","53",",","67",",","30",",","73",",","16",",","69",",","87",",","40",",","31"}],"}"}],",",RowBox[
+{"{",RowBox[{"04",",","62",",","98",",","27",",","23",",","09",",","70",",","98",",","73",",","93",",","38",",","53",",","60",",","04",",","23"}],"}"}]}],"}"}]}],";"}],"\n"}]}]],
+"Input",CellChangeTimes->{3.690719211544517*^9,{3.690719466042272*^9,3.690719475152964*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"turn"," ","it"," ","into"," ","a"," ","matrix"," ","with"," ","zeros"," ","along"," ","right"," ",RowBox[
+{"side","."," "," ","this"}]," ","makes"," ","it"," ","easier"," ","to"," ","iterate"," ","over"," ","the"," ","values"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{RowBox[{"triangle","=",RowBox[{"PadRight","[",RowBox[{"triangle",",",RowBox[
+{"{",RowBox[{"15",",","15"}],"}"}]}],"]"}]}],";"}]," ","\[IndentingNewLine]",RowBox[
+{"(*"," ",RowBox[{RowBox[{"let","'"}],"s"," ","look"," ","at"," ","the"," ","triangle"}]," ","*)"}],"\n",RowBox[
+{"triangle"," ","//"," ","MatrixForm"}]}]}]],"Input",CellChangeTimes->{{3.690719341227067*^9,3.690719437921515*^9},3.690719877004793*^9}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"Create"," ","costs"," ","matrix"," ","for"," ","keep"," ","track"," ","of"," ","cost"," ","at"," ","each"," ","location"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{RowBox[{"costs","=",RowBox[{"PadRight","[",RowBox[{RowBox[{"{",RowBox[{RowBox[
+{"{","75","}"}],",",RowBox[{"{",RowBox[{"170",",","139"}],"}"}]}],"}"}],",",RowBox[
+{"{",RowBox[{"15",",","15"}],"}"}]}],"]"}]}],";"}]," ","\[IndentingNewLine]",RowBox[
+{"(*"," ",RowBox[{RowBox[{"let","'"}],"s"," ","look"," ","at"," ","the"," ","costs"," ","matrix"}]," ","*)"}],"\n",RowBox[
+{"costs"," ","//","MatrixForm"}]}]}]],"Input",CellChangeTimes->{{3.690719341227067*^9,3.690719452032134*^9},3.690719881601817*^9}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"calculate"," ","the"," ","\"costs\""," ","for"," ","each"," ","location"," ","in"," ","the"," ","cost"," ","matrix"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"costVal","[",RowBox[{"r_",",","c_"}],"]"}],":=",RowBox[{RowBox[{RowBox[
+{"triangle","[",RowBox[{"[","r","]"}],"]"}],"[",RowBox[{"[","c","]"}],"]"}],"+",RowBox[
+{"Max","[",RowBox[{"{",RowBox[{RowBox[{RowBox[{"costs","[",RowBox[{"[",RowBox[{"r","-","1"}],"]"}],"]"}],"[",RowBox[
+{"[",RowBox[{"c","-","1"}],"]"}],"]"}],",",RowBox[{RowBox[{"costs","[",RowBox[{"[",RowBox[
+{"r","-","1"}],"]"}],"]"}],"[",RowBox[{"[","c","]"}],"]"}]}],"}"}],"]"}]," "}]}]}]],
+"Input",CellChangeTimes->{{3.69071950137949*^9,3.690719539628736*^9},3.6907196561121683`*^9,{3.690719816369184*^9,3.6907198492883663`*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"calculate"," ","costs"}],"*)"}],"\n",RowBox[{RowBox[
+{"For","[",RowBox[{RowBox[{"i","=","3"}],",",RowBox[{"i","\[LessEqual]","15"}],",",RowBox[
+{"i","++"}],",","\n","\t",RowBox[{"For","[",RowBox[{RowBox[{"j","=","1"}],",",RowBox[
+{"j","\[LessEqual]","15"}],",",RowBox[{"j","++"}],",","\n","\t\t",RowBox[{RowBox[
+{RowBox[{"costs","[",RowBox[{"[","i","]"}],"]"}],"[",RowBox[{"[","j","]"}],"]"}],"=",RowBox[
+{"costVal","[",RowBox[{"i",",","j"}],"]"}]}]}],"\[IndentingNewLine]","     ","]"}]}],"\[IndentingNewLine]","]"}],"\n",RowBox[
+{"costs"," ","//","MatrixForm"}]," ",RowBox[{"(*"," ",RowBox[{"show"," ","the"," ","costs"," ","matrix"," ","now"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{"Max","[",RowBox[{"costs","[",RowBox[{"[",RowBox[{"Length","[","costs","]"}],"]"}],"]"}]," ",RowBox[
+{"(*",RowBox[{"find"," ","largest"," ","cost"," ","in"," ","last"," ","row"}]," ","*)"}],"]"}]}]}]],
+"Input",CellChangeTimes->{3.690719557416601*^9,{3.690719726165263*^9,3.690719738860721*^9},{3.690719774695189*^9,3.690719793174757*^9},{3.6907198520819597`*^9,3.690719853279973*^9},{3.6907199005786047`*^9,3.690719905913254*^9},{3.690720130984228*^9,3.690720168420373*^9},{3.6907201987399054`*^9,3.6907202010600367`*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"calculate"," ","how"," ","fast"," ","this"," ","algorithm"," ","is"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{"Timing","[","\[IndentingNewLine]",RowBox[{RowBox[{"For","[",RowBox[{RowBox[{"i","=","3"}],",",RowBox[
+{"i","\[LessEqual]","15"}],",",RowBox[{"i","++"}],",","\n","\t",RowBox[{"For","[",RowBox[
+{RowBox[{"j","=","1"}],",",RowBox[{"j","\[LessEqual]","15"}],",",RowBox[{"j","++"}],",","\n","\t\t",RowBox[
+{RowBox[{RowBox[{"costs","[",RowBox[{"[","i","]"}],"]"}],"[",RowBox[{"[","j","]"}],"]"}],"=",RowBox[
+{"costVal","[",RowBox[{"i",",","j"}],"]"}]}]}],"\[IndentingNewLine]","     ","]"}]}],"\[IndentingNewLine]","]"}],"\n",RowBox[
+{"Max","[",RowBox[{"costs","[",RowBox[{"[",RowBox[{"Length","[","costs","]"}],"]"}],"]"}]," ",RowBox[
+{"(*",RowBox[{"find"," ","largest"," ","cost"," ","in"," ","last"," ","row"}]," ","*)"}],"]"}]}],"\[IndentingNewLine]","]"}]}]],
+"Input",CellChangeTimes->{3.690719557416601*^9,{3.690719726165263*^9,3.690719738860721*^9},{3.690719774695189*^9,3.690719793174757*^9},{3.6907198520819597`*^9,3.690719853279973*^9},{3.6907199005786047`*^9,3.690719905913254*^9},{3.690720130984228*^9,3.690720168420373*^9},{3.690720211772304*^9,3.690720223996099*^9}}]},
+{1}]],Cell[
+CellGroupData[{Cell[
+"\<Solution 2 - Recursion + Dynamic Programming (credit: Jenna & Julia Lawrey)\>",
+"Section",CellChangeTimes->{{3.690719106653545*^9,3.690719128446205*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"triangle","=",RowBox[{"{","\[IndentingNewLine]",RowBox[{RowBox[{"{","75","}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"95",",","64"}],"}"}],",","\[IndentingNewLine]",RowBox[{"{",RowBox[{"17",",","47",",","82"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"18",",","35",",","87",",","10"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"20",",","04",",","82",",","47",",","65"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"19",",","01",",","23",",","75",",","03",",","34"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"88",",","02",",","77",",","73",",","07",",","63",",","67"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"99",",","65",",","04",",","28",",","06",",","16",",","70",",","92"}],"}"}],",","\[IndentingNewLine]",RowBox[
+{"{",RowBox[{"41",",","41",",","26",",","56",",","83",",","40",",","80",",","70",",","33"}],"}"}],",",RowBox[
+{"{",RowBox[{"41",",","48",",","72",",","33",",","47",",","32",",","37",",","16",",","94",",","29"}],"}"}],",",RowBox[
+{"{",RowBox[{"53",",","71",",","44",",","65",",","25",",","43",",","91",",","52",",","97",",","51",",","14"}],"}"}],",",RowBox[
+{"{",RowBox[{"70",",","11",",","33",",","28",",","77",",","73",",","17",",","78",",","39",",","68",",","17",",","57"}],"}"}],",",RowBox[
+{"{",RowBox[{"91",",","71",",","52",",","38",",","17",",","14",",","91",",","43",",","58",",","50",",","27",",","29",",","48"}],"}"}],",",RowBox[
+{"{",RowBox[{"63",",","66",",","04",",","68",",","89",",","53",",","67",",","30",",","73",",","16",",","69",",","87",",","40",",","31"}],"}"}],",",RowBox[
+{"{",RowBox[{"04",",","62",",","98",",","27",",","23",",","09",",","70",",","98",",","73",",","93",",","38",",","53",",","60",",","04",",","23"}],"}"}]}],"}"}]}],";"}]],
+"Input",CellChangeTimes->{{3.690719960938787*^9,3.69072000444168*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"Recursive"," ","function"," ","to"," ","calculate"," ","the"," ","max"," ","path"}],"*)"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"MaxPath","[",RowBox[{"i_",",","j_"}],"]"}],":=",RowBox[{RowBox[{"triangle","[",RowBox[
+{"[",RowBox[{"i",",","j"}],"]"}],"]"}],"+",RowBox[{"If","[",RowBox[{RowBox[{"i","<",RowBox[
+{"Length","[","triangle","]"}]}],",",RowBox[{"Max","[",RowBox[{RowBox[{"MaxPath","[",RowBox[
+{RowBox[{"i","+","1"}],",","j"}],"]"}],",",RowBox[{"MaxPath","[",RowBox[{RowBox[{"i","+","1"}],",",RowBox[
+{"j","+","1"}]}],"]"}]}],"]"}],",","0"}],"]"}]}]}]}]],"Input",CellChangeTimes->{{3.690719960938787*^9,3.69072005547429*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"Calcuate"," ","all"," ","paths"," ","starting"," ","at"," ","the"," ","top"," ","and"," ","recursively"," ","working"," ","to"," ","bottom"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{"MaxPath","[",RowBox[{"1",",","1"}],"]"}]}]],"Input",CellChangeTimes->{{3.690719960938787*^9,3.690720007817576*^9},{3.690720051378433*^9,3.690720114891575*^9}}],Cell[
+BoxData[
+RowBox[{RowBox[{"(*"," ",RowBox[{"Calculate"," ","how"," ","fast"," ","this"," ","algorithm"," ","is"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{"Timing","[",RowBox[{"MaxPath","[",RowBox[{"1",",","1"}],"]"}],"]"}]}]],"Input",
+CellChangeTimes->{{3.690719960938787*^9,3.690720007817576*^9},{3.690720051378433*^9,3.690720114891575*^9}}]},
+Open]]},Open]]},WindowSize->{720,817},WindowMargins->{{Automatic,0},{Automatic,0}},
+StyleDefinitions->Notebook[{Cell[
+StyleData[StyleDefinitions->"Default.nb"]],Cell[
+StyleData[
+"Section"],FontSize->18]},Visible->False,FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, 2016)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb"],FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

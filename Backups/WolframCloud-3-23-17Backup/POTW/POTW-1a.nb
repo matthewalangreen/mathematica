@@ -1,0 +1,639 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26624,        631]
+NotebookOptionsPosition[     23838,        552]
+NotebookOutlinePosition[     25405,        597]
+CellTagsIndexPosition[     25362,        594]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["Problem of the Week-1a\n", "Title"],
+ "Try the following by pressing SHIFT+ENTER on each ",
+ StyleBox["Input", "Input"],
+ " line below\n"
+}], "Text",
+ Evaluatable->True,
+ CellChangeTimes->{{3.686411314115027*^9, 3.686411382207486*^9}, {
+   3.6864116606773148`*^9, 3.686411664365921*^9}, {3.68641181829972*^9, 
+   3.686411905311411*^9}, {3.6864140627266483`*^9, 3.686414082115959*^9}, 
+   3.686828238251267*^9, {3.686828317359994*^9, 3.686828346043144*^9}, {
+   3.686828616294256*^9, 3.686828631248518*^9}, 3.68682866213588*^9, {
+   3.6868286947798977`*^9, 3.686828694800317*^9}, {3.68682892104773*^9, 
+   3.686828967094186*^9}, {3.686846481846863*^9, 3.686846490361328*^9}, {
+   3.6868475252243977`*^9, 3.6868475716219473`*^9}, {3.686847690487937*^9, 
+   3.686847695150855*^9}, 3.6868481477335663`*^9, {3.686848343800947*^9, 
+   3.6868483438285646`*^9}, {3.686848641469817*^9, 3.686848657898883*^9}},
+ TextJustification->0.],
+
+Cell[TextData[StyleBox["Part One: Plotting Integer Data", "Subsection"]], \
+"Text",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.686411895777266*^9, 3.686411899479196*^9}, {
+  3.6864120407140827`*^9, 3.686412052433058*^9}}],
+
+Cell["\<\
+Step 1: Let\[CloseCurlyQuote]s ask Mathematica to make a list of 10 random \
+numbers: (Click on the cell below and press SHIFT+ENTER)\
+\>", "Text",
+ CellChangeTimes->{{3.686411409897242*^9, 3.686411462972515*^9}, {
+  3.6864128192568493`*^9, 3.686412823304727*^9}, {3.686828714462469*^9, 
+  3.686828723358161*^9}, {3.6868287740588818`*^9, 3.6868287841143208`*^9}, {
+  3.6868478258950663`*^9, 3.6868478372823153`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"myList", " ", "=", " ", 
+  RowBox[{"RandomInteger", "[", 
+   RowBox[{"10", ",", "10"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6864114246848707`*^9, 3.686411434845688*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 2: Notice how we stored these 10 values into something named  ",
+ StyleBox["myList", "Input"],
+ "  This means we can recall those values at any time by simply typing",
+ StyleBox[" ",
+  FontSlant->"Italic"],
+ StyleBox["myList", "Input"],
+ StyleBox["  ",
+  FontSlant->"Italic"],
+ "(and pressing SHIFT+ENTER)"
+}], "Text",
+ CellChangeTimes->{{3.686411543894857*^9, 3.686411608415618*^9}, 
+   3.686412685182252*^9, {3.686412795201887*^9, 3.686412810656982*^9}, {
+   3.6866721215561943`*^9, 3.686672142798373*^9}, 3.6868293426647167`*^9, {
+   3.6868478134765577`*^9, 3.686847838610887*^9}, {3.6868480808447933`*^9, 
+   3.686848082516951*^9}, 3.6868486685955887`*^9}],
+
+Cell[BoxData["myList"], "Input",
+ CellChangeTimes->{{3.6864116100432167`*^9, 3.686411610783711*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 3: Let\[CloseCurlyQuote]s plot the data and explore different ",
+ StyleBox["PlotTheme", "Input"],
+ " options we can use to look at the data. (Run each of the commands below)"
+}], "Text",
+ CellChangeTimes->{{3.686411641239977*^9, 3.686411719395904*^9}, 
+   3.686412686846056*^9, {3.6864127751717987`*^9, 3.686412784426437*^9}, {
+   3.6864141407147284`*^9, 3.68641414098575*^9}, 3.686847841026326*^9, 
+   3.686848083964897*^9}],
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", "myList", "]"}]], "Input",
+ CellChangeTimes->{{3.686411699280921*^9, 3.686411705916688*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"myList", ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Web\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686411724721322*^9, 3.686411736955749*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"myList", ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Detailed\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6864117493165073`*^9, 3.686411750171074*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"myList", ",", 
+   RowBox[{"PlotTheme", "\[Rule]", "\"\<Marketing\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686411755156303*^9, 3.686411756426794*^9}}],
+
+Cell[TextData[StyleBox["\n\nPart Two: Plotting Map Data", "Subsection"]], \
+"Text",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.686411895777266*^9, 3.686411899479196*^9}, {
+  3.6864120445856256`*^9, 3.6864120563847723`*^9}, {3.686848072117943*^9, 
+  3.686848072932798*^9}}],
+
+Cell["\<\
+Step1:  Let\[CloseCurlyQuote]s get real, geographical data from the internet \
+via WolframAlpha. \
+\>", "Text",
+ CellChangeTimes->{{3.686411409897242*^9, 3.686411462972515*^9}, {
+   3.686412065089035*^9, 3.686412078928143*^9}, {3.6864121363724947`*^9, 
+   3.686412140290258*^9}, {3.686414196225815*^9, 3.686414197592207*^9}, 
+   3.686671209021557*^9, {3.686847844329872*^9, 3.686847845642226*^9}, 
+   3.686848878367145*^9}],
+
+Cell[BoxData[
+ RowBox[{"GeoListPlot", "[", 
+  NamespaceBox["LinguisticAssistant",
+   DynamicModuleBox[{Typeset`query$$ = "France", Typeset`boxes$$ = 
+    TemplateBox[{"\"France\"", 
+      RowBox[{"Entity", "[", 
+        RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+      "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+     "Entity"], 
+    Typeset`allassumptions$$ = {{
+     "type" -> "Clash", "word" -> "France", "template" -> 
+      "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+      "2", "Values" -> {{
+        "name" -> "Country", "desc" -> "a country", "input" -> 
+         "*C.France-_*Country-"}, {
+        "name" -> "GivenName", "desc" -> "a given name", "input" -> 
+         "*C.France-_*GivenName-"}}}}, Typeset`assumptions$$ = {}, 
+    Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+    "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+     0.741313`6.321546609668923, "Messages" -> {}}}, 
+    DynamicBox[ToBoxes[
+      AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+       Dynamic[Typeset`query$$], 
+       Dynamic[Typeset`boxes$$], 
+       Dynamic[Typeset`allassumptions$$], 
+       Dynamic[Typeset`assumptions$$], 
+       Dynamic[Typeset`open$$], 
+       Dynamic[Typeset`querystate$$]], StandardForm],
+     ImageSizeCache->{153., {7., 15.}},
+     TrackedSymbols:>{
+      Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+       Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+    DynamicModuleValues:>{},
+    UndoTrackedVariables:>{Typeset`open$$}],
+   BaseStyle->{"Deploy"},
+   DeleteWithContents->True,
+   Editable->False,
+   SelectWithContents->True], "]"}]], "Input",
+ CellChangeTimes->{{3.686412082143443*^9, 3.6864120893377457`*^9}, {
+  3.686413217379594*^9, 3.68641323806642*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 2: Let\[CloseCurlyQuote]s zoom out so we can see a larger area:"
+}], "Text",
+ CellChangeTimes->{{3.686412107736597*^9, 3.686412135734425*^9}, 
+   3.686412675535655*^9, 3.686598127019127*^9}],
+
+Cell[BoxData[
+ RowBox[{"GeoListPlot", "[", 
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "france", Typeset`boxes$$ = 
+     TemplateBox[{"\"France\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+       "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+      "Entity"], 
+     Typeset`allassumptions$$ = {{
+      "type" -> "Clash", "word" -> "france", "template" -> 
+       "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Country", "desc" -> "a country", "input" -> 
+          "*C.france-_*Country-"}, {
+         "name" -> "GivenName", "desc" -> "a given name", "input" -> 
+          "*C.france-_*GivenName-"}}}}, Typeset`assumptions$$ = {}, 
+     Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.859969`6.386027789656289, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{153., {7., 15.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], ",", 
+   RowBox[{"GeoRange", "->", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "Europe", Typeset`boxes$$ = 
+      TemplateBox[{"\"Europe\"", 
+        RowBox[{"Entity", "[", 
+          RowBox[{"\"GeographicRegion\"", ",", "\"Europe\""}], "]"}], 
+        "\"Entity[\\\"GeographicRegion\\\", \\\"Europe\\\"]\"", 
+        "\"geographic region\""}, "Entity"], 
+      Typeset`allassumptions$$ = {{
+       "type" -> "Clash", "word" -> "Europe", "template" -> 
+        "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+        "3", "Values" -> {{
+          "name" -> "GeographicRegion", "desc" -> "a continent", "input" -> 
+           "*C.Europe-_*GeographicRegion-"}, {
+          "name" -> "CountryClass", "desc" -> "a class of countries", "input" -> 
+           "*C.Europe-_*CountryClass-"}, {
+          "name" -> "Word", "desc" -> "a word", "input" -> 
+           "*C.Europe-_*Word-"}}}}, Typeset`assumptions$$ = {}, 
+      Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       1.401242`6.598058139622981, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{216., {7., 15.}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686412143673781*^9, 3.686412166870513*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 3:  Let\[CloseCurlyQuote]s zoom out a bit more..."
+}], "Text",
+ CellChangeTimes->{{3.686412190267652*^9, 3.686412201194501*^9}, 
+   3.686412677119578*^9, 3.6865981296064453`*^9}],
+
+Cell[BoxData[
+ RowBox[{"GeoListPlot", "[", 
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "france", Typeset`boxes$$ = 
+     TemplateBox[{"\"France\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+       "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+      "Entity"], 
+     Typeset`allassumptions$$ = {{
+      "type" -> "Clash", "word" -> "france", "template" -> 
+       "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Country", "desc" -> "a country", "input" -> 
+          "*C.france-_*Country-"}, {
+         "name" -> "GivenName", "desc" -> "a given name", "input" -> 
+          "*C.france-_*GivenName-"}}}}, Typeset`assumptions$$ = {}, 
+     Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.859969`6.386027789656289, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{153., {7., 15.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], ",", 
+   RowBox[{"GeoRange", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686412209517253*^9, 3.686412210567898*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 4:  We can change the ",
+ StyleBox["GeoBackground", "Input"],
+ " too:"
+}], "Text",
+ CellChangeTimes->{{3.686412236561833*^9, 3.686412249080557*^9}, 
+   3.686412678918432*^9, {3.6864127581964893`*^9, 3.686412760259075*^9}, 
+   3.6865981321193037`*^9}],
+
+Cell[BoxData[
+ RowBox[{"GeoListPlot", "[", 
+  RowBox[{
+   NamespaceBox["LinguisticAssistant",
+    DynamicModuleBox[{Typeset`query$$ = "france", Typeset`boxes$$ = 
+     TemplateBox[{"\"France\"", 
+       RowBox[{"Entity", "[", 
+         RowBox[{"\"Country\"", ",", "\"France\""}], "]"}], 
+       "\"Entity[\\\"Country\\\", \\\"France\\\"]\"", "\"country\""}, 
+      "Entity"], 
+     Typeset`allassumptions$$ = {{
+      "type" -> "Clash", "word" -> "france", "template" -> 
+       "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+       "2", "Values" -> {{
+         "name" -> "Country", "desc" -> "a country", "input" -> 
+          "*C.france-_*Country-"}, {
+         "name" -> "GivenName", "desc" -> "a given name", "input" -> 
+          "*C.france-_*GivenName-"}}}}, Typeset`assumptions$$ = {}, 
+     Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+     "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+      0.859969`6.386027789656289, "Messages" -> {}}}, 
+     DynamicBox[ToBoxes[
+       AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+        Dynamic[Typeset`query$$], 
+        Dynamic[Typeset`boxes$$], 
+        Dynamic[Typeset`allassumptions$$], 
+        Dynamic[Typeset`assumptions$$], 
+        Dynamic[Typeset`open$$], 
+        Dynamic[Typeset`querystate$$]], StandardForm],
+      ImageSizeCache->{153., {7., 15.}},
+      TrackedSymbols:>{
+       Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+        Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+     DynamicModuleValues:>{},
+     UndoTrackedVariables:>{Typeset`open$$}],
+    BaseStyle->{"Deploy"},
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True], ",", 
+   RowBox[{"GeoRange", "->", 
+    NamespaceBox["LinguisticAssistant",
+     DynamicModuleBox[{Typeset`query$$ = "Europe", Typeset`boxes$$ = 
+      TemplateBox[{"\"Europe\"", 
+        RowBox[{"Entity", "[", 
+          RowBox[{"\"GeographicRegion\"", ",", "\"Europe\""}], "]"}], 
+        "\"Entity[\\\"GeographicRegion\\\", \\\"Europe\\\"]\"", 
+        "\"geographic region\""}, "Entity"], 
+      Typeset`allassumptions$$ = {{
+       "type" -> "Clash", "word" -> "Europe", "template" -> 
+        "Assuming \"${word}\" is ${desc1}. Use as ${desc2} instead", "count" -> 
+        "3", "Values" -> {{
+          "name" -> "GeographicRegion", "desc" -> "a continent", "input" -> 
+           "*C.Europe-_*GeographicRegion-"}, {
+          "name" -> "CountryClass", "desc" -> "a class of countries", "input" -> 
+           "*C.Europe-_*CountryClass-"}, {
+          "name" -> "Word", "desc" -> "a word", "input" -> 
+           "*C.Europe-_*Word-"}}}}, Typeset`assumptions$$ = {}, 
+      Typeset`open$$ = {1, 2}, Typeset`querystate$$ = {
+      "Online" -> True, "Allowed" -> True, "mparse.jsp" -> 
+       1.401242`6.598058139622981, "Messages" -> {}}}, 
+      DynamicBox[ToBoxes[
+        AlphaIntegration`LinguisticAssistantBoxes["", 4, Automatic, 
+         Dynamic[Typeset`query$$], 
+         Dynamic[Typeset`boxes$$], 
+         Dynamic[Typeset`allassumptions$$], 
+         Dynamic[Typeset`assumptions$$], 
+         Dynamic[Typeset`open$$], 
+         Dynamic[Typeset`querystate$$]], StandardForm],
+       ImageSizeCache->{216., {7., 15.}},
+       TrackedSymbols:>{
+        Typeset`query$$, Typeset`boxes$$, Typeset`allassumptions$$, 
+         Typeset`assumptions$$, Typeset`open$$, Typeset`querystate$$}],
+      DynamicModuleValues:>{},
+      UndoTrackedVariables:>{Typeset`open$$}],
+     BaseStyle->{"Deploy"},
+     DeleteWithContents->True,
+     Editable->False,
+     SelectWithContents->True]}], ",", 
+   RowBox[{"GeoBackground", "->", "\"\<ReliefMap\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.686412262467573*^9, 3.686412279211383*^9}}],
+
+Cell[TextData[StyleBox["\n\nPart Three: Explore Sample Data", "Subsection"]], \
+"Text",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.686411895777266*^9, 3.686411899479196*^9}, {
+  3.6864120445856256`*^9, 3.6864120563847723`*^9}, {3.686412398443859*^9, 
+  3.6864124320180902`*^9}}],
+
+Cell[TextData[{
+ "Mathematica includes lots of data of various types.  We\[CloseCurlyQuote]re \
+going to explore that dataset a bit.",
+ StyleBox["\n\n\n",
+  FontSlant->"Italic"],
+ "Step 1: Lear more about the data that is included in ",
+ StyleBox["ExampleData[]", "Input"]
+}], "Text",
+ CellChangeTimes->{{3.686411409897242*^9, 3.686411462972515*^9}, {
+   3.686412065089035*^9, 3.686412078928143*^9}, {3.6864121363724947`*^9, 
+   3.686412140290258*^9}, {3.686412417825889*^9, 3.686412495407934*^9}, 
+   3.686412695861314*^9, 3.686412730516306*^9, 3.686412830736637*^9}],
+
+Cell[BoxData[
+ RowBox[{"ExampleData", "[", "]"}]], "Input",
+ CellChangeTimes->{{3.686412497882303*^9, 3.686412501848921*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 2: Pick a type you\[CloseCurlyQuote]d like to explore more deeply. I\
+\[CloseCurlyQuote]m choosing ",
+ StyleBox["\[OpenCurlyDoubleQuote]Geometry3D\[CloseCurlyDoubleQuote]", "Input"]
+}], "Text",
+ CellChangeTimes->{{3.686412627352604*^9, 3.686412667903019*^9}, {
+   3.6864128557929*^9, 3.6864128578551188`*^9}, 3.6865981391685762`*^9}],
+
+Cell[BoxData[
+ RowBox[{"ExampleData", "[", "\"\<Geometry3D\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.686412518690526*^9, 3.686412526989985*^9}, {
+  3.686412860063436*^9, 3.6864128618104267`*^9}}],
+
+Cell[TextData[{
+ StyleBox["\n\n",
+  FontSlant->"Italic"],
+ "Step 3: Choose a 3D object you\[CloseCurlyQuote]d like to interact with.  I\
+\[CloseCurlyQuote]m choosing  ",
+ StyleBox["\[OpenCurlyDoubleQuote]Seashell\[CloseCurlyDoubleQuote]", "Input"]
+}], "Text",
+ CellChangeTimes->{{3.686412655304141*^9, 3.686412670422471*^9}, {
+   3.686412704637219*^9, 3.68641274571567*^9}, {3.686412875008486*^9, 
+   3.686412891014172*^9}, 3.686596480784088*^9, 3.686598142518808*^9}],
+
+Cell[BoxData[
+ RowBox[{"ExampleData", "[", 
+  RowBox[{"{", 
+   RowBox[{"\"\<Geometry3D\>\"", ",", "\"\<Seashell\>\""}], "}"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.686412534881496*^9, 3.686412600319539*^9}, {
+   3.6864128923986893`*^9, 3.6864129011594753`*^9}, {3.6865973989547873`*^9, 
+   3.686597507546092*^9}, {3.68659754353161*^9, 3.686597552756641*^9}, {
+   3.686598105361286*^9, 3.6865981075229197`*^9}, 3.68659814866968*^9, 
+   3.686848027995098*^9}],
+
+Cell[TextData[StyleBox["\n\nPart Four: Your Turn To Ask", "Subsection"]], \
+"Text",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.686411895777266*^9, 3.686411899479196*^9}, {
+  3.6864120445856256`*^9, 3.6864120563847723`*^9}, {3.686412398443859*^9, 
+  3.6864124320180902`*^9}, {3.686848000476041*^9, 3.68684801024903*^9}}],
+
+Cell["\<\
+Mathematica lets you ask it questions.  We\[CloseCurlyQuote]re going to ask \
+it to get some information just for you.
+
+Step 1:  Ask WolframAlpha (Mathematica talks to WolframAlpha to get stuff) to \
+show you a picture of something you want to see.  Do this by simply typing \
+\[OpenCurlyDoubleQuote]Show me a picture of....\[CloseCurlyDoubleQuote] \
+inside brackets.  Don\[CloseCurlyQuote]t forget the quotes \
+\[OpenCurlyDoubleQuote] \[OpenCurlyDoubleQuote] .  I filled in my example for \
+you... you should change it.\
+\>", "Text",
+ CellChangeTimes->{{3.686597580377988*^9, 3.6865976328752127`*^9}, {
+  3.686597665673028*^9, 3.686597769466836*^9}, {3.6865982010288897`*^9, 
+  3.686598208743539*^9}, {3.686671233178586*^9, 3.686671263026249*^9}, {
+  3.686671321610012*^9, 3.6866713222599154`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WolframAlpha", "[", "\"\<Show me a picture of a Beagle\>\"", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.686413471990795*^9, 3.686413482606948*^9}, {
+  3.686413863732332*^9, 3.686413864724071*^9}, {3.686597406465107*^9, 
+  3.686597408915169*^9}, {3.686597641921438*^9, 3.6865976572269278`*^9}, {
+  3.686597774704734*^9, 3.686597817064166*^9}, {3.686598224715407*^9, 
+  3.686598237787921*^9}}],
+
+Cell["\<\
+
+
+Step 2:  Now ask WolframAlpha to get you some data about your picture.  Think \
+of something about your picture that involves numbers and tell or ask \
+WolframAlpha to get it.  Do this by simply typing inside brackets.  Don\
+\[CloseCurlyQuote]t forget the quotes \[OpenCurlyDoubleQuote] \
+\[CloseCurlyDoubleQuote] .   filled in my example for you... you should \
+change it.\
+\>", "Text",
+ CellChangeTimes->{{3.686597872697564*^9, 3.6865980586984997`*^9}, 
+   3.686598114084543*^9, 3.686598296723955*^9, {3.686671279538835*^9, 
+   3.686671312910296*^9}, {3.6868480565090113`*^9, 3.686848064005474*^9}}],
+
+Cell[BoxData[
+ RowBox[{"WolframAlpha", "[", "\"\<How tall is a beagle?\>\"", "]"}]], "Input",\
+
+ CellChangeTimes->{{3.686413493818656*^9, 3.686413576009119*^9}, {
+   3.686413820938362*^9, 3.6864138354606447`*^9}, {3.686597849526577*^9, 
+   3.686597850487053*^9}, {3.6865980669275923`*^9, 3.686598073637559*^9}, {
+   3.6865982498742723`*^9, 3.686598267461055*^9}, 3.686848054909073*^9}],
+
+Cell[CellGroupData[{
+
+Cell["Initialization", "Section",
+ CellChangeTimes->{{3.68682453176772*^9, 3.6868245883543253`*^9}, {
+  3.686848682133709*^9, 3.686848683067692*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"EvaluationNotebook", "[", "]"}], ",", " ", 
+    RowBox[{"Background", "\[Rule]", 
+     RowBox[{
+      RowBox[{"Interpreter", "[", "\"\<Color\>\"", "]"}], "[", 
+      "\"\<RGB 250 250 250\>\"", "]"}]}]}], "]"}], " "}]], "Input",
+ CellChangeTimes->{{3.6868246130490103`*^9, 3.686824637688196*^9}, {
+   3.68682532011768*^9, 3.68682540505951*^9}, {3.686825459650639*^9, 
+   3.6868254668345833`*^9}, {3.68682553726653*^9, 3.686825542583558*^9}, {
+   3.686825669796652*^9, 3.6868256853128633`*^9}, {3.68682734191759*^9, 
+   3.686827348463315*^9}, {3.686827409752822*^9, 3.686827424989892*^9}, {
+   3.686827589737617*^9, 3.686827598592093*^9}, {3.6868279926633043`*^9, 
+   3.686827998768841*^9}, {3.6868281502330103`*^9, 3.6868281723421707`*^9}, {
+   3.68682855823769*^9, 3.686828596347213*^9}, {3.686829092909231*^9, 
+   3.686829135849577*^9}, {3.686829349640151*^9, 3.686829354079796*^9}, {
+   3.686847280493341*^9, 3.686847283955851*^9}, {3.686847932922312*^9, 
+   3.6868479350894423`*^9}, {3.686848092732625*^9, 3.68684810163649*^9}, {
+   3.6868487302897243`*^9, 3.686848730440341*^9}, {3.686914111013678*^9, 
+   3.68691411536687*^9}, {3.686914166449651*^9, 3.686914167588276*^9}, {
+   3.686914268038755*^9, 3.686914270404595*^9}, {3.686914502355612*^9, 
+   3.686914516804761*^9}, 3.686961821225527*^9, {3.686962227388771*^9, 
+   3.686962228035137*^9}}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{Automatic, -1}, {Automatic, 0}},
+TaggingRules->{"$testsRun" -> False},
+Background->RGBColor[
+  Rational[50, 51], 
+  Rational[50, 51], 
+  Rational[50, 51]],
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Title"], FontFamily -> "Futura", FontSize -> 36, FontWeight -> 
+    "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0.12941176470588237`, 0.4627450980392157, 0.7803921568627451]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Futura", FontSize -> 14, FontWeight -> 
+    "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Input"], CellFrame -> True, CellFrameColor -> 
+    GrayLevel[0.901961], Background -> 
+    RGBColor[0.992157, 0.960784, 0.862745]], 
+   Cell[
+    StyleData["Subsection"], FontColor -> 
+    RGBColor[0.9313954375524529, 0.42537575341420614`, 0.06530861371786069]]},
+   WindowSize -> {581, 517}, 
+  WindowMargins -> {{232, Automatic}, {122, Automatic}}, Visible -> False, 
+  FrontEndVersion -> 
+  "11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, 2016)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+FrameBox -> True
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 951, 17, 106, "Text",
+ Evaluatable->True],
+Cell[1512, 39, 230, 4, 48, "Text"],
+Cell[1745, 45, 426, 7, 55, "Text"],
+Cell[2174, 54, 198, 4, 48, "Input"],
+Cell[2375, 60, 725, 17, 99, "Text"],
+Cell[3103, 79, 100, 1, 48, "Input"],
+Cell[3206, 82, 490, 10, 99, "Text"],
+Cell[3699, 94, 136, 2, 48, "Input"],
+Cell[3838, 98, 207, 4, 48, "Input"],
+Cell[4048, 104, 214, 4, 48, "Input"],
+Cell[4265, 110, 213, 4, 48, "Input"],
+Cell[4481, 116, 281, 5, 102, "Text"],
+Cell[4765, 123, 433, 8, 33, "Text"],
+Cell[5201, 133, 1800, 39, 57, "Input"],
+Cell[7004, 174, 255, 6, 77, "Text"],
+Cell[7262, 182, 3691, 78, 57, "Input"],
+Cell[10956, 262, 243, 6, 77, "Text"],
+Cell[11202, 270, 1848, 40, 57, "Input"],
+Cell[13053, 312, 315, 9, 77, "Text"],
+Cell[13371, 323, 3754, 79, 85, "Input"],
+Cell[17128, 404, 287, 5, 102, "Text"],
+Cell[17418, 411, 568, 11, 99, "Text"],
+Cell[17989, 424, 125, 2, 48, "Input"],
+Cell[18117, 428, 398, 8, 77, "Text"],
+Cell[18518, 438, 198, 3, 48, "Input"],
+Cell[18719, 443, 468, 9, 77, "Text"],
+Cell[19190, 454, 462, 9, 48, "Input"],
+Cell[19655, 465, 328, 5, 102, "Text"],
+Cell[19986, 472, 809, 14, 143, "Text"],
+Cell[20798, 488, 414, 7, 48, "Input"],
+Cell[21215, 497, 613, 12, 143, "Text"],
+Cell[21831, 511, 385, 6, 48, "Input"],
+Cell[CellGroupData[{
+Cell[22241, 521, 149, 2, 64, "Section"],
+Cell[22393, 525, 1429, 24, 70, "Input"]
+}, Open  ]]
+}
+]
+*)
+

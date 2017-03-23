@@ -1,0 +1,240 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8401,        232]
+NotebookOptionsPosition[      7893,        209]
+NotebookOutlinePosition[      8246,        225]
+CellTagsIndexPosition[      8203,        222]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+A Pythagorean triplet is a set of three natural numbers, a < b < c, for \
+which,
+a^2 + b^2 = c^2
+For example, 3^2 + 4^2 = 9 + 16 = 25 = 5^2.
+
+There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+Find the product abc.\
+\>", "Text",
+ CellChangeTimes->{{3.674480322586421*^9, 3.674480366418449*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"limit", "=", "400"}], "\[IndentingNewLine]", 
+   RowBox[{"sumSquares", "=", 
+    RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"perfSquares", "=", 
+    RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"a", "=", "1"}], ",", 
+     RowBox[{"a", "<=", "limit"}], ",", 
+     RowBox[{"a", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"For", "[", 
+      RowBox[{
+       RowBox[{"b", "=", 
+        RowBox[{"a", "+", "1"}]}], ",", 
+       RowBox[{"b", "<=", "limit"}], ",", 
+       RowBox[{"b", "++"}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"sumSquares", ",", 
+         RowBox[{"{", 
+          RowBox[{"a", ",", "b", ",", 
+           RowBox[{
+            RowBox[{"a", "^", "2"}], "+", 
+            RowBox[{"b", "^", "2"}]}]}], "}"}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", 
+      RowBox[{"Length", "[", "sumSquares", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{"IntegerQ", "[", 
+        RowBox[{"Sqrt", "[", 
+         RowBox[{"sumSquares", "[", 
+          RowBox[{"[", 
+           RowBox[{"i", ",", "3"}], "]"}], "]"}], "]"}], "]"}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"perfSquares", ",", 
+         RowBox[{"sumSquares", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "]"}]}], "]"}]}], "]"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", 
+      RowBox[{"Length", "[", "perfSquares", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", 
+     RowBox[{
+      RowBox[{"a", "=", 
+       RowBox[{"perfSquares", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "1"}], "]"}], "]"}]}], ";", 
+      RowBox[{"b", "=", 
+       RowBox[{"perfSquares", "[", 
+        RowBox[{"[", 
+         RowBox[{"i", ",", "2"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
+      RowBox[{"c", "=", 
+       RowBox[{"Sqrt", "[", 
+        RowBox[{"perfSquares", "[", 
+         RowBox[{"[", 
+          RowBox[{"i", ",", "3"}], "]"}], "]"}], "]"}]}], ";", 
+      RowBox[{"If", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"a", "+", "b", "+", "c"}], "\[Equal]", "1000"}], ",", 
+        RowBox[{"Print", "[", 
+         RowBox[{
+         "\"\<a: \>\"", ",", "a", ",", "\"\< b: \>\"", ",", "b", ",", 
+          "\"\< c: \>\"", ",", "c", ",", 
+          RowBox[{"a", "*", "b", "*", "c"}]}], "]"}]}], "]"}]}]}], "]"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.674483157687462*^9, 3.67448323443154*^9}, {
+   3.674483270329228*^9, 3.674483303079979*^9}, {3.674483361756301*^9, 
+   3.674483453684643*^9}, {3.674483523446836*^9, 3.674483643588998*^9}, {
+   3.6744839656174593`*^9, 3.674483982358251*^9}, {3.674484075973374*^9, 
+   3.674484145272348*^9}, 3.674484276407991*^9, {3.674484518248239*^9, 
+   3.674484519630959*^9}, {3.6744845627151337`*^9, 3.6744846144535933`*^9}, {
+   3.674484681487666*^9, 3.67448468564773*^9}, {3.674484719045155*^9, 
+   3.67448483473151*^9}, {3.6744848778809834`*^9, 3.674485030815579*^9}, {
+   3.674485150672566*^9, 3.674485414872154*^9}, {3.674485446510839*^9, 
+   3.674485448942296*^9}, 3.674485950680455*^9, {3.674486102640107*^9, 
+   3.674486122328751*^9}, {3.674486231002722*^9, 3.674486280463428*^9}, {
+   3.674486322843368*^9, 3.674486340049453*^9}, {3.674486629195723*^9, 
+   3.674486675901392*^9}, {3.6744867222265053`*^9, 3.674486792265316*^9}, {
+   3.674487021850238*^9, 3.674487050711166*^9}, {3.674487120124175*^9, 
+   3.6744872377082767`*^9}, {3.674487321424382*^9, 3.674487355932583*^9}, {
+   3.674487395589122*^9, 3.674487440121154*^9}, {3.674487484430616*^9, 
+   3.674487526805903*^9}, {3.6744875628257732`*^9, 3.674487588527631*^9}, {
+   3.674487686335156*^9, 3.6744876889571753`*^9}, {3.6744878250640287`*^9, 
+   3.67448783510968*^9}, {3.674487867876306*^9, 3.67448787052379*^9}, {
+   3.674487912432601*^9, 3.674487983928685*^9}, 3.6744880178165073`*^9, {
+   3.6744881029979258`*^9, 3.674488139175311*^9}, {3.674488376493514*^9, 
+   3.674488380083425*^9}, {3.6744884403018837`*^9, 3.6744884482533417`*^9}, {
+   3.674488483997941*^9, 3.674488490316163*^9}, {3.6744886110815163`*^9, 
+   3.67448876069672*^9}, {3.6744887928348722`*^9, 3.67448881495228*^9}, {
+   3.6744888648488903`*^9, 3.674488872670566*^9}, 3.674488925477784*^9, {
+   3.674488961894212*^9, 3.674489242061048*^9}, {3.674489347579571*^9, 
+   3.674489430785532*^9}, {3.6744894646030607`*^9, 3.674489496950687*^9}, {
+   3.674489609276058*^9, 3.674489610019425*^9}, {3.674489708338551*^9, 
+   3.6744897472589693`*^9}, {3.674489787130937*^9, 3.674489831280046*^9}, {
+   3.6744898742421007`*^9, 3.6744899298992977`*^9}, {3.674492260207082*^9, 
+   3.674492263045163*^9}, {3.674492317131909*^9, 3.674492317763422*^9}, {
+   3.6744924016791697`*^9, 3.6744924063174877`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"a: \"\>", "\[InvisibleSpace]", "200", 
+   "\[InvisibleSpace]", "\<\" b: \"\>", "\[InvisibleSpace]", "375", 
+   "\[InvisibleSpace]", "\<\" c: \"\>", "\[InvisibleSpace]", "425", 
+   "\[InvisibleSpace]", "31875000"}],
+  SequenceForm["a: ", 200, " b: ", 375, " c: ", 425, 31875000],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.674492307660048*^9, 3.674492353002242*^9, 
+  3.674492437012344*^9}]
+}, Open  ]],
+
+Cell["\<\
+Too simple for Python:
+
+def euler009():
+    result = 0
+    for a in range(1000):
+        for b in range(1000):
+            if a<b<(1000-a-b) and a**2+b**2==(1000-a-b)**2:
+                result = a * b* (1000-a-b)
+    return result
+
+
+s = time.time()
+print(euler009())
+print(time.time()-s)\
+\>", "Text",
+ CellChangeTimes->{3.674492655256679*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"a", "=", "1"}], ",", 
+   RowBox[{"a", "<", "1000"}], ",", 
+   RowBox[{"a", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"b", "=", "1"}], ",", 
+     RowBox[{"b", "<", "1000"}], ",", 
+     RowBox[{"b", "++"}], ",", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"a", "<", "b", "<", 
+         RowBox[{"(", 
+          RowBox[{"1000", "-", "a", "-", "b"}], ")"}]}], " ", "&&", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"a", "^", "2"}], "+", 
+          RowBox[{"b", "^", "2"}]}], "\[Equal]", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1000", "-", "a", "-", "b"}], ")"}], "^", "2"}]}]}], ",", 
+       RowBox[{"Print", "[", 
+        RowBox[{"a", "*", "b", "*", 
+         RowBox[{"(", 
+          RowBox[{"1000", "-", "a", "-", "b"}], ")"}]}], "]"}]}], "]"}]}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.674492673309978*^9, 3.674492795503778*^9}}],
+
+Cell[BoxData["31875000"], "Print",
+ CellChangeTimes->{3.674492796855472*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 326, 9, 125, "Text"],
+Cell[CellGroupData[{
+Cell[909, 33, 5034, 107, 267, "Input"],
+Cell[5946, 142, 446, 9, 21, "Print"]
+}, Open  ]],
+Cell[6407, 154, 354, 16, 277, "Text"],
+Cell[CellGroupData[{
+Cell[6786, 174, 1012, 29, 97, "Input"],
+Cell[7801, 205, 76, 1, 21, "Print"]
+}, Open  ]]
+}
+]
+*)
+

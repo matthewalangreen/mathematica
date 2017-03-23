@@ -1,0 +1,293 @@
+Notebook[{Cell[
+BoxData[""],"Input",CellID->7],Cell[
+CellGroupData[{Cell[
+BoxData[
+RowBox[{"url"," ","="," ","\"https://docs.google.com/spreadsheets/d/1-D_wQ7weDnjEoXxlJY-NJRO_EoiOSV1ZwXb--mzLI2Y\""}]],
+"Input",CellID->8,CellLabel->"In[1]:= "],Cell[
+BoxData["\"https://docs.google.com/spreadsheets/d/1-D_wQ7weDnjEoXxlJY-NJRO_EoiOSV1ZwXb--mzLI2Y\"",
+StandardForm],"Output",CellID->9,CellLabel->"Out[1]= "]},Open]],Cell[
+BoxData[""],
+"Input",CellID->2],Cell[
+BoxData[RowBox[{RowBox[{"csv"," ","="," ",RowBox[{"Import","[",RowBox[
+{"url",","," ","\"CSV\"",","," ",RowBox[{"CharacterEncoding"," ","\[Rule]"," ","\"UTF8\""}]}],"]"}]}],";"}]],
+"Input",CellID->3,CellLabel->"In[3]:= "],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[
+{"dataset"," ","="," ",RowBox[{"Dataset","[",RowBox[{"Map","[",RowBox[{RowBox[{RowBox[
+{"AssociationThread","[",RowBox[{RowBox[{"First","[","csv","]"}],","," ","#"}],"]"}]," ","&"}],","," ",RowBox[
+{"Rest","[","csv","]"}]}],"]"}],"]"}]}]],"Input",CellID->4,CellLabel->"In[4]:= "],Cell[
+BoxData[
+TemplateBox[{"AssociationThread","idim","\"\\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"\\\\\\\"\\\\\\\"\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"  <title>Google Sheets - create and edit spreadsheets online\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" for free.</title>\\\\\\\"\\\"}], \\\"}\\\"}], Short[#1, 5] & ]\\) must have the same length.\"",2,4,3,17561627458852212592,$Failed},
+"MessageTemplate"],StandardForm],"Message",CellID->5],Cell[
+BoxData[TemplateBox[{"AssociationThread","idim","\"\\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"\\\\\\\"\\\\\\\"\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"  src: local('Open Sans Light')\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" local('OpenSans-Light')\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" url(//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');\\\\\\\"\\\"}], \\\"}\\\"}], Short[#1, 5] & ]\\) must have the same length.\"",2,4,4,17561627458852212592,$Failed},
+"MessageTemplate"],StandardForm],"Message",CellID->10],Cell[
+BoxData[TemplateBox[
+{"AssociationThread","idim","\"\\!\\(\\*TagBox[RowBox[{\\\"{\\\", \\\"\\\\\\\"\\\\\\\"\\\", \\\"}\\\"}], Short[#1, 5] & ]\\) and \\!\\(\\*TagBox[RowBox[{\\\"{\\\", RowBox[{\\\"\\\\\\\"  src: local('Open Sans')\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" local('OpenSans')\\\\\\\"\\\", \\\",\\\", \\\"\\\\\\\" url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');\\\\\\\"\\\"}], \\\"}\\\"}], Short[#1, 5] & ]\\) must have the same length.\"",2,4,5,17561627458852212592,$Failed},
+"MessageTemplate"],StandardForm],"Message",CellID->11],Cell[
+BoxData[TemplateBox[
+{"General","stop","\"Further output of \\!\\(\\*TagBox[StyleBox[RowBox[{\\\"AssociationThread\\\", \\\"::\\\", \\\"idim\\\"}], \\\"MessageName\\\"], Short[#1, 5] & ]\\) will be suppressed during this calculation.\"",2,4,6,17561627458852212592,$Failed},
+"MessageTemplate"],StandardForm],"Message",CellID->12],Cell[
+BoxData[TemplateBox[
+{TagBox[StyleBox[TagBox[GridBox[{{ItemBox[TagBox[TooltipBox[TagBox[TooltipBox[TemplateBox[
+{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},"RowDefault"],TemplateBox[
+{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],BaseStyle->(ShowStringCharacters->True)]},
+"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],Function[Annotation[Slot[
+1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],"Tooltip"]]],
+TemplateBox[{TemplateBox[{StyleBox["1",GrayLevel[0.6],StripOnInput->False]},"RowDefault"]},
+"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[RowBox[
+{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["1"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["2",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["2"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["3",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["3"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["4",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["4"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["5",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["5"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["6",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["6"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["7",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["7"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{PaneBox[TagBox[TagBox[
+TooltipBox[StyleBox[RowBox[{"AssociationThread","[",RowBox[{RowBox[{"{","\"\"","}"}],",",RowBox[
+{"{",RowBox[{"\"  <title>Google Sheets - create and edit spreadsheets online\"",",","\" for free.</title>\""}],"}"}]}],"]"}],
+FontFamily->"Courier",FontSize->13,ShowStringCharacters->True],TemplateBox[{TemplateBox[
+{StyleBox["8",GrayLevel[0.6],StripOnInput->False]},"RowDefault"]},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[
+{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],
+Function[Annotation[Slot[1],Row[{Row[{Style[RawBoxes["8"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],Function[Annotation[Slot[1],TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+TypeSystem`NestedGrid`PackagePrivate`$outputID][GeneralUtilities`Slice[8]],"Mouse"]]],
+ImageSize->{{60,Full},Automatic},Alignment->{Left,Baseline}]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["9",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["9"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["10",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["10"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["11",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["11"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["12",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["12"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["13",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["13"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{PaneBox[TagBox[TagBox[
+TooltipBox[StyleBox[RowBox[{"AssociationThread","[",RowBox[{RowBox[{"{","\"\"","}"}],",",RowBox[
+{"{",RowBox[{"\"  src: local('Open Sans Light')\"",",","\" local('OpenSans-Light')\"",",","\" url(//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTYnF5uFdDttMLvmWuJdhhgs.ttf) format('truetype');\""}],"}"}]}],"]"}],
+FontFamily->"Courier",FontSize->13,ShowStringCharacters->True],TemplateBox[{TemplateBox[
+{StyleBox["14",GrayLevel[0.6],StripOnInput->False]},"RowDefault"]},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[
+{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],
+Function[Annotation[Slot[1],Row[{Row[{Style[RawBoxes["14"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],Function[Annotation[Slot[1],TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+TypeSystem`NestedGrid`PackagePrivate`$outputID][GeneralUtilities`Slice[14]],"Mouse"]]],
+ImageSize->{{60,Full},Automatic},Alignment->{Left,Baseline}]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["15",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["15"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["16",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["16"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["17",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["17"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["18",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["18"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{ItemBox[TagBox[TooltipBox[
+TagBox[TooltipBox[TemplateBox[{"\"\:f113 \"",SubscriptBox["\"\[Ellipsis]\"","1"],"\"\:f114\""},
+"RowDefault"],TemplateBox[{"\"Keys: \"",TemplateBox[{"\"\""},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",","\", \"",",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"ShowStringCharacters","\[Rule]","True"}]}]}],"]"}]],
+BaseStyle->(ShowStringCharacters->True)]},"RowDefault"],TooltipDelay->0.1,LabelStyle->"TextStyling"],
+Function[Annotation[Slot[1],Row[{"Keys: ",Row[{""},", ",BaseStyle->(ShowStringCharacters->True)]}],
+"Tooltip"]]],TemplateBox[{TemplateBox[{StyleBox["19",GrayLevel[0.6],StripOnInput->False]},
+"RowDefault"]},"Row",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function[
+RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[
+{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],
+BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],Function[Annotation[Slot[1],Row[
+{Row[{Style[RawBoxes["19"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],BaseStyle->{GrayLevel[0.5]},StripOnInput->False]},{PaneBox[TagBox[TagBox[
+TooltipBox[StyleBox[RowBox[{"AssociationThread","[",RowBox[{RowBox[{"{","\"\"","}"}],",",RowBox[
+{"{",RowBox[{"\"  src: local('Open Sans')\"",",","\" local('OpenSans')\"",",","\" url(//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');\""}],"}"}]}],"]"}],
+FontFamily->"Courier",FontSize->13,ShowStringCharacters->True],TemplateBox[{TemplateBox[
+{StyleBox["20",GrayLevel[0.6],StripOnInput->False]},"RowDefault"]},"Row",DisplayFunction->Function[
+Slot[1]],InterpretationFunction->Function[RowBox[{"Row","[",RowBox[{RowBox[{"{",Slot[
+1],"}"}],",",RowBox[{"BaseStyle","\[Rule]",RowBox[{"{",RowBox[{RowBox[{"FontFamily","\[Rule]","\"Verdana\""}],",",RowBox[
+{"FontSize","\[Rule]","9.`"}]}],"}"}]}]}],"]"}]],BaseStyle->{FontFamily->"Verdana",FontSize->9.0}]],
+Function[Annotation[Slot[1],Row[{Row[{Style[RawBoxes["20"],GrayLevel[0.6]]}]},BaseStyle->{FontFamily->"Verdana",FontSize->9.0}],
+"Tooltip"]]],Function[Annotation[Slot[1],TypeSystem`NestedGrid`PackagePrivate`$SliceMarker[
+TypeSystem`NestedGrid`PackagePrivate`$outputID][GeneralUtilities`Slice[20]],"Mouse"]]],
+ImageSize->{{60,Full},Automatic},Alignment->{Left,Baseline}]},{ItemBox[TagBox[TooltipBox[
+"\"1510 total\"","\"\"",LabelStyle->"TextStyling"],Function[Annotation[Slot[1],"",
+"Tooltip"]]],BaseStyle->{{RGBColor[0.5098039215686274,0.5098039215686274,0.5098039215686274],8}},
+Alignment->{Center,Baseline},Background->GrayLevel[0.98],StripOnInput->False]}},GridBoxAlignment->{"Columns"->{{Left}}},
+AutoDelete->False,GridBoxDividers->{"Columns"->{{True}},"Rows"->{{True}}},GridBoxItemSize->{"Columns"->{{Automatic}},"Rows"->{{Automatic}}},
+RowMinHeight->1.5,FrameStyle->GrayLevel[0.85],BaseStyle->{FontFamily->"Verdana",FontSize->12}],
+"Grid"],LineBreakWithin->False,ContextMenu->{},StripOnInput->False],Deploy,DefaultBaseStyle->"Deploy"]},
+"CopyTag",DisplayFunction->Function[Slot[1]],InterpretationFunction->Function["Dataset[<>]"]],
+StandardForm],"Output",CellID->13]},Open]]},StyleDefinitions->"Default.nb",FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

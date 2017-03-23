@@ -1,0 +1,91 @@
+Notebook[{Cell[
+TextData[{StyleBox["Share a notebook\n","Title"],"You can put stuff on the Wolfram Cloud really easily.  We\[CloseCurlyQuote]re going to do it programmatically.  This means that we will write code to do it for us so we don\[CloseCurlyQuote]t have to visit like a bazillion websites and click a lot.\n\nHere\[CloseCurlyQuote]s how it works.\n\n"}],
+"Text",Evaluatable->True,CellChangeTimes->{{3.686411314115027*^9,3.686411382207486*^9},{3.6864116606773148`*^9,3.686411664365921*^9},{3.68641181829972*^9,3.686411905311411*^9},{3.6864140627266483`*^9,3.686414082115959*^9},3.686828238251267*^9,{3.686828317359994*^9,3.686828346043144*^9},{3.686828616294256*^9,3.686828631248518*^9},3.68682866213588*^9,{3.6868286947798977`*^9,3.686828694800317*^9},{3.68682892104773*^9,3.686828967094186*^9},{3.686846481846863*^9,3.686846490361328*^9},{3.6868475252243977`*^9,3.6868475716219473`*^9},{3.686847690487937*^9,3.686847695150855*^9},3.6868481477335663`*^9,{3.686848343800947*^9,3.6868483438285646`*^9},{3.686848641469817*^9,3.686848657898883*^9},{3.687538032857171*^9,3.6875380755371513`*^9},{3.687538308677369*^9,3.687538316836238*^9},{3.6875383637787447`*^9,3.687538364755004*^9},{3.6875393512036467`*^9,3.687539362134699*^9},{3.687539395319111*^9,3.687539397382955*^9},{3.6875394278936977`*^9,3.687539430053241*^9},{3.6875432351520777`*^9,3.687543245587997*^9},{3.6875432961001368`*^9,3.6875433104188643`*^9},{3.687554535391336*^9,3.687554535499873*^9},{3.687554807040971*^9,3.687554813189809*^9},{3.6876052534946938`*^9,3.6876052652021637`*^9},{3.687605299981851*^9,3.687605309469695*^9},{3.6876053404616957`*^9,3.687605378197013*^9},{3.688172541776081*^9,3.688172556160922*^9},{3.688172625359523*^9,3.6881727021736517`*^9},{3.688174855698481*^9,3.6881748828581753`*^9},{3.688229957416415*^9,3.688229961982029*^9},{3.6894402487178183`*^9,3.689440258188466*^9},{3.689440291695126*^9,3.689440334245247*^9},{3.689441590366397*^9,3.6894415904223833`*^9},{3.68962312545068*^9,3.689623188244676*^9},3.689623805378126*^9},
+TextJustification->0.],Cell[
+TextData[{StyleBox["How to ","Subsection"],StyleBox[
+"CloudDeploy","Code",FontSize->16],StyleBox[" current notebook","Subsection"]}],"Text",
+CellFrame->{{0,0},{2,0}},CellChangeTimes->{{3.686411895777266*^9,3.686411899479196*^9},{3.6864120407140827`*^9,3.686412052433058*^9},{3.6875380124318037`*^9,3.687538020785404*^9},{3.6875381261590633`*^9,3.687538127503049*^9},{3.687539423940826*^9,3.6875394257245626`*^9},{3.688173148601007*^9,3.688173153119372*^9},{3.6881741426472607`*^9,3.6881741585828114`*^9},{3.689440363781427*^9,3.689440375291852*^9},{3.6896231941722517`*^9,3.689623197371457*^9},{3.689623439821377*^9,3.689623447020914*^9}}],Cell[
+TextData[
+{"\n1. Create a ",StyleBox["PermissionsGroup","Code"]," and assign it to a variable named ",StyleBox[
+"group\n","Code"]}],"Text",CellChangeTimes->{{3.689623212204462*^9,3.6896232661924963`*^9},{3.689623449364246*^9,3.6896234508766747`*^9},{3.689623484337907*^9,3.689623553078785*^9},3.6896236742824297`*^9}],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"group"," ","="," ",RowBox[{"CreatePermissionsGroup","[",RowBox[
+{"\"teachers\"",",",RowBox[{"{",RowBox[{"\"matt.green@mead354.org\"",",","\"rick.biggerstaff@mead354.org\""}],"}"}]}],"]"}]}]],
+"Input",Deletable->False,CellChangeTimes->{{3.6896232734165573`*^9,3.6896233085167627`*^9}}],Cell[
+BoxData[
+RowBox[{"PermissionsGroup","[","\"https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/PermissionsGroup/teachers\"","]"}]],
+"Output",CellChangeTimes->{3.6896238265219593`*^9}]},Open]],Cell[
+TextData[{StyleBox[
+"What just happened?\n","Item"],StyleBox["\nWe created a ","Subitem"],StyleBox["PermissionsGroup",
+"Code"],StyleBox[" with just Rick & Matt\[CloseCurlyQuote]s email addresses.  You could have added other\[CloseCurlyQuote]s here too.  You can also create multiple permissions groups if you\[CloseCurlyQuote]d like other people to have different access.",
+"Subitem"]}],"Text",CellChangeTimes->{{3.6896236787152243`*^9,3.689623695112259*^9},{3.689623742838979*^9,3.689623789884948*^9}}],Cell[
+TextData[
+{"\n2.  ",StyleBox["CloudDeploy","Code"]," this current document using the following command:"}],
+"Text",CellChangeTimes->{{3.6894404065560217`*^9,3.689440458129404*^9},{3.689623316293117*^9,3.68962335409275*^9},3.689623472777334*^9,{3.689623562062055*^9,3.689623621764543*^9},{3.6896236997818193`*^9,3.689623700744968*^9}}],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"CloudDeploy","[",RowBox[{RowBox[{"EvaluationNotebook","[","]"}],",","\"NB\"",",",RowBox[
+{"Permissions","\[Rule]",RowBox[{"group","\[Rule]","\"Execute\""}]}]}],"]"}]],"Input",
+CellChangeTimes->{{3.6894404431175756`*^9,3.6894404445603952`*^9},{3.689440476128813*^9,3.689440484847478*^9},{3.689623356661417*^9,3.6896233827002296`*^9}}],Cell[
+BoxData[
+InterpretationBox[RowBox[{"CloudObject","[",TagBox[ButtonBox[PaneSelectorBox[{False->"\"https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB\"",True->StyleBox[
+"\"https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB\"",
+"HyperlinkActive"]},Dynamic[CurrentValue["MouseOver"]],BaseStyle->{"Hyperlink"},FrameMargins->0,
+ImageSize->Automatic],BaseStyle->"Hyperlink",ButtonData->{URL["https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB"],None},
+ButtonNote->"https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB"],
+Function[Annotation[Slot[1],"https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB",
+"Hyperlink"]]],"]"}],CloudObject["https://www.wolframcloud.com/objects/user-a719bf00-74d4-408a-afd9-ff40eb7ed2ab/NB"],
+SelectWithContents->True]],"Output",CellChangeTimes->{3.689623831985654*^9}]},Open]],Cell[
+TextData[
+{StyleBox["What just happened?\n","Item",FontWeight->"Plain"],StyleBox["\nWe chose ",
+"Subitem"],StyleBox["\[OpenCurlyDoubleQuote]Execute\[CloseCurlyDoubleQuote]","Code"],StyleBox[
+" so that we can run your code in the web, but you\[CloseCurlyQuote]ve got other options for Permissions: ",
+"Subitem"],StyleBox["\[OpenCurlyDoubleQuote]Read\[CloseCurlyDoubleQuote]","Code"],StyleBox[
+" or ","Subitem"],StyleBox["\[OpenCurlyDoubleQuote]Write\[CloseCurlyDoubleQuote]",
+"Code"],StyleBox[" give your users less access.","Subitem"]}],"Text",CellChangeTimes->{{3.6896237042340517`*^9,3.689623709239654*^9},3.689623793317285*^9}],Cell[
+
+"\<
+
+\>","Text",CellChangeTimes->{{3.689440786922696*^9,3.689440807461727*^9},{3.6894408847258472`*^9,3.689440899588134*^9},{3.68962347696136*^9,3.689623480153099*^9},{3.689623795884932*^9,3.6896238010428457`*^9}}],Cell[
+CellGroupData[
+{Cell[
+TextData[StyleBox["Initialization",FontColor->RGBColor[0.5568627450980392,
+0.8235294117647058,0.7843137254901961]]],"Section",CellChangeTimes->{{3.687551052693632*^9,3.687551054116392*^9},3.6875527446380177`*^9}],Cell[
+
+"\<This is stuff that we put in the document.  This code runs as you open the document.  Feel free to mess with it.  \>",
+"Text",CellChangeTimes->{{3.687554268132909*^9,3.687554281531313*^9}}],Cell[
+BoxData[
+{RowBox[{"Clear","[","x","]"}],"\[IndentingNewLine]",RowBox[{"Clear","[","f","]"}],"\[IndentingNewLine]",RowBox[
+{"Clear","[","g","]"}],"\[IndentingNewLine]",RowBox[{"Clear","[","h","]"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"SetOptions","[",RowBox[{RowBox[{"EvaluationNotebook","[","]"}],","," ",RowBox[
+{"Background","\[Rule]",RowBox[{RowBox[{"Interpreter","[","\"Color\"","]"}],"[","\"RGB 250 250 250\"","]"}]}]}],"]"}]," "}]}],
+"Input",InitializationCell->True,CellChangeTimes->{{3.6875510645732203`*^9,3.6875510879798107`*^9},{3.6875542997425327`*^9,3.687554300034606*^9},{3.6875544185342216`*^9,3.687554423929469*^9}}]},
+Open]]},WindowSize->{720,817},WindowMargins->{{0,Automatic},{Automatic,0}},TaggingRules->{"$testsRun"->False},
+RuleDelayed[Magnification,Times[1.25,Inherited]],Background->RGBColor[Rational[50,
+51],Rational[50,51],Rational[50,51]],StyleDefinitions->Notebook[{Cell[
+StyleData[
+StyleDefinitions->"Default.nb"]],Cell[
+StyleData["Title"],FontFamily->"Futura",FontSize->36,
+FontWeight->"Regular",FontSlant->"Plain",PrivateFontOptions->{"FontPostScriptName"->"Automatic"},
+FontColor->RGBColor[0.12941176470588237`,0.4627450980392157,0.7803921568627451]],Cell[
+StyleData[
+"Text"],FontFamily->"Futura",FontSize->14,FontWeight->"Regular",FontSlant->"Plain",
+PrivateFontOptions->{"FontPostScriptName"->"Automatic"}],Cell[
+StyleData["Input"],
+CellFrame->True,CellFrameColor->GrayLevel[0.901961],FontFamily->"Consolas",FontSize->13,
+FontWeight->"Bold",FontSlant->"Plain",PrivateFontOptions->{"FontPostScriptName"->"Automatic"},
+Background->RGBColor[0.992157,0.960784,0.862745]],Cell[
+StyleData["Subsection"],FontColor->RGBColor[
+0.9313954375524529,0.42537575341420614`,0.06530861371786069]],Cell[
+StyleData["Code"],
+FontFamily->"Consolas",FontSize->14,FontWeight->"Bold",FontSlant->"Plain",PrivateFontOptions->{"FontPostScriptName"->"Automatic"},
+Background->RGBColor[0.953047989623865,0.953047989623865,0.953047989623865]],Cell[
+StyleData[
+"Item"],CellDingbat->None,FontFamily->"Futura",FontSize->14,FontWeight->"Regular",
+FontSlant->"Plain",PrivateFontOptions->{"FontPostScriptName"->"Automatic"},FontColor->RGBColor[
+0.9921568627450981,0.4549019607843137,0.06666666666666667]],Cell[
+StyleData["Subitem"],
+CellDingbat->None,TabSpacings->{0},FontSlant->"Italic",FontColor->RGBColor[0.2115205615320058,
+0.34006256198977647`,0.8058747234302281]]},Visible->False,FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, 2016)",
+StyleDefinitions->"PrivateStylesheetFormatting.nb"],FrameBox->True,FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

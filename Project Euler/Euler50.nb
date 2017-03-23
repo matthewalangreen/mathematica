@@ -1,0 +1,71 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"values","=",RowBox[{"{",RowBox[
+{"2",",","3",",","5",",","7",",","11",",","13",",","17",",","19",",","23",",","29",",","31",",","37",",","41",",","43",",","47",",","53",",","59",",","61",",","67",",","71",",","73",",","79",",","83",",","89",",","97",",","101",",","103",",","107",",","109",",","113",",","127",",","131",",","137",",","139",",","149",",","151",",","157",",","163",",","167",",","173",",","179",",","181",",","191",",","193",",","197",",","199",",","211",",","223",",","227",",","229"}],"}"}]}]],
+"Input",CellChangeTimes->{{3.6908339454521027`*^9,3.690833946081367*^9}},CellID->19],Cell[
+BoxData[
+RowBox[{"{",RowBox[{"2",",","3",",","5",",","7",",","11",",","13",",","17",",","19",",","23",",","29",",","31",",","37",",","41",",","43",",","47",",","53",",","59",",","61",",","67",",","71",",","73",",","79",",","83",",","89",",","97",",","101",",","103",",","107",",","109",",","113",",","127",",","131",",","137",",","139",",","149",",","151",",","157",",","163",",","167",",","173",",","179",",","181",",","191",",","193",",","197",",","199",",","211",",","223",",","227",",","229"}],"}"}]],
+"Output",CellID->20]},Open]],Cell[
+BoxData[""],"Input",CellID->1],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"primes","=",RowBox[{"Table","[",RowBox[{RowBox[{"Prime","[","n","]"}],",",RowBox[
+{"{",RowBox[{"n",",","1000"}],"}"}]}],"]"}]}],";"}],"\[IndentingNewLine]",RowBox[
+{"Prime","[","2","]"}]}],"Input",CellChangeTimes->{{3.690833949439266*^9,3.690833997656344*^9}}],Cell[
+BoxData[
+"3"],"Output",CellChangeTimes->{{3.690833967904746*^9,3.690833998196599*^9}}]},Open]],Cell[
+
+"\<Add up primes
+Add first prime up to last prime
+	if its prime:
+		save it and length of that sequence
+	if its not prime:
+		add up primes from first to first+last/2 (this is the midpoint)
+		check for prime again
+		\>",
+"Text",CellChangeTimes->{{3.6908340132290287`*^9,3.6908340162217703`*^9},{3.690834184324933*^9,3.690834243947751*^9}}],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{RowBox[{"limit","=","78498"}],";"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"sum","=","0"}],";"}],"\[IndentingNewLine]",RowBox[{"For","[",RowBox[{RowBox[
+{"i","=","1"}],",",RowBox[{"i","<","limit"}],",",RowBox[{"i","++"}],",","\[IndentingNewLine]",RowBox[
+{"sum"," ","="," ",RowBox[{"sum","+",RowBox[{"Prime","[","i","]"}]}]}]}],"\[IndentingNewLine]","]"}],"\[IndentingNewLine]","sum","\[IndentingNewLine]",RowBox[
+{RowBox[{"Prime","[","78498","]"}]," ",RowBox[{"(*"," ",RowBox[{RowBox[{"this"," ","is"," ","the"," ","biggest"," ","prime"," ","under"," ","1"}],",","000",",","000"}]," ","*)"}]}],"\[IndentingNewLine]"}],
+"Input",CellChangeTimes->{{3.690834020847122*^9,3.690834176381774*^9},{3.6908345128109007`*^9,3.690834653741466*^9},{3.690834691711673*^9,3.6908346975896072`*^9}}],Cell[
+BoxData[
+"37549402040"],"Output",CellChangeTimes->{{3.6908340660692883`*^9,3.69083417687281*^9},{3.690834519870204*^9,3.690834633151176*^9},{3.690834683524404*^9,3.6908346980578527`*^9}}],Cell[
+BoxData[
+"999983"],"Output",CellChangeTimes->{{3.6908340660692883`*^9,3.69083417687281*^9},{3.690834519870204*^9,3.690834633151176*^9},{3.690834683524404*^9,3.690834698063861*^9}}]},
+Open]],Cell[
+"\<Let\[CloseCurlyQuote]s do a simpler version of this to test our algorithm...
+\>",
+"Text",CellChangeTimes->{{3.6908349094179077`*^9,3.690834917760973*^9}}],Cell[
+BoxData[
+{RowBox[{RowBox[{"Solve","[",RowBox[{RowBox[{RowBox[{"Prime","[","n","]"}],"\[LessEqual]","1000"}],",","n"}],"]"}],";"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{RowBox[{"Prime","[","168","]"}],";"}]," ",RowBox[{"(*"," ",RowBox[{"this"," ","is"," ","the"," ","largest"," ","prime"," ","under"," ","1000"}]," ","*)"}]}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"myPrimes","=",RowBox[{"Table","[",RowBox[{RowBox[{"Prime","[","n","]"}],",",RowBox[
+{"{",RowBox[{"n",",","168"}],"}"}]}],"]"}]}],";"}],"\[IndentingNewLine]",RowBox[{RowBox[
+{"bigPrimes","=",RowBox[{"Table","[",RowBox[{RowBox[{"Prime","[","n","]"}],",",RowBox[
+{"{",RowBox[{"n",",","78498"}],"}"}]}],"]"}]}],";"}]}],"Input",CellChangeTimes->{{3.690834922345853*^9,3.690835038776124*^9},3.690835821892457*^9,3.690836140612389*^9,{3.6908369903420067`*^9,3.690836993700492*^9},{3.69083722100534*^9,3.690837221674973*^9},{3.690837492537879*^9,3.690837516250203*^9}}],Cell[
+CellGroupData[
+{Cell[
+BoxData[RowBox[{"\[IndentingNewLine]",RowBox[{RowBox[{RowBox[{"winners","=",RowBox[
+{"{","}"}]}],";"}],"\[IndentingNewLine]",RowBox[{RowBox[{"winner","=","0"}],";"}],"\[IndentingNewLine]",RowBox[
+{"For","[",RowBox[{RowBox[{"i","=","1"}],",",RowBox[{"i","<",RowBox[{"Length","[","bigPrimes","]"}]}],",",RowBox[
+{"i","++"}],",","\[IndentingNewLine]",RowBox[{RowBox[{"cSum","=","0"}],";","\[IndentingNewLine]",RowBox[
+{"For","[",RowBox[{RowBox[{"j","=","i"}],",",RowBox[{"j","<=",RowBox[{"Length","[","bigPrimes","]"}]}],",",RowBox[
+{"j","++"}],",","\[IndentingNewLine]",RowBox[{RowBox[{"cSum","=",RowBox[{"cSum","+",RowBox[
+{"bigPrimes","[",RowBox[{"[","j","]"}],"]"}]}]}],";","\[IndentingNewLine]",RowBox[
+{"If","[",RowBox[{RowBox[{RowBox[{"PrimeQ","[","cSum","]"}],"&&",RowBox[{"cSum","\[LessEqual]","1000000"}],"&&",RowBox[
+{RowBox[{"j","-","i"}],">","10"}],"&&",RowBox[{RowBox[{"j","-","i","+","1"}],">","winner"}]}],",","\[IndentingNewLine]",RowBox[
+{"(*",RowBox[{RowBox[{"AppendTo","[",RowBox[{"winners",",",RowBox[{"{",RowBox[{"cSum",",",RowBox[
+{"j","-","i","+","1"}]}],"}"}]}],"]"}],";"}]," ","*)"}],"\[IndentingNewLine]",RowBox[
+{RowBox[{"winner","=",RowBox[{"j","-","i","+","1"}]}],";"}]}],"\[IndentingNewLine]","]"}]}]}],"\[IndentingNewLine]","]"}]}]}],"\[IndentingNewLine]","]"}],"\[IndentingNewLine]",RowBox[
+{"(*",RowBox[{"winners"," ","//","TableForm"}]," ","*)"}],"\[IndentingNewLine]","winner","\[IndentingNewLine]","\[IndentingNewLine]"}]}]],
+"Input",CellChangeTimes->{{3.690835479249926*^9,3.690835777526531*^9},{3.690835831739686*^9,3.690835900145568*^9},{3.690835953428823*^9,3.690836021305642*^9},{3.690836081671692*^9,3.690836487002028*^9},{3.69083653357917*^9,3.6908365340589*^9},{3.690836600897661*^9,3.69083666904014*^9},{3.690836733206758*^9,3.6908367952916527`*^9},{3.69083685441269*^9,3.6908368921214733`*^9},{3.69083695562362*^9,3.690836967645344*^9},{3.690837239292839*^9,3.6908372426906643`*^9},{3.690837278644196*^9,3.690837486961882*^9},{3.690837518849598*^9,3.690837526273691*^9},{3.69083755758031*^9,3.6908376322712383`*^9},{3.690837745433631*^9,3.69083774696069*^9}}],Cell[
+BoxData[
+"543"],"Output",CellChangeTimes->{{3.690836471906748*^9,3.69083648782552*^9},3.690836536518887*^9,{3.690836606683873*^9,3.690836669836961*^9},3.6908367344812717`*^9,3.690836801798726*^9,{3.6908368681257343`*^9,3.690836893928659*^9},{3.690836956924488*^9,3.690836969124618*^9},{3.690837201484314*^9,3.690837246727298*^9},{3.690837285024303*^9,3.690837386583197*^9},{3.6908374630109863`*^9,3.690837467781478*^9},{3.690837537605214*^9,3.6908376013930397`*^9},3.690837742370549*^9,3.690847923097204*^9}]},
+Open]],Cell[
+BoxData["\[IndentingNewLine]"],"Input",CellChangeTimes->{3.690836172417808*^9}]},
+WindowSize->{808,717},WindowMargins->{{316,Automatic},{Automatic,50}},StyleDefinitions->"Default.nb",
+FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

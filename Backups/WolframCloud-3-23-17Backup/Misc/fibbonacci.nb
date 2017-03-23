@@ -1,0 +1,29 @@
+Notebook[{Cell[
+TextData[{"Each"," ","new"," ","term"," ","in"," ","the"," ","Fibonacci"," ","sequence"," ","is"," ","generated"," ","by"," ","adding"," ","the"," ","previous"," ","two"," ","terms",StyleBox[
+RowBox[{"."," "}]],"By"," ","starting"," ","with"," ","1"," ","and"," ","2",StyleBox[
+RowBox[{","," "}]],"the"," ","first"," ","10"," ","terms"," ","will"," ","be",":","\n","\n","1",StyleBox[
+RowBox[{","," "}]],"2",StyleBox[RowBox[{","," "}]],"3",StyleBox[RowBox[{","," "}]],"5",StyleBox[
+RowBox[{","," "}]],"8",StyleBox[RowBox[{","," "}]],"13",StyleBox[RowBox[{","," "}]],"21",StyleBox[
+RowBox[{","," "}]],"34",StyleBox[RowBox[{","," "}]],"55",StyleBox[RowBox[{","," "}]],"89",StyleBox[
+RowBox[{","," ","..."}]],"\n","\n","By"," ","considering"," ","the"," ","terms"," ","in"," ","the"," ","Fibonacci"," ","sequence"," ","whose"," ","values"," ","do"," ","not"," ","exceed"," ","four"," ","million",StyleBox[
+RowBox[{","," "}]],"find"," ","the"," ","sum"," ","of"," ","the"," ","even","-","valued"," ","terms","."}],
+"Text",CellID->16],Cell[
+BoxData[{RowBox[{"a","=","1"}],"\n",RowBox[{"b","=","2"}],"\n",RowBox[
+{"fib","=","{","a",",","b","}"}],"\n",RowBox[{"While","[","a","+","b","<","4000000",",","c","=","a","+","b",";","a","=","b",";","b","=","c",";","AppendTo","[","fib",",","c","]","]"}],"\n",RowBox[
+{"Total","[","Select","[","fib",",","EvenQ","]","]","\n"}]}],"Input",CellID->1,CellLabel->"In[1]:= "],Cell[
+CellGroupData[
+{Cell[
+BoxData[{RowBox[{"a","=","1"}],"\n",RowBox[{"b","=","2"}],"\n",RowBox[{"fib","=","{","a",",","b","}"}],"\n",RowBox[
+{"While","[","a","+","b","<","4000000",",","c","=","a","+","b",";","a","=","b",";","b","=","c",";","AppendTo","[","fib",",","c","]","]"}],"\n",RowBox[
+{"Total","[","Select","[","fib",",","EvenQ","]","]"}]}],"Input",CellID->40,CellLabel->"In[30]:= "],Cell[
+BoxData[
+"1",StandardForm],"Output",CellID->41,CellLabel->"Out[30]= "],Cell[
+BoxData["2",StandardForm],
+"Output",CellID->43,CellLabel->"Out[31]= "],Cell[
+BoxData[RowBox[{"{",RowBox[{"1",",","2"}],"}"}],
+StandardForm],"Output",CellID->44,CellLabel->"Out[32]= "],Cell[
+BoxData["4613732",
+StandardForm],"Output",CellID->45,CellLabel->"Out[34]= "]},Open]],Cell[
+BoxData[RowBox[
+{"Total","[",RowBox[{"IntegerDigits","[",RowBox[{"100"," !"}],"]"}],"]"}]],"Input",
+CellID->3,CellLabel->"In[1]:= "]},StyleDefinitions->"Default.nb",FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

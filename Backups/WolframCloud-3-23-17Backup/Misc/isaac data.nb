@@ -1,0 +1,14 @@
+Notebook[{Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"Range","[","10","]"}]],"Input",
+CellID->1],Cell[
+BoxData[RowBox[{"{",RowBox[{"1",",","2",",","3",",","4",",","5",",","6",",","7",",","8",",","9",",","10"}],"}"}]],
+"Output",CellID->2]},Open]],Cell[
+CellGroupData[{Cell[
+BoxData[RowBox[{"Factor","[",RowBox[
+{RowBox[{"x","^","2"}],"+",RowBox[{"2","x"}],"-","8"}],"]"}]],"Input",CellChangeTimes->{{3.683572720189933*^9,3.6835727348353243`*^9}},
+CellLabel->"In[2]:= "],Cell[
+BoxData[RowBox[{RowBox[{"(",RowBox[{RowBox[{"-","2"}],"+","x"}],")"}]," ",RowBox[
+{"(",RowBox[{"4","+","x"}],")"}]}],StandardForm],"Output",CellID->5,CellLabel->"Out[2]= "]},
+Open]]},WindowSize->{808,717},WindowMargins->{{316,Automatic},{Automatic,50}},StyleDefinitions->"Default.nb",
+FrontEndVersion->"10.0 for Wolfram Cloud Platform (June 2 2014)"]

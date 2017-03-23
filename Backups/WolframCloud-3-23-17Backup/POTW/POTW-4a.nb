@@ -1,0 +1,1029 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     33836,       1021]
+NotebookOptionsPosition[     27887,        852]
+NotebookOutlinePosition[     30333,        913]
+CellTagsIndexPosition[     30290,        910]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ StyleBox["POTW - 4a\n", "Title"],
+ "We\[CloseCurlyQuote]re going to write code this week!  For reals! This is \
+excerpted from the online book, check it out: ",
+ ButtonBox["www.wolfram.com/language/elementary-introduction/03-first-look-at-\
+lists.html",
+  BaseStyle->"Hyperlink",
+  ButtonData->{
+    URL["https://www.wolfram.com/language/elementary-introduction/03-first-\
+look-at-lists.html"], None},
+  ButtonNote->
+   "https://www.wolfram.com/language/elementary-introduction/03-first-look-at-\
+lists.html"],
+ "\n\n"
+}], "Text",
+ Evaluatable->True,
+ CellChangeTimes->{{3.686411314115027*^9, 3.686411382207486*^9}, {
+   3.6864116606773148`*^9, 3.686411664365921*^9}, {3.68641181829972*^9, 
+   3.686411905311411*^9}, {3.6864140627266483`*^9, 3.686414082115959*^9}, 
+   3.686828238251267*^9, {3.686828317359994*^9, 3.686828346043144*^9}, {
+   3.686828616294256*^9, 3.686828631248518*^9}, 3.68682866213588*^9, {
+   3.6868286947798977`*^9, 3.686828694800317*^9}, {3.68682892104773*^9, 
+   3.686828967094186*^9}, {3.686846481846863*^9, 3.686846490361328*^9}, {
+   3.6868475252243977`*^9, 3.6868475716219473`*^9}, {3.686847690487937*^9, 
+   3.686847695150855*^9}, 3.6868481477335663`*^9, {3.686848343800947*^9, 
+   3.6868483438285646`*^9}, {3.686848641469817*^9, 3.686848657898883*^9}, {
+   3.687538032857171*^9, 3.6875380755371513`*^9}, {3.687538308677369*^9, 
+   3.687538316836238*^9}, {3.6875383637787447`*^9, 3.687538364755004*^9}, {
+   3.6875393512036467`*^9, 3.687539362134699*^9}, {3.687539395319111*^9, 
+   3.687539397382955*^9}, {3.6875394278936977`*^9, 3.687539430053241*^9}, {
+   3.6875432351520777`*^9, 3.687543245587997*^9}, {3.6875432961001368`*^9, 
+   3.6875433104188643`*^9}, {3.687554535391336*^9, 3.687554535499873*^9}, {
+   3.687554807040971*^9, 3.687554813189809*^9}, {3.6876052534946938`*^9, 
+   3.6876052652021637`*^9}, {3.687605299981851*^9, 3.687605309469695*^9}, {
+   3.6876053404616957`*^9, 3.687605378197013*^9}, {3.688172541776081*^9, 
+   3.688172556160922*^9}, {3.688172625359523*^9, 3.6881727021736517`*^9}, {
+   3.688174855698481*^9, 3.6881748828581753`*^9}, {3.688229957416415*^9, 
+   3.688229961982029*^9}, {3.6894402487178183`*^9, 3.689440258188466*^9}, {
+   3.689440291695126*^9, 3.689440334245247*^9}, {3.689441590366397*^9, 
+   3.6894415904223833`*^9}},
+ TextJustification->0.],
+
+Cell[TextData[StyleBox["3 | First Look at Lists", "Subsection"]], "Text",
+ CellFrame->{{0, 0}, {2, 0}},
+ CellChangeTimes->{{3.686411895777266*^9, 3.686411899479196*^9}, {
+  3.6864120407140827`*^9, 3.686412052433058*^9}, {3.6875380124318037`*^9, 
+  3.687538020785404*^9}, {3.6875381261590633`*^9, 3.687538127503049*^9}, {
+  3.687539423940826*^9, 3.6875394257245626`*^9}, {3.688173148601007*^9, 
+  3.688173153119372*^9}, {3.6881741426472607`*^9, 3.6881741585828114`*^9}, {
+  3.689440363781427*^9, 3.689440375291852*^9}}],
+
+Cell[TextData[{
+ StyleBox["Lists", "Code"],
+ " are a basic way to collect things together in the Wolfram Language. ",
+ Cell[BoxData[
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3"}], "}"}]], "InlineCodeText"],
+ " is a list of numbers. On their own, lists don\[CloseCurlyQuote]t ",
+ StyleBox["do",
+  FontSlant->"Italic"],
+ " anything; they\[CloseCurlyQuote]re just a way to store things. So if you \
+give a list as input, it\[CloseCurlyQuote]ll just come back unchanged:"
+}], "Text",
+ CellChangeTimes->{{3.688174198578115*^9, 3.6881742064088583`*^9}, {
+  3.688174239434401*^9, 3.688174372037763*^9}, {3.688174431837232*^9, 
+  3.688174468371333*^9}, {3.688228166438944*^9, 3.6882281895651703`*^9}, {
+  3.6894403470513697`*^9, 3.689440354270249*^9}, {3.689440385028678*^9, 
+  3.689440393955577*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "a", ",", "b", ",", "c"}], 
+  "}"}]], "Input",
+ Deletable->False],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "a", ",", "b", ",", "c"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.689449072657425*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ StyleBox["ListPlot", "Code"],
+ " is a function that makes a plot of a list of numbers.\n\nPlot the list of \
+numbers: {1,1,2,2,3,4,4}"
+}], "Text",
+ CellChangeTimes->{{3.6894404065560217`*^9, 3.689440458129404*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "1", ",", "2", ",", "2", ",", "3", ",", "4", ",", "4"}], 
+   "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6894404431175756`*^9, 3.6894404445603952`*^9}, {
+  3.689440476128813*^9, 3.689440484847478*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 1.}, {2., 1.}, {3., 2.}, {4., 2.}, {5., 3.}, {6., 4.}, {
+      7., 4.}}]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 7.}, {0, 4.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6894490749712057`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Plot the list of numbers ",
+ StyleBox["{10,9,8,7,3,2,1}", "Code"]
+}], "Text",
+ CellChangeTimes->{{3.6894405011290407`*^9, 3.689440535830654*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"{", 
+   RowBox[{"10", ",", "9", ",", "8", ",", "7", ",", "3", ",", "2", ",", "1"}],
+    "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.68944051389904*^9, 3.6894405231164093`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 10.}, {2., 9.}, {3., 8.}, {4., 7.}, {5., 3.}, {6., 2.}, {
+      7., 1.}}]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 7.}, {0, 10.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.689449077549728*^9}]
+}, Open  ]],
+
+Cell["Range is a function that makes a list of numbers.", "Text",
+ CellChangeTimes->{{3.689440559230932*^9, 3.689440573269393*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Range", "[", "10", "]"}]], "Input",
+ CellChangeTimes->{{3.689440576500873*^9, 3.68944057815755*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7", ",", "8", 
+   ",", "9", ",", "10"}], "}"}]], "Output",
+ CellChangeTimes->{3.689449080373488*^9}]
+}, Open  ]],
+
+Cell["Generate a list of numbers, then plot it:", "Text",
+ CellChangeTimes->{{3.689440594144176*^9, 3.689440611836287*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Range", "[", "20", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.68944061415353*^9, 3.689440618556134*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxTTMoPSmViYGAQAWIQDQEf7FFpBgdUmgONFkCjRdBoCTRaBo1WQKOV0GgV
+NFoNjdZAo7XQaB00Wg+NNkCjDdFoIzTaGI02gdMA/GISxA==
+      
+      "]]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 20.}, {0, 20.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.689449081884712*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Reverse ",
+ StyleBox["reverses", "Code"],
+ " the elements in a list.\n\nReverse the elements in a list:"
+}], "Text",
+ CellChangeTimes->{{3.689440625972946*^9, 3.689440647091049*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reverse", "[", 
+  RowBox[{"{", 
+   RowBox[{"1", ",", "2", ",", "3", ",", "4"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.689440652748315*^9, 3.6894406662540216`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"4", ",", "3", ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.689449084151424*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Reverse what ",
+ StyleBox["Range", "Code"],
+ " has generated: "
+}], "Text",
+ CellChangeTimes->{{3.689440678899312*^9, 3.6894406856260366`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Reverse", "[", 
+  RowBox[{"Range", "[", "10", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.689440691392057*^9, 3.689440704465577*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "10", ",", "9", ",", "8", ",", "7", ",", "6", ",", "5", ",", "4", ",", "3", 
+   ",", "2", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.689449088414009*^9}]
+}, Open  ]],
+
+Cell["Plot the reversed list:", "Text",
+ CellChangeTimes->{{3.68944071017769*^9, 3.689440715906081*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Reverse", "[", 
+   RowBox[{"Range", "[", "10", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6894407178000307`*^9, 3.6894407264967413`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.012833333333333334`],
+      AbsoluteThickness[1.6], 
+     PointBox[{{1., 10.}, {2., 9.}, {3., 8.}, {4., 7.}, {5., 6.}, {6., 5.}, {
+      7., 4.}, {8., 3.}, {9., 2.}, {10., 1.}}]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 10.}, {0, 10.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6894490934965897`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Join joins lists together, making a single list as the result
+
+Join lists together:\
+\>", "Text",
+ CellChangeTimes->{{3.68944043685021*^9, 3.689440438833782*^9}, {
+  3.6894405830931587`*^9, 3.689440602908186*^9}, {3.689440733194065*^9, 
+  3.6894407579275084`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "7"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6894407910069036`*^9, 3.689440801814455*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5", ",", "6", ",", "7"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.689449096332032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3", ",", "4", ",", "5"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.689440808915954*^9, 3.6894408163660393`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.68944909765098*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Join two lists made by ",
+ StyleBox["Range:", "Code"]
+}], "Text",
+ CellChangeTimes->{{3.689440819917706*^9, 3.689440830717297*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Join", "[", 
+  RowBox[{
+   RowBox[{"Range", "[", "3", "]"}], ",", 
+   RowBox[{"Range", "[", "5", "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.689440834914754*^9, 3.689440841901136*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1", ",", "2", ",", "3", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.689449100462194*^9}]
+}, Open  ]],
+
+Cell["Plot three lists joined together:", "Text",
+ CellChangeTimes->{{3.6894408463190107`*^9, 3.689440851668494*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Join", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "20", "]"}], ",", 
+    RowBox[{"Range", "[", "20", "]"}], ",", 
+    RowBox[{"Range", "[", "30", "]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.689440854197096*^9, 3.6894408772773447`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.011000000000000001`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd0jlKRFEURdGPkaGBgYFB+REREbHvrXpaWvbtEARjp3CH5pAcgop7B3Ue
+PBYn3dyl98+3j5mu6ya//8//9z2atmvTzoZz4Xy4EC6Gg7APl8OVcDVcC9fD
+jXAz3Aq3w51wN9xD++2z7XeA9jtE+x2h/Y7Rfidov1O03xn2OET7jdB+DelX
+bvudI/3Kbb8LpF+57TdG+pXbfpdIv3Lb74pNv3Lbb4L0K7f9rpF+5bbfDdKv
+3D3eIv3Kbb87tJ/bfvdoP7f9HtB+bvs9ov3c9ntC+7m9w2fkDsvtHb4gd9jc
+3GG5ucMvt3f4itxhc3OH5R62H+5wTRg=
+      "]]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 70.}, {0, 30.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.689449101857152*^9}]
+}, Open  ]],
+
+Cell["Reverse the list in the middle:", "Text",
+ CellChangeTimes->{{3.689440887358148*^9, 3.689440897580202*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", 
+  RowBox[{"Join", "[", 
+   RowBox[{
+    RowBox[{"Range", "[", "20", "]"}], ",", 
+    RowBox[{"Reverse", "[", 
+     RowBox[{"Range", "[", "20", "]"}], "]"}], ",", 
+    RowBox[{"Range", "[", "30", "]"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.689440901109131*^9, 3.689440919763974*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.011000000000000001`],
+      AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd0klKA1EUheHCkUMHDhw4iIWIiITY90nZxb5dguDYLdyluSSXoJL/H9QJ
+FB8HitR7956Vj6/3z7mmaaZ/z7+z38+kb9P1nQ8XwsVwKVwOB2EbroZr4Xq4
+EW6Gw3AUboXb4U64G+5F3o/3D+L/DuN7R3Ge4zjvCXqfU/S+Z+g8xui8Jug8
+O2xnltl9nCP7KrP7vED2XWb7cIn0pcz26QrpW0Vurvvvl9n+TfvfK7P9u+mf
+t8z27xa5b5lbvEPmVWbneY/Mu8zu4wHZV5nd5yOy7zLbhyekL2W2T89I38ps
+D1+QHpbZHr4iPezM9LDM9PDbbA/fkB52ZnpY5nH3C7PATRg=
+      
+      "]]}, {}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 70.}, {0, 30.}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.6894491043348007`*^9}]
+}, Open  ]],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.689449164667941*^9, 3.689449167202935*^9}}],
+
+Cell[TextData[StyleBox["Vocabulary", "Subsection"]], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.689440940587995*^9, 3.689440970225909*^9}}],
+
+Cell[TextData[{
+ StyleBox["{1,2,3,4}", "Code"],
+ "\t\t\t\tlist of elements\n",
+ StyleBox["ListPlot[{1,2,3,4}]", "Code"],
+ "\t\tplot a list of numbers\n",
+ StyleBox["Range[10]", "Code"],
+ "\t\t\t\trange of numbers\n",
+ StyleBox["Reverse[{1,2,3}]", "Code"],
+ "\t\t\treverse a list\n",
+ StyleBox["Join[{4,5,6},{2,3,2}]", "Code"],
+ "\t\tjoins lists together\n\n"
+}], "Text",
+ CellChangeTimes->{{3.6894409772339087`*^9, 3.6894410284244967`*^9}, {
+  3.6894410639693413`*^9, 3.689441077991023*^9}, {3.689441109109483*^9, 
+  3.689441114061625*^9}, {3.689441202525278*^9, 3.6894412026751623`*^9}}],
+
+Cell[TextData[{
+ StyleBox["Exercises\n", "Subsection"],
+ "Complete the following exercises by writing code.  ",
+ StyleBox["Remember, coding is collaborative -- don\[CloseCurlyQuote]t work \
+alone!", "Item"],
+ "  Get help, work together, ask questions.  You can do this!"
+}], "Text",
+ CellFrame->{{0, 0}, {0, 0.5}},
+ CellChangeTimes->{{3.689441166397973*^9, 3.689441168995797*^9}, {
+  3.689441279513843*^9, 3.6894413068478117`*^9}, {3.689441617484861*^9, 
+  3.689441641203479*^9}}],
+
+Cell[TextData[{
+ "\n1. Use ",
+ StyleBox["Range", "Code"],
+ " to create the list ",
+ StyleBox["{1,2,3,4}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.68944125507244*^9}, {
+  3.6894413196714487`*^9, 3.689441320087441*^9}, {3.6894416593948*^9, 
+  3.689441661266807*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell["\<\
+
+2. Make a list of numbers up to 100.\
+\>", "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441260964469*^9}, {
+  3.6894413213833313`*^9, 3.6894413217033443`*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n3. Use ",
+ StyleBox["Range", "Code"],
+ " and ",
+ StyleBox["Reverse", "Code"],
+ " to create ",
+ StyleBox["{4,3,2,1}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.68944126421424*^9}, {
+  3.689441323279202*^9, 3.689441323623234*^9}, {3.689441666762624*^9, 
+  3.6894416685462027`*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n4. Make a list of numbers from 1 to 50 in ",
+ StyleBox["reverse", "Code"],
+ " order."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.68944133378412*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n5. Use ",
+ StyleBox["Range", "Code"],
+ ", ",
+ StyleBox["Reverse", "Code"],
+ " and ",
+ StyleBox["Join", "Code"],
+ " to create ",
+ StyleBox["{1,2,3,4,4,3,2,1}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.689441346678184*^9}, {3.689441689529982*^9, 
+  3.68944169430546*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell["\<\
+
+6. Plot a list that counts up from 1 to 100, then down to 1.\
+\>", "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.689441355494225*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n7. Use ",
+ StyleBox["Range", "Code"],
+ " and ",
+ StyleBox["RandomInteger", "Code"],
+ " to make a list with a random length up to 10."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.6894413625072517`*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n8. Find a simpler form for ",
+ StyleBox["Reverse[Reverse[Range[10]]]", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.689441393311598*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n9. Find a simpler form for ",
+ StyleBox["Join[{1,2},Join[{3,4},{5}]]", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.689441409498752*^9}, {3.689441715849107*^9, 
+  3.689441721752945*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n10. Find a simpler form for ",
+ StyleBox["Join[Range[10],Join[Range[10],Range[5]]]", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+  3.689441329864711*^9, 3.689441418612144*^9}, {3.689441728704607*^9, 
+  3.689441729544557*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n11. Find a simpler form for ",
+ StyleBox["Reverse[Join[Range[20],Reverse[Range[20]]]]", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441472854804*^9}, 3.689441737576429*^9}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n12. Compute the reverse of the ",
+ StyleBox["reverse", "Code"],
+ " of ",
+ StyleBox["{1,2,3,4}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441446059387*^9}, 3.68944147633773*^9, {
+   3.689441743344336*^9, 3.6894417452800922`*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n13. Use ",
+ StyleBox["Range", "Code"],
+ ", ",
+ StyleBox["Reverse", "Code"],
+ " and ",
+ StyleBox["Join", "Code"],
+ " to create the list ",
+ StyleBox["{1,2,3,4,5,4,3,2,1}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441446059387*^9}, 3.689441481960347*^9, {
+   3.6894417566158257`*^9, 3.689441764375595*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n14. Use Range, Reverse and Join to create ",
+ StyleBox["{3,2,1,4,3,2,1,5,4,3,2,1}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441446059387*^9}, 3.689441485736081*^9, {
+   3.689441771015624*^9, 3.689441783607955*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n15. Plot the list of numbers ",
+ StyleBox["{10,11,12,13,14}", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441446059387*^9}, 3.689441488839869*^9, {
+   3.689441853070157*^9, 3.689441856726122*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[TextData[{
+ "\n16. Find a simpler form for ",
+ StyleBox["Join[Join[Range[10],Reverse[Range[10]]],Range[10]]", "Code"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.689441209726573*^9, 3.689441249953326*^9}, {
+   3.689441329864711*^9, 3.689441446059387*^9}, 3.689441492723185*^9, {
+   3.689441862885933*^9, 3.689441864198044*^9}}],
+
+Cell[BoxData[""], "Input"],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\
+\>", "Text",
+ CellChangeTimes->{{3.689440786922696*^9, 3.689440807461727*^9}, {
+  3.6894408847258472`*^9, 3.689440899588134*^9}}],
+
+Cell["\<\
+
+
+
+
+
+
+
+
+
+
+\
+\>", "Text",
+ CellChangeTimes->{{3.688230628566536*^9, 3.6882306297391167`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[TextData[StyleBox["Initialization",
+ FontColor->RGBColor[
+  0.5568627450980392, 0.8235294117647058, 0.7843137254901961]]], "Section",
+ CellChangeTimes->{{3.687551052693632*^9, 3.687551054116392*^9}, 
+   3.6875527446380177`*^9}],
+
+Cell["\<\
+This is stuff that we put in the document.  This code runs as you open the \
+document.  Feel free to mess with it.  \
+\>", "Text",
+ CellChangeTimes->{{3.687554268132909*^9, 3.687554281531313*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"Clear", "[", "x", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "f", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "g", "]"}], "\[IndentingNewLine]", 
+ RowBox[{"Clear", "[", "h", "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"SetOptions", "[", 
+   RowBox[{
+    RowBox[{"EvaluationNotebook", "[", "]"}], ",", " ", 
+    RowBox[{"Background", "\[Rule]", 
+     RowBox[{
+      RowBox[{"Interpreter", "[", "\"\<Color\>\"", "]"}], "[", 
+      "\"\<RGB 250 250 250\>\"", "]"}]}]}], "]"}], " "}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.6875510645732203`*^9, 3.6875510879798107`*^9}, {
+  3.6875542997425327`*^9, 3.687554300034606*^9}, {3.6875544185342216`*^9, 
+  3.687554423929469*^9}}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+TaggingRules->{"$testsRun" -> False},
+Magnification:>1.25 Inherited,
+Background->RGBColor[
+  Rational[50, 51], 
+  Rational[50, 51], 
+  Rational[50, 51]],
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->Notebook[{
+   Cell[
+    StyleData[StyleDefinitions -> "Default.nb"]], 
+   Cell[
+    StyleData["Title"], FontFamily -> "Futura", FontSize -> 36, FontWeight -> 
+    "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0.12941176470588237`, 0.4627450980392157, 0.7803921568627451]], 
+   Cell[
+    StyleData["Text"], FontFamily -> "Futura", FontSize -> 14, FontWeight -> 
+    "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}], 
+   Cell[
+    StyleData["Input"], CellFrame -> True, CellFrameColor -> 
+    GrayLevel[0.901961], FontFamily -> "Consolas", FontSize -> 13, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, Background -> 
+    RGBColor[0.992157, 0.960784, 0.862745]], 
+   Cell[
+    StyleData["Subsection"], FontColor -> 
+    RGBColor[0.9313954375524529, 0.42537575341420614`, 0.06530861371786069]], 
+   
+   Cell[
+    StyleData["Code"], FontFamily -> "Consolas", FontSize -> 14, FontWeight -> 
+    "Bold", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, Background -> 
+    RGBColor[0.953047989623865, 0.953047989623865, 0.953047989623865]], 
+   Cell[
+    StyleData["Item"], CellDingbat -> None, FontFamily -> "Futura", FontSize -> 
+    14, FontWeight -> "Regular", FontSlant -> "Plain", 
+    PrivateFontOptions -> {"FontPostScriptName" -> "Automatic"}, FontColor -> 
+    RGBColor[0.9921568627450981, 0.4549019607843137, 0.06666666666666667]], 
+   Cell[
+    StyleData["Subitem"], CellDingbat -> None, TabSpacings -> {0}, FontSlant -> 
+    "Italic", FontColor -> 
+    RGBColor[0.2115205615320058, 0.34006256198977647`, 0.8058747234302281]]}, 
+  Visible -> False, FrontEndVersion -> 
+  "11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, 2016)", 
+  StyleDefinitions -> "PrivateStylesheetFormatting.nb"],
+FrameBox -> True
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2326, 40, 215, "Text",
+ Evaluatable->True],
+Cell[2887, 62, 518, 7, 59, "Text"],
+Cell[3408, 71, 800, 16, 126, "Text"],
+Cell[CellGroupData[{
+Cell[4233, 91, 144, 4, 60, "Input"],
+Cell[4380, 97, 168, 4, 39, "Output"]
+}, Open  ]],
+Cell[4563, 104, 231, 5, 97, "Text"],
+Cell[CellGroupData[{
+Cell[4819, 113, 281, 6, 60, "Input"],
+Cell[5103, 121, 1422, 35, 309, "Output"]
+}, Open  ]],
+Cell[6540, 159, 163, 4, 41, "Text"],
+Cell[CellGroupData[{
+Cell[6728, 167, 230, 5, 60, "Input"],
+Cell[6961, 174, 1422, 35, 305, "Output"]
+}, Open  ]],
+Cell[8398, 212, 131, 1, 41, "Text"],
+Cell[CellGroupData[{
+Cell[8554, 217, 124, 2, 60, "Input"],
+Cell[8681, 221, 203, 5, 39, "Output"]
+}, Open  ]],
+Cell[8899, 229, 123, 1, 41, "Text"],
+Cell[CellGroupData[{
+Cell[9047, 234, 159, 3, 60, "Input"],
+Cell[9209, 239, 1483, 37, 305, "Output"]
+}, Open  ]],
+Cell[10707, 279, 200, 5, 97, "Text"],
+Cell[CellGroupData[{
+Cell[10932, 288, 195, 4, 60, "Input"],
+Cell[11130, 294, 135, 3, 39, "Output"]
+}, Open  ]],
+Cell[11280, 300, 161, 5, 41, "Text"],
+Cell[CellGroupData[{
+Cell[11466, 309, 159, 3, 60, "Input"],
+Cell[11628, 314, 203, 5, 39, "Output"]
+}, Open  ]],
+Cell[11846, 322, 104, 1, 41, "Text"],
+Cell[CellGroupData[{
+Cell[11975, 327, 199, 4, 60, "Input"],
+Cell[12177, 333, 1456, 35, 305, "Output"]
+}, Open  ]],
+Cell[13648, 371, 274, 7, 97, "Text"],
+Cell[CellGroupData[{
+Cell[13947, 382, 315, 9, 60, "Input"],
+Cell[14265, 393, 168, 4, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14470, 402, 289, 8, 60, "Input"],
+Cell[14762, 412, 180, 5, 39, "Output"]
+}, Open  ]],
+Cell[14957, 420, 149, 4, 41, "Text"],
+Cell[CellGroupData[{
+Cell[15131, 428, 212, 5, 60, "Input"],
+Cell[15346, 435, 181, 5, 39, "Output"]
+}, Open  ]],
+Cell[15542, 443, 117, 1, 41, "Text"],
+Cell[CellGroupData[{
+Cell[15684, 448, 299, 7, 63, "Input"],
+Cell[15986, 457, 1704, 40, 305, "Output"]
+}, Open  ]],
+Cell[17705, 500, 113, 1, 41, "Text"],
+Cell[CellGroupData[{
+Cell[17843, 505, 334, 8, 63, "Input"],
+Cell[18180, 515, 1729, 41, 305, "Output"]
+}, Open  ]],
+Cell[19924, 559, 92, 1, 60, "Input"],
+Cell[20019, 562, 158, 2, 57, "Text"],
+Cell[20180, 566, 588, 14, 208, "Text"],
+Cell[20771, 582, 480, 10, 141, "Text"],
+Cell[21254, 594, 294, 9, 69, "Text"],
+Cell[21551, 605, 26, 0, 60, "Input"],
+Cell[21580, 607, 180, 5, 69, "Text"],
+Cell[21763, 614, 26, 0, 60, "Input"],
+Cell[21792, 616, 327, 11, 69, "Text"],
+Cell[22122, 629, 26, 0, 60, "Input"],
+Cell[22151, 631, 231, 6, 69, "Text"],
+Cell[22385, 639, 26, 0, 60, "Input"],
+Cell[22414, 641, 367, 13, 69, "Text"],
+Cell[22784, 656, 26, 0, 60, "Input"],
+Cell[22813, 658, 200, 5, 69, "Text"],
+Cell[23016, 665, 26, 0, 60, "Input"],
+Cell[23045, 667, 282, 8, 97, "Text"],
+Cell[23330, 677, 26, 0, 60, "Input"],
+Cell[23359, 679, 231, 6, 69, "Text"],
+Cell[23593, 687, 26, 0, 60, "Input"],
+Cell[23622, 689, 280, 7, 69, "Text"],
+Cell[23905, 698, 26, 0, 60, "Input"],
+Cell[23934, 700, 294, 7, 97, "Text"],
+Cell[24231, 709, 26, 0, 60, "Input"],
+Cell[24260, 711, 271, 6, 97, "Text"],
+Cell[24534, 719, 26, 0, 60, "Input"],
+Cell[24563, 721, 330, 9, 69, "Text"],
+Cell[24896, 732, 26, 0, 60, "Input"],
+Cell[24925, 734, 406, 13, 69, "Text"],
+Cell[25334, 749, 26, 0, 60, "Input"],
+Cell[25363, 751, 317, 7, 69, "Text"],
+Cell[25683, 760, 26, 0, 60, "Input"],
+Cell[25712, 762, 295, 7, 69, "Text"],
+Cell[26010, 771, 26, 0, 60, "Input"],
+Cell[26039, 773, 328, 7, 97, "Text"],
+Cell[26370, 782, 26, 0, 60, "Input"],
+Cell[26399, 784, 155, 18, 430, "Text"],
+Cell[26557, 804, 102, 13, 398, "Text"],
+Cell[CellGroupData[{
+Cell[26684, 821, 232, 4, 100, "Section"],
+Cell[26919, 827, 206, 4, 69, "Text"],
+Cell[27128, 833, 743, 16, 196, "Input",
+ InitializationCell->True]
+}, Open  ]]
+}
+]
+*)
+

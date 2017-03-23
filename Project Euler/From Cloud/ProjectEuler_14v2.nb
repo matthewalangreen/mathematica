@@ -1,0 +1,689 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     26225,        681]
+NotebookOptionsPosition[     25206,        643]
+NotebookOutlinePosition[     25558,        659]
+CellTagsIndexPosition[     25515,        656]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"Storage", " ", "for", " ", "collatz", " ", "pairs"}], ",", " ", 
+    RowBox[{
+    "will", " ", "take", " ", "max", " ", "at", " ", "end", " ", "of", " ", 
+     "loop", " ", 
+     RowBox[{"FORMAT", ":", " ", 
+      RowBox[{"(", 
+       RowBox[{"startingValue", ",", " ", "length"}], ")"}]}]}]}], " ", 
+   "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"cPairs", " ", "=", " ", 
+     RowBox[{"<|", 
+      RowBox[{"1", "\[Rule]", "1"}], "|>"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{"cPairs", " ", "=", " ", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"10", "\[Rule]", "7"}], ",", 
+       RowBox[{"5", "\[Rule]", "6"}], ",", 
+       RowBox[{"16", "\[Rule]", "5"}], ",", 
+       RowBox[{"8", "\[Rule]", "4"}], ",", 
+       RowBox[{"4", "\[Rule]", "3"}], ",", 
+       RowBox[{"2", "\[Rule]", "2"}], ",", 
+       RowBox[{"1", "\[Rule]", "1"}]}], "|>"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "temporary", " ", "storage", " ", "for", " ", "the", " ", "current"}], 
+     ",", " ", 
+     RowBox[{"generated", " ", "collatz", " ", "sequence"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"curSeq", " ", "=", " ", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "temporary", " ", "storage", " ", "for", " ", "current", " ", "term", " ",
+      "in", " ", "sequence"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"curTerm", " ", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "function", " ", "to", " ", "generate", " ", "next", " ", "term", " ", 
+     "in", " ", "collatz", " ", "sequence"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Collatz", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"3", "x"}], "+", "1"}]}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Collatz", "[", "x_", "]"}], ":=", 
+    RowBox[{
+     RowBox[{"x", "/", "2"}], "/;", 
+     RowBox[{
+      RowBox[{"Mod", "[", 
+       RowBox[{"x", ",", "2"}], "]"}], "\[Equal]", "0"}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Collatz", "[", "1", "]"}], ":=", "1"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "get", " ", "first", " ", "term", " ", "of", " ", "sequnce", " ", "from",
+       " ", "values", " ", "of", " ", "i", " ", "in", " ", "while", " ", 
+      RowBox[{"loop", ".", " ", "\[IndentingNewLine]", "this"}], " ", "first",
+       " ", "term", " ", "will", " ", "be", " ", "unique"}], ",", " ", 
+     RowBox[{"the", " ", "second", " ", "may", " ", "not", " ", "be"}]}], " ",
+     "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"sequences", " ", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "1"}], ",", 
+     RowBox[{"i", "\[LessEqual]", "999999"}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"curSeq", " ", "=", " ", 
+       RowBox[{"{", "}"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"curTerm", " ", "=", " ", "i"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"curSeq", ",", "curTerm"}], "]"}], ";", "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"curTerm", " ", "\[NotEqual]", "1"}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"(*", " ", 
+         RowBox[{"generate", " ", "next", " ", "term"}], " ", "*)"}], 
+        "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{"curTerm", " ", "=", " ", 
+          RowBox[{"Collatz", "[", "curTerm", "]"}]}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"(*", " ", 
+          RowBox[{
+           RowBox[{"if", " ", "this", " ", "term", " ", "is", " ", "unique"}],
+            "..."}], " ", "*)"}], "\[IndentingNewLine]", 
+         RowBox[{"If", "[", 
+          RowBox[{
+           RowBox[{"!", 
+            RowBox[{"IntegerQ", "[", 
+             RowBox[{"cPairs", "[", 
+              RowBox[{"[", 
+               RowBox[{"Key", "[", "curTerm", "]"}], "]"}], "]"}], "]"}]}], 
+           ",", "\[IndentingNewLine]", 
+           RowBox[{"(*", 
+            RowBox[{"append", " ", "to", " ", "curSeq"}], " ", "*)"}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"AppendTo", "[", 
+            RowBox[{"curSeq", ",", "curTerm"}], "]"}], ",", 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+             RowBox[{"if", " ", "this", " ", 
+              RowBox[{"term", " ", "!"}], "unique"}], "..."}], " ", "*)"}], 
+           "\[IndentingNewLine]", 
+           RowBox[{"(*", " ", 
+            RowBox[{
+             RowBox[{
+             "1.", " ", "take", " ", "first", " ", "term", " ", "of", " ", 
+              "curSeq"}], ",", " ", 
+             RowBox[{"store", " ", "it", " ", "in", " ", "tempFirst"}]}], " ",
+             "*)"}], "\[IndentingNewLine]", 
+           RowBox[{"While", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Length", "[", "curSeq", "]"}], ">", "0"}], ",", 
+             "\[IndentingNewLine]", 
+             RowBox[{
+              RowBox[{"tempFirst", " ", "=", " ", 
+               RowBox[{"curSeq", "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+              
+              RowBox[{"(*", " ", 
+               RowBox[{
+                RowBox[{
+                "2.", " ", "get", " ", "length", " ", "of", " ", "curSeq"}], 
+                ",", " ", 
+                RowBox[{"store", " ", "it", " ", "in", " ", "tempLength"}]}], 
+               " ", "*)"}], "\[IndentingNewLine]", 
+              RowBox[{"tempLength", " ", "=", " ", 
+               RowBox[{"Length", "[", "curSeq", "]"}]}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"(*", " ", 
+               RowBox[{
+                RowBox[{
+                "3.", " ", "get", " ", "length", " ", "associated", " ", 
+                 "with", " ", "startingValue", " ", "KEY", " ", "in", " ", 
+                 "cPairs", " ", "you", " ", "just", " ", "found"}], ",", " ", 
+                
+                RowBox[{
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{
+                   "add", " ", "this", " ", "length", " ", "to", " ", 
+                    "tempLength"}], "..."}], " ", "tempLength"}], " ", "=", 
+                 " ", 
+                 RowBox[{"tempLength", " ", "+", " ", 
+                  RowBox[{"cPairs", "[", 
+                   RowBox[{"[", 
+                    RowBox[{"Key", "[", "keyYouFound", "]"}], "]"}], 
+                   "]"}]}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+              RowBox[{"tempLength", " ", "=", " ", 
+               RowBox[{"tempLength", " ", "+", " ", 
+                RowBox[{"cPairs", "[", 
+                 RowBox[{"[", 
+                  RowBox[{"Key", "[", "curTerm", "]"}], "]"}], "]"}]}]}], ";",
+               "\[IndentingNewLine]", 
+              RowBox[{"(*", " ", 
+               RowBox[{
+               "4.", " ", "store", " ", "this", " ", "pair", " ", "as", " ", 
+                "association", " ", "in", " ", "cPairs"}], " ", "*)"}], 
+              "\[IndentingNewLine]", 
+              RowBox[{"AppendTo", "[", 
+               RowBox[{"cPairs", ",", 
+                RowBox[{"tempFirst", "\[Rule]", "tempLength"}]}], "]"}], ";", 
+              "\[IndentingNewLine]", 
+              RowBox[{"(*", " ", 
+               RowBox[{
+               "5.", " ", "drop", " ", "first", " ", "term", " ", "of", " ", 
+                "curSeq"}], " ", "*)"}], "\[IndentingNewLine]", 
+              RowBox[{"curSeq", " ", "=", " ", 
+               RowBox[{"Drop", "[", 
+                RowBox[{"curSeq", ",", "1"}], "]"}]}]}]}], 
+            "\[IndentingNewLine]", "]"}]}], "\[IndentingNewLine]", "]"}]}]}], 
+       "\[IndentingNewLine]", "]"}]}]}], "\[IndentingNewLine]", 
+    RowBox[{"(*", 
+     RowBox[{
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"sequences", ",", "curSeq"}], "]"}], ";"}], " ", "*)"}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   RowBox[{"Sort", "[", "cPairs", "]"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"its", " ", "the", " ", "last", " ", "association", " ", "key"}], 
+    " ", "*)"}], "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.685529545236466*^9, 3.685529610579791*^9}, {
+   3.685611940885593*^9, 3.685612037813573*^9}, {3.685612135004434*^9, 
+   3.685612150266616*^9}, {3.6856122765292797`*^9, 3.6856123423018637`*^9}, {
+   3.6856123914463587`*^9, 3.685612749320695*^9}, {3.685612786388706*^9, 
+   3.6856128940751762`*^9}, 3.685613114605439*^9, {3.685613177442595*^9, 
+   3.685613236059523*^9}, {3.685613668740531*^9, 3.685613748913043*^9}, {
+   3.685613783335205*^9, 3.685613839725378*^9}, {3.685613876686047*^9, 
+   3.6856141646464233`*^9}, {3.685614230596943*^9, 3.685614258066683*^9}, {
+   3.68561439002048*^9, 3.685614504764225*^9}, {3.685614598727871*^9, 
+   3.685614600477621*^9}, {3.685614678001318*^9, 3.685614679710862*^9}, {
+   3.685614733979031*^9, 3.685614738871085*^9}, {3.6856147899432592`*^9, 
+   3.6856148314198017`*^9}, {3.68561487358857*^9, 3.6856148826260853`*^9}, {
+   3.685615038159298*^9, 3.685615067164694*^9}, {3.685615099062064*^9, 
+   3.685615136883047*^9}, {3.685615206157642*^9, 3.685615280057499*^9}, {
+   3.6856153191455297`*^9, 3.685615326689386*^9}, {3.685615421883675*^9, 
+   3.6856154233789263`*^9}, {3.685615481353266*^9, 3.6856155076397057`*^9}, {
+   3.6856155416400757`*^9, 3.6856155429653254`*^9}, {3.685615595854031*^9, 
+   3.6856156801132193`*^9}, {3.6856157773188972`*^9, 3.685615801973537*^9}, {
+   3.6856158619255857`*^9, 3.685615952766461*^9}, {3.685616045224667*^9, 
+   3.685616090437182*^9}, {3.685616182605134*^9, 3.685616184315637*^9}, {
+   3.6856162361964083`*^9, 3.6856163199259357`*^9}, {3.6856166182037067`*^9, 
+   3.685616618673324*^9}, {3.685616708043385*^9, 3.6856167268420057`*^9}, {
+   3.685616798544083*^9, 3.685616836527687*^9}, {3.685617060184141*^9, 
+   3.685617064800132*^9}, {3.6856172279392347`*^9, 3.6856172292009068`*^9}, {
+   3.6856185924287357`*^9, 3.6856186113621883`*^9}, {3.6856187074340153`*^9, 
+   3.685618722951346*^9}}],
+
+Cell[BoxData["525"], "Output",
+ CellChangeTimes->{3.685616734162199*^9, 3.685616810818775*^9, 
+  3.685618129168252*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"cPairs", "[", 
+  RowBox[{"[", 
+   RowBox[{"Key", "[", "525", "]"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Sort", "[", "cPairs", "]"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.685616847581126*^9, 3.6856169687729692`*^9}, 
+   3.685617057817274*^9, {3.6856183217742453`*^9, 3.685618349936517*^9}, {
+   3.685618623906375*^9, 3.6856186689372797`*^9}}],
+
+Cell[BoxData["31"], "Output",
+ CellChangeTimes->{
+  3.685616734162199*^9, 3.685616810990765*^9, {3.685616849094293*^9, 
+   3.685616905360579*^9}, 3.6856169704279747`*^9, {3.6856183332097483`*^9, 
+   3.685618350527527*^9}, {3.685618645441331*^9, 3.685618673486848*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"\[LeftAssociation]", 
+          RowBox[{
+           RowBox[{"1", "\[Rule]", "1"}], ",", 
+           RowBox[{"2", "\[Rule]", "2"}], ",", 
+           RowBox[{"4", "\[Rule]", "3"}], ",", 
+           RowBox[{"8", "\[Rule]", "4"}], ",", 
+           RowBox[{"16", "\[Rule]", "5"}], ",", 
+           RowBox[{"5", "\[Rule]", "6"}], ",", 
+           RowBox[{"32", "\[Rule]", "6"}], ",", 
+           RowBox[{"10", "\[Rule]", "7"}], ",", 
+           RowBox[{"64", "\[Rule]", "7"}], ",", 
+           RowBox[{"3", "\[Rule]", "8"}], ",", 
+           RowBox[{"20", "\[Rule]", "8"}], ",", 
+           RowBox[{"21", "\[Rule]", "8"}], ",", 
+           RowBox[{"128", "\[Rule]", "8"}], ",", 
+           RowBox[{"6", "\[Rule]", "9"}], ",", 
+           RowBox[{"40", "\[Rule]", "9"}], ",", 
+           RowBox[{"42", "\[Rule]", "9"}], ",", 
+           TemplateBox[{"2168580"},
+            "OutputSizeLimit`Skeleton",
+            DisplayFunction->(FrameBox[
+              RowBox[{"\" \[CenterEllipsis]\"", #, "\"\[CenterEllipsis] \""}],
+               Background -> GrayLevel[0.75], 
+              BaseStyle -> {
+               "Deploy", FontColor -> GrayLevel[1], FontSize -> Smaller, 
+                ShowStringCharacters -> False}, BaselinePosition -> Baseline, 
+              ContentPadding -> False, FrameMargins -> {{1, 1}, {1, 2}}, 
+              FrameStyle -> None, RoundingRadius -> 7]& )], ",", 
+           RowBox[{"2385767", "\[Rule]", "511"}], ",", 
+           RowBox[{"4771534", "\[Rule]", "512"}], ",", 
+           RowBox[{"1590511", "\[Rule]", "513"}], ",", 
+           RowBox[{"3181022", "\[Rule]", "514"}], ",", 
+           RowBox[{"6362044", "\[Rule]", "515"}], ",", 
+           RowBox[{"2120681", "\[Rule]", "516"}], ",", 
+           RowBox[{"4241362", "\[Rule]", "517"}], ",", 
+           RowBox[{"1413787", "\[Rule]", "518"}], ",", 
+           RowBox[{"2827574", "\[Rule]", "519"}], ",", 
+           RowBox[{"5655148", "\[Rule]", "520"}], ",", 
+           RowBox[{"1885049", "\[Rule]", "521"}], ",", 
+           RowBox[{"3770098", "\[Rule]", "522"}], ",", 
+           RowBox[{"1256699", "\[Rule]", "523"}], ",", 
+           RowBox[{"2513398", "\[Rule]", "524"}], ",", 
+           RowBox[{"837799", "\[Rule]", "525"}]}], "\[RightAssociation]"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{58., {2., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarCategory",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{50., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 21, 32932454213661846616, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{56., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 21, 32932454213661846616, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 21, 32932454213661846616, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{74., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "SuggestionsBarControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Evaluation"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    Background->RGBColor[0.9657, 0.9753, 0.9802],
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  Out[21]]], "Output",
+ CellChangeTimes->{
+  3.685616734162199*^9, 3.685616810990765*^9, {3.685616849094293*^9, 
+   3.685616905360579*^9}, 3.6856169704279747`*^9, {3.6856183332097483`*^9, 
+   3.685618350527527*^9}, {3.685618645441331*^9, 3.6856186650632257`*^9}, 
+   3.6856186995168667`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cPairs", "[", 
+  RowBox[{"[", 
+   RowBox[{"Key", "[", "9", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.685619933258212*^9, 3.6856199392007923`*^9}}],
+
+Cell[BoxData["20"], "Output",
+ CellChangeTimes->{3.685619939563355*^9}]
+}, Open  ]],
+
+Cell["\<\
+Let\[CloseCurlyQuote]s say we\[CloseCurlyQuote]ve just generated the collatz \
+starting at 10:
+10, 5, 16, 8, 4, 2, 1
+
+and fast forward we are generating the collatz starting at 13:
+13, 40, 20, 10*
+
+As soon as we get to 10, we should stop generating and do the steps above
+curSeq = {13,40,20}
+<|10 -> 7|> is an element of cPairs
+
+So, 
+While[Length[curSeq] > 1,
+1. tempFirst = curSeq[1] = 13;
+2. tempLength = Length[curSeq] = 3;
+3. tempLength = tempLength + cPairs[[Key[curTerm]]] // tempLength = 3 + 7 = \
+10
+4. AppendTo[cPairs,tempFirst -> tempLength];
+5. curSeq = Drop[curSeq,1];
+]
+\
+\>", "Text",
+ CellChangeTimes->{{3.6856129055063133`*^9, 3.685613099819627*^9}, {
+  3.68561328889513*^9, 3.685613429632474*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.68561232040856*^9}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.68561230773647*^9}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.685612296291503*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"generates", " ", "a", " ", "sequence"}], "..."}], " ", "keep", 
+    " ", "this", " ", "as", " ", "reference"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]", 
+  RowBox[{"curSeq", ";"}]}]], "Input",
+ CellChangeTimes->{3.685619589230897*^9}],
+
+Cell["\<\
+def collatz_len(n):
+    i=1
+    while n!=1:
+        if n%2==0:
+            n=n/2
+            i=i+1
+        else:
+            n=3*n+1
+            i=i+1
+    return i
+
+maxi=0
+maxlen=0
+for i in range(1, 1000001):
+    if maxlen<=collatz_len(i):
+        maxlen=collatz_len(i)
+        maxi=i
+    
+print(maxi)\
+\>", "Text",
+ CellChangeTimes->{3.6856190528417473`*^9}],
+
+Cell[BoxData[""], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"maxi", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"maxlen", " ", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "2"}], ",", 
+   RowBox[{"i", "<", "1000001"}], ",", 
+   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"val", " ", "=", " ", "i"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"length", "=", "1"}], ";", "\[IndentingNewLine]", 
+    RowBox[{"While", "[", 
+     RowBox[{
+      RowBox[{"val", "\[NotEqual]", "1"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"val", " ", "=", 
+        RowBox[{"Collatz", "[", "val", "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"length", "++"}], ";"}]}], "\[IndentingNewLine]", "]"}], ";", 
+    "\[IndentingNewLine]", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{"maxlen", "\[LessEqual]", "length"}], ",", 
+      RowBox[{
+       RowBox[{"maxlen", "=", "length"}], ";", 
+       RowBox[{"maxi", "=", "i"}]}]}], "]"}], ";"}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  "]"}], "\[IndentingNewLine]", "maxi", "\[IndentingNewLine]", "maxlen", "\
+\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.6856195697221537`*^9, 3.685619892706684*^9}, {
+  3.685620069210476*^9, 3.685620073093717*^9}}],
+
+Cell[BoxData["1000000"], "Output",
+ CellChangeTimes->{{3.685619862414453*^9, 3.68561989311195*^9}, 
+   3.685620164453328*^9}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{{3.685619862414453*^9, 3.68561989311195*^9}, 
+   3.6856201644633007`*^9}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 10455, 229, 1125, "Input"],
+Cell[11038, 253, 119, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11194, 260, 436, 9, 96, "Input"],
+Cell[11633, 271, 268, 4, 32, "Output"],
+Cell[11904, 277, 9650, 236, 180, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21591, 518, 181, 4, 32, "Input"],
+Cell[21775, 524, 71, 1, 32, "Output"]
+}, Open  ]],
+Cell[21861, 528, 723, 24, 372, "Text"],
+Cell[22587, 554, 86, 1, 54, "Input"],
+Cell[22676, 557, 86, 1, 54, "Input"],
+Cell[22765, 560, 87, 1, 54, "Input"],
+Cell[22855, 563, 340, 9, 75, "Input"],
+Cell[23198, 574, 369, 21, 372, "Text"],
+Cell[23570, 597, 26, 0, 32, "Input"],
+Cell[CellGroupData[{
+Cell[23621, 601, 1317, 31, 327, "Input"],
+Cell[24941, 634, 125, 2, 32, "Output"],
+Cell[25069, 638, 121, 2, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+

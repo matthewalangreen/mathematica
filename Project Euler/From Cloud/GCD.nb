@@ -1,0 +1,101 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      2680,         93]
+NotebookOptionsPosition[      2322,         75]
+NotebookOutlinePosition[      2675,         91]
+CellTagsIndexPosition[      2632,         88]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Divides", "[", 
+   RowBox[{"x_", ",", "y_"}], "]"}], " ", ":=", " ", 
+  RowBox[{
+   RowBox[{"Mod", "[", 
+    RowBox[{"y", ",", "x"}], "]"}], "\[Equal]", 
+   "0"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gcd", "[", 
+    RowBox[{"0", ",", "b_"}], "]"}], ":=", "b"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"special", " ", "case"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"gcd", "[", 
+    RowBox[{"a_", ",", "0"}], "]"}], ":=", "a"}], " ", 
+  RowBox[{"(*", 
+   RowBox[{"special", " ", "case"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"gcd", "[", 
+   RowBox[{"a_", ",", "b_"}], "]"}], ":=", "\[IndentingNewLine]", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", "c", "}"}], ",", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"c", "=", 
+      RowBox[{"Min", "[", 
+       RowBox[{"a", ",", "b"}], "]"}]}], ";", "\[IndentingNewLine]", 
+     RowBox[{"While", "[", 
+      RowBox[{
+       RowBox[{"!", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"Divides", "[", 
+           RowBox[{"c", ",", "a"}], "]"}], " ", "&&", " ", 
+          RowBox[{"Divides", "[", 
+           RowBox[{"c", ",", "b"}], "]"}]}], ")"}]}], ",", 
+       RowBox[{"c", "--"}]}], "]"}], ";", "\[IndentingNewLine]", "\t", 
+     "c"}]}], "\[IndentingNewLine]", "\t", "]"}]}]}], "Input",
+ CellChangeTimes->{{3.673807858027485*^9, 3.673808050481988*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"gcd", "[", 
+  RowBox[{"200", ",", "12"}], "]"}]], "Input",
+ CellChangeTimes->{{3.673808082376215*^9, 3.673808083644923*^9}, {
+  3.673808773545045*^9, 3.67380880692714*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{{3.6738087785300694`*^9, 3.673808809596965*^9}}]
+}, Open  ]]
+},
+WindowSize->{720, 817},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Mac OS X x86 (32-bit, 64-bit Kernel) (April 11, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1428, 41, 165, "Input"],
+Cell[CellGroupData[{
+Cell[2011, 65, 196, 4, 28, "Input"],
+Cell[2210, 71, 96, 1, 62, "Output"]
+}, Open  ]]
+}
+]
+*)
+
