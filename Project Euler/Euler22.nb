@@ -1,0 +1,135 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5151,        127]
+NotebookOptionsPosition[      4839,        113]
+NotebookOutlinePosition[      5198,        129]
+CellTagsIndexPosition[      5155,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "make", " ", "a", " ", "value", " ", "map", " ", "for", " ", "letters", 
+    " ", "of", " ", "the", " ", "alphabet"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"letterNumber", "=", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<A\>\"", "\[Rule]", "1"}], ",", 
+       RowBox[{"\"\<B\>\"", "\[Rule]", "2"}], ",", 
+       RowBox[{"\"\<C\>\"", "\[Rule]", "3"}], ",", 
+       RowBox[{"\"\<D\>\"", "\[Rule]", "4"}], ",", 
+       RowBox[{"\"\<E\>\"", "\[Rule]", "5"}], ",", 
+       RowBox[{"\"\<F\>\"", "\[Rule]", "6"}], ",", 
+       RowBox[{"\"\<G\>\"", "\[Rule]", "7"}], ",", 
+       RowBox[{"\"\<H\>\"", "\[Rule]", "8"}], ",", 
+       RowBox[{"\"\<I\>\"", "\[Rule]", "9"}], ",", 
+       RowBox[{"\"\<J\>\"", "\[Rule]", "10"}], ",", 
+       RowBox[{"\"\<K\>\"", "\[Rule]", "11"}], ",", 
+       RowBox[{"\"\<L\>\"", "\[Rule]", "12"}], ",", 
+       RowBox[{"\"\<M\>\"", "\[Rule]", "13"}], ",", 
+       RowBox[{"\"\<N\>\"", "\[Rule]", "14"}], ",", 
+       RowBox[{"\"\<O\>\"", "\[Rule]", "15"}], ",", 
+       RowBox[{"\"\<P\>\"", "\[Rule]", "16"}], ",", 
+       RowBox[{"\"\<Q\>\"", "\[Rule]", "17"}], ",", 
+       RowBox[{"\"\<R\>\"", "\[Rule]", "18"}], ",", 
+       RowBox[{"\"\<S\>\"", "\[Rule]", "19"}], ",", 
+       RowBox[{"\"\<T\>\"", "\[Rule]", "20"}], ",", 
+       RowBox[{"\"\<U\>\"", "\[Rule]", "21"}], ",", 
+       RowBox[{"\"\<V\>\"", "\[Rule]", "22"}], ",", 
+       RowBox[{"\"\<W\>\"", "\[Rule]", "23"}], ",", 
+       RowBox[{"\"\<X\>\"", "\[Rule]", "24"}], ",", 
+       RowBox[{"\"\<Y\>\"", "\[Rule]", "25"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"\"\<Z\>\"", "\[Rule]", "26"}]}], "|>"}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "create", " ", "helper", " ", "function", " ", "to", " ", "convert", " ", 
+     "a", " ", "letter", " ", "to", " ", "a", " ", "value"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GetValGivenLetter", "[", "letter_", "]"}], ":=", 
+    RowBox[{"letterNumber", "[", 
+     RowBox[{"ToString", "[", "letter", "]"}], "]"}]}], "\[IndentingNewLine]",
+    "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "user", " ", "above", " ", "function", " ", "on", " ", "whole", " ", 
+     "name"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"GetNameValue", "[", "name_", "]"}], ":=", 
+    RowBox[{"Total", "[", 
+     RowBox[{"GetValGivenLetter", "/@", 
+      RowBox[{"StringPartition", "[", 
+       RowBox[{"name", ",", "1"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "get", " ", "data", " ", "as", " ", "CSV", " ", "and", " ", "clean", " ", 
+     "it", " ", "up"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"data", "=", 
+     RowBox[{"Sort", "@", 
+      RowBox[{"Flatten", "@", 
+       RowBox[{"Import", "[", 
+        RowBox[{
+        "\"\</Users/matt/GitHub Clones/Mathematica/Project \
+Euler/p022_names.txt\>\"", ",", "\"\<CSV\>\""}], "]"}]}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"GetNameValue", "/@", "data"}], "*", 
+     RowBox[{"Range", "[", 
+      RowBox[{"Length", "[", "nameNumbers", "]"}], "]"}]}], "//", "Total"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.720097205074821*^9, 3.720097239001947*^9}, {
+  3.7200972855264874`*^9, 3.7200973399329576`*^9}, {3.7200973892277613`*^9, 
+  3.7200973967230062`*^9}, {3.720097496337899*^9, 3.720097724273299*^9}, {
+  3.7200977640010138`*^9, 3.7200978830236397`*^9}, {3.720097958043873*^9, 
+  3.7200979660395823`*^9}, {3.720098016485735*^9, 3.720098037586916*^9}, {
+  3.720098172697626*^9, 3.720098178049727*^9}, {3.720098635617622*^9, 
+  3.72009864490175*^9}, {3.720098711105667*^9, 3.720098735335312*^9}, {
+  3.7200988136196957`*^9, 3.720098815372046*^9}, {3.720099166683488*^9, 
+  3.7200991977180967`*^9}, {3.720099237118959*^9, 3.7200992397706833`*^9}, {
+  3.720099455269516*^9, 3.720099468928307*^9}, {3.720099507860941*^9, 
+  3.7200995086860228`*^9}, {3.720099598281896*^9, 
+  3.72009965393338*^9}},ExpressionUUID->"ce733c4d-8f94-448f-b6de-\
+032b4dcc4e82"]
+},
+WindowSize->{808, 867},
+WindowMargins->{{20, Automatic}, {Automatic, 44}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 4277, 91, 472, "Input",ExpressionUUID->"ce733c4d-8f94-448f-b6de-032b4dcc4e82"]
+}
+]
+*)
+

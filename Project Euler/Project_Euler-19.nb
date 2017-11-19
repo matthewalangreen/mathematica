@@ -1,0 +1,2398 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     89311,       2390]
+NotebookOptionsPosition[     88363,       2366]
+NotebookOutlinePosition[     88720,       2382]
+CellTagsIndexPosition[     88677,       2379]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"FirstDayQ", "[", "day_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"ToExpression", "[", 
+    RowBox[{"DateString", "[", 
+     RowBox[{"day", ",", 
+      RowBox[{"{", "\"\<Day\>\"", "}"}]}], "]"}], "]"}], "\[Equal]", 
+   "1"}]}]], "Input",
+ CellChangeTimes->{{3.720054181957776*^9, 
+  3.72005426033571*^9}},ExpressionUUID->"28ee290a-38f1-415a-86ec-\
+42ae421363ae"],
+
+Cell[BoxData[
+ RowBox[{"DayPlus", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1900", ",", "1", ",", "1"}], "}"}], ",", "1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.720052367074687*^9, 3.7200523697610493`*^9}, {
+  3.7200524447039003`*^9, 3.7200524523416147`*^9}, {3.720052490011428*^9, 
+  3.720052520072847*^9}},ExpressionUUID->"fba8dfa4-71ab-4273-bb62-\
+d2c9c27a0e55"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"DayPlus", "[", 
+      RowBox[{
+       RowBox[{"Date", "[", "\"\<January 1 1900\>\"", "]"}], ",", "7"}], 
+      "]"}], ",", "100"}], "]"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"demo", "=", 
+     RowBox[{"NestList", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DayPlus", "[", 
+         RowBox[{"#", ",", "1"}], "]"}], "&"}], ",", 
+       RowBox[{"DateObject", "[", "\"\<January 1 1900\>\"", "]"}], ",", 
+       "100"}], "]"}]}], ";", "\[IndentingNewLine]", 
+    RowBox[{"Select", "[", 
+     RowBox[{"demo", ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"DayName", "[", "#", "]"}], "\[Equal]", "Sunday"}], "&"}]}], 
+     "]"}], ";"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"dates", "=", 
+    RowBox[{"NestWhileList", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"DayPlus", "[", 
+        RowBox[{"#", ",", "1"}], "]"}], "&"}], ",", 
+      RowBox[{"DateObject", "[", "\"\<January 1 1900\>\"", "]"}], ",", 
+      RowBox[{
+       RowBox[{"#", "<", 
+        RowBox[{"DateObject", "[", "\"\<December 31 2000\>\"", "]"}]}], 
+       "&"}]}], "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.720052541482026*^9, 3.720052592730857*^9}, {
+   3.720052645890238*^9, 3.7200526588211603`*^9}, {3.720052694101141*^9, 
+   3.720052727299185*^9}, {3.7200527964090843`*^9, 3.720052838391824*^9}, {
+   3.720052894837215*^9, 3.7200529235126257`*^9}, {3.720053003852194*^9, 
+   3.720053096564996*^9}, {3.720053440181136*^9, 3.720053468351907*^9}, {
+   3.720053654855978*^9, 3.720053746310276*^9}, {3.720053777234873*^9, 
+   3.720053779404996*^9}, {3.7200538317955017`*^9, 3.7200538702651157`*^9}, 
+   3.720054473817255*^9},ExpressionUUID->"8a291e64-ebad-4d7b-9ae2-\
+e493b2862840"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sundays", "=", 
+  RowBox[{"Select", "[", 
+   RowBox[{"dates", ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"DayName", "[", "#", "]"}], "\[Equal]", "Sunday"}], "&"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7200526052679768`*^9, 3.720052637276523*^9}, {
+  3.72005395928476*^9, 3.720054005064034*^9}, {3.720054270160884*^9, 
+  3.720054311877433*^9}, {3.7200545910075912`*^9, 3.72005459308997*^9}, {
+  3.720054626596221*^9, 
+  3.720054629360951*^9}},ExpressionUUID->"87a8e8aa-2474-4b5e-a3c3-\
+369fcb922494"],
+
+Cell[BoxData[
+ InterpretationBox[
+  TagBox[
+   FrameBox[GridBox[{
+      {
+       ItemBox[
+        TagBox[
+         RowBox[{"{", 
+          RowBox[{
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 7 Jan 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "1", ",", "7"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 14 Jan 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "1", ",", "14"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 21 Jan 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "1", ",", "21"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 28 Jan 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "1", ",", "28"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 4 Feb 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "2", ",", "4"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 11 Feb 1900\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"1900", ",", "2", ",", "11"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{"5258"},
+            "OutputSizeLimit`Skeleton"], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 26 Nov 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "11", ",", "26"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 3 Dec 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "12", ",", "3"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 10 Dec 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "12", ",", "10"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 17 Dec 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "12", ",", "17"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 24 Dec 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "12", ",", "24"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False], ",", 
+           TemplateBox[{RowBox[{
+               StyleBox[
+               "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain],
+                "\"Sun 31 Dec 2000\""}],RowBox[{"DateObject", "[", 
+               RowBox[{
+                 RowBox[{"{", 
+                   RowBox[{"2000", ",", "12", ",", "31"}], "}"}], ",", 
+                 "\"Day\"", ",", "\"Gregorian\"", ",", 
+                 RowBox[{"-", "8.`"}]}], "]"}]},
+            "DateObject",
+            Editable->False]}], "}"}],
+         Short[#, 5]& ],
+        BaseStyle->{Deployed -> False},
+        StripOnInput->False]},
+      {GridBox[{
+         {
+          TagBox[
+           TooltipBox[
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource[
+                "FEStrings", "sizeBriefExplanation"], StandardForm],
+               ImageSizeCache->{58., {2., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLText",
+             StripOnInput->False],
+            StyleBox[
+             DynamicBox[
+              ToBoxes[
+               FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"], 
+               StandardForm]], DynamicUpdating -> True, StripOnInput -> 
+             False]],
+           Annotation[#, 
+            Style[
+             Dynamic[
+              FEPrivate`FrontEndResource["FEStrings", "sizeExplanation"]], 
+             DynamicUpdating -> True], "Tooltip"]& ], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm],
+               ImageSizeCache->{50., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowLess"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 24951847795745568670, 5/2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm],
+               ImageSizeCache->{56., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowMore"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 24951847795745568670, 5 2],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm],
+               ImageSizeCache->{42., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeShowAll"], 
+                StandardForm]],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           
+           ButtonFunction:>OutputSizeLimit`ButtonFunction[
+            OutputSizeLimit`Defer, 49, 24951847795745568670, Infinity],
+           Enabled->True,
+           Evaluator->Automatic,
+           Method->"Queued"], 
+          ButtonBox[
+           PaneSelectorBox[{False->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{74., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControl",
+             StripOnInput->False], True->
+            StyleBox[
+             StyleBox[
+              DynamicBox[ToBoxes[
+                FEPrivate`FrontEndResource["FEStrings", "sizeChangeLimit"], 
+                StandardForm],
+               ImageSizeCache->{74., {0., 8.}}],
+              StripOnInput->False,
+              DynamicUpdating->True], "OSLControlActive",
+             StripOnInput->False]}, Dynamic[
+             CurrentValue["MouseOver"]],
+            Alignment->Center,
+            FrameMargins->0,
+            ImageSize->{Automatic, 25}],
+           Appearance->None,
+           BaselinePosition->Baseline,
+           ButtonFunction:>FrontEndExecute[{
+              FrontEnd`SetOptions[
+              FrontEnd`$FrontEnd, 
+               FrontEnd`PreferencesSettings -> {"Page" -> "Advanced"}], 
+              FrontEnd`FrontEndToken["PreferencesDialog"]}],
+           Evaluator->None,
+           Method->"Preemptive"]}
+        },
+        AutoDelete->False,
+        FrameStyle->GrayLevel[0.85],
+        GridBoxDividers->{"Columns" -> {False, {True}}},
+        GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+        GridBoxSpacings->{"Columns" -> {{2}}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxDividers->{
+      "Columns" -> {{False}}, "ColumnsIndexed" -> {}, "Rows" -> {{False}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.5599999999999999]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], 
+         Offset[1.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    BaseStyle->"OutputSizeLimit",
+    FrameMargins->{{12, 12}, {0, 15}},
+    FrameStyle->GrayLevel[0.85],
+    RoundingRadius->5,
+    StripOnInput->False],
+   Deploy,
+   DefaultBaseStyle->"Deploy"],
+  If[24951847795745568670 === $SessionID, 
+   Out[49], Message[
+     MessageName[Syntax, "noinfoker"]]; Missing["NotAvailable"]; 
+   Null]]], "Output",
+ CellChangeTimes->{3.720054600656534*^9, 
+  3.720054638780637*^9},ExpressionUUID->"1f375306-9da6-4595-a679-\
+4bb1dd2bd79d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Select", "[", 
+  RowBox[{"sundays", ",", 
+   RowBox[{
+    RowBox[{"FirstDayQ", "[", "#", "]"}], "&"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7200546342464113`*^9, 
+  3.720054691301907*^9}},ExpressionUUID->"cf430078-a7ed-47c5-ba93-\
+848c0fa6e64c"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1900\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1900", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1900\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1900", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1901\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1901", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1901\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1901", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1902\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1902", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1903\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1903", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1903\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1903", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1903\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1903", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1904\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1904", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1905\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1905", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1905\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1905", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1906\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1906", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1906\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1906", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1907\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1907", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1907\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1907", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1908\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1908", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1908\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1908", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1909\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1909", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1910\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1910", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1911\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1911", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1911\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1911", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1912\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1912", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1912\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1912", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1913\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1913", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1914\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1914", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1914\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1914", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1914\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1914", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1915\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1915", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1916\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1916", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1917\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1917", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1917\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1917", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1918\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1918", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1918\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1918", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1919\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1919", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1920\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1920", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1920\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1920", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1921\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1921", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1922\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1922", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1922\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1922", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1923\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1923", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1923\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1923", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1924\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1924", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1925\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1925", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1925\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1925", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1925\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1925", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1926\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1926", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1927\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1927", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1928\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1928", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1928\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1928", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1928\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1928", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1929\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1929", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1929\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1929", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1930\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1930", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1931\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1931", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1931\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1931", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1931\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1931", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1932\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1932", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1933\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1933", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1933\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1933", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1934\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1934", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1934\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1934", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1935\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1935", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1935\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1935", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1936\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1936", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1936\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1936", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1937\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1937", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1938\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1938", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1939\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1939", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1939\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1939", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1940\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1940", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1940\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1940", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1941\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1941", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1942\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1942", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1942\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1942", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1942\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1942", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1943\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1943", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1944\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1944", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1945\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1945", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1945\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1945", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1946\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1946", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1946\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1946", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1947\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1947", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1948\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1948", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1948\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1948", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1949\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1949", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1950\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1950", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1950\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1950", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1951\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1951", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1951\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1951", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1952\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1952", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1953\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1953", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1953\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1953", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1953\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1953", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1954\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1954", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1955\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1955", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1956\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1956", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1956\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1956", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1956\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1956", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1957\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1957", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1957\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1957", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1958\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1958", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1959\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1959", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1959\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1959", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1959\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1959", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1960\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1960", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1961\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1961", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1961\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1961", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1962\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1962", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1962\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1962", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1963\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1963", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1963\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1963", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1964\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1964", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1964\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1964", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1965\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1965", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1966\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1966", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1967\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1967", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1967\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1967", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1968\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1968", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1968\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1968", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1969\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1969", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1970\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1970", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1970\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1970", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1970\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1970", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1971\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1971", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1972\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1972", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1973\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1973", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1973\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1973", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1974\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1974", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1974\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1974", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1975\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1975", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1976\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1976", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1976\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1976", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1977\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1977", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1978\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1978", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1978\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1978", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1979\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1979", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1979\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1979", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1980\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1980", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1981\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1981", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1981\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1981", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1981\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1981", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1982\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1982", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1983\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1983", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1984\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1984", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1984\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1984", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1984\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1984", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1985\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1985", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1985\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1985", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1986\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1986", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1987\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1987", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1987\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1987", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1987\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1987", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1988\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1988", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1989\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1989", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1989\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1989", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Apr 1990\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1990", ",", "4", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jul 1990\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1990", ",", "7", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1991\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1991", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1991\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1991", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1992\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1992", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1992\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1992", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1993\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1993", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 May 1994\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1994", ",", "5", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jan 1995\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1995", ",", "1", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 1995\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1995", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Sep 1996\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1996", ",", "9", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Dec 1996\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1996", ",", "12", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Jun 1997\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1997", ",", "6", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Feb 1998\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1998", ",", "2", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Mar 1998\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1998", ",", "3", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Nov 1998\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1998", ",", "11", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Aug 1999\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"1999", ",", "8", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False], ",", 
+   TemplateBox[{RowBox[{
+       StyleBox[
+       "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> Plain], 
+       "\"Sun 1 Oct 2000\""}],RowBox[{"DateObject", "[", 
+       RowBox[{
+         RowBox[{"{", 
+           RowBox[{"2000", ",", "10", ",", "1"}], "}"}], ",", "\"Day\"", ",", 
+         "\"Gregorian\"", ",", 
+         RowBox[{"-", "8.`"}]}], "]"}]},
+    "DateObject",
+    Editable->False]}], "}"}]], "Output",
+ CellChangeTimes->{{3.72005465501748*^9, 
+  3.7200546935293007`*^9}},ExpressionUUID->"425262fe-21d9-4e5e-8234-\
+08df13384f34"]
+}, Open  ]]
+},
+WindowSize->{840, 967},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 392, 11, 30, "Input",ExpressionUUID->"28ee290a-38f1-415a-86ec-42ae421363ae"],
+Cell[953, 33, 372, 8, 30, "Input",ExpressionUUID->"fba8dfa4-71ab-4273-bb62-d2c9c27a0e55"],
+Cell[1328, 43, 1823, 45, 115, "Input",ExpressionUUID->"8a291e64-ebad-4d7b-9ae2-e493b2862840"],
+Cell[CellGroupData[{
+Cell[3176, 92, 537, 13, 30, "Input",ExpressionUUID->"87a8e8aa-2474-4b5e-a3c3-369fcb922494"],
+Cell[3716, 107, 13509, 334, 196, "Output",ExpressionUUID->"1f375306-9da6-4595-a679-4bb1dd2bd79d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17262, 446, 273, 7, 30, "Input",ExpressionUUID->"cf430078-a7ed-47c5-ba93-848c0fa6e64c"],
+Cell[17538, 455, 70809, 1908, 1370, "Output",ExpressionUUID->"425262fe-21d9-4e5e-8234-08df13384f34"]
+}, Open  ]]
+}
+]
+*)
+
