@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2961,         98]
-NotebookOptionsPosition[      2203,         75]
-NotebookOutlinePosition[      2560,         91]
-CellTagsIndexPosition[      2517,         88]
+NotebookDataLength[      3502,        112]
+NotebookOptionsPosition[      2743,         89]
+NotebookOutlinePosition[      3100,        105]
+CellTagsIndexPosition[      3057,        102]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,20 +22,29 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
-  RowBox[{"vals", "=", 
-   RowBox[{"Permutations", "[", 
-    RowBox[{"Range", "[", 
-     RowBox[{"0", ",", "9"}], "]"}], "]"}]}], ";"}], "\n", 
+  RowBox[{
+   RowBox[{"vals", "=", 
+    RowBox[{"Permutations", "[", 
+     RowBox[{"Range", "[", 
+      RowBox[{"0", ",", "9"}], "]"}], "]"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"get", " ", "all", " ", "permutations"}], " ", "*)"}]}], "\n", 
  RowBox[{
-  RowBox[{"vals", "=", 
-   RowBox[{"Sort", "[", "vals", "]"}]}], ";"}], "\n", 
- RowBox[{"vals", "[", 
-  RowBox[{"[", "1000000", "]"}], "]"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"vals", "=", 
+    RowBox[{"Sort", "[", "vals", "]"}]}], ";"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"put", " ", "in", " ", "numerical", " ", "order"}], " ", "*)"}], 
+  "\[IndentingNewLine]", "\n", 
+  RowBox[{"(*", " ", 
+   RowBox[{"turn", " ", "it", " ", "into", " ", "a", " ", "number"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{"FromDigits", "[", 
   RowBox[{"vals", "[", 
    RowBox[{"[", "1000000", "]"}], "]"}], "]"}]}], "Input",
  CellChangeTimes->{{3.7201139358895063`*^9, 3.720113941676177*^9}, 
-   3.720114409101591*^9, 3.720114598120104*^9},
+   3.720114409101591*^9, 3.720114598120104*^9, {3.720114793767017*^9, 
+   3.720114849226544*^9}},
  CellID->1,ExpressionUUID->"b04497ac-5b3e-48a9-a6fa-7ac827f3ac58"],
 
 Cell[BoxData[
@@ -56,15 +65,20 @@ Cell[BoxData["2783915460"], "Output",
 Cell[CellGroupData[{
 
 Cell[BoxData[
- RowBox[{"FromDigits", "[", 
-  RowBox[{
-   RowBox[{"Sort", "[", 
-    RowBox[{"Permutations", "[", 
-     RowBox[{"Range", "[", 
-      RowBox[{"0", ",", "9"}], "]"}], "]"}], "]"}], "[", 
-   RowBox[{"[", "1000000", "]"}], "]"}], "]"}]], "Input",
- CellChangeTimes->{{3.720114610222131*^9, 
-  3.720114640311533*^9}},ExpressionUUID->"437c6f0c-cfae-4bab-8ec8-\
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"all", " ", "in", " ", "one", " ", "shot"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"FromDigits", "[", 
+   RowBox[{
+    RowBox[{"Sort", "[", 
+     RowBox[{"Permutations", "[", 
+      RowBox[{"Range", "[", 
+       RowBox[{"0", ",", "9"}], "]"}], "]"}], "]"}], "[", 
+    RowBox[{"[", "1000000", "]"}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.720114610222131*^9, 3.720114640311533*^9}, {
+  3.720114851696127*^9, 
+  3.7201148554182587`*^9}},ExpressionUUID->"437c6f0c-cfae-4bab-8ec8-\
 bd19b95ff850"],
 
 Cell[BoxData["2783915460"], "Output",
@@ -91,18 +105,16 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 639, 16, 94, "Input",ExpressionUUID->"b04497ac-5b3e-48a9-a6fa-7ac827f3ac58",
+Cell[580, 22, 991, 25, 115, "Input",ExpressionUUID->"b04497ac-5b3e-48a9-a6fa-7ac827f3ac58",
  CellID->1],
-Cell[1222, 40, 262, 7, 34, "Output",ExpressionUUID->"a05c7437-5497-40a8-9be1-5a99feccdd51"],
-Cell[1487, 49, 139, 3, 34, "Output",ExpressionUUID->"93448772-8964-482d-a1cc-199c5cd23305"]
+Cell[1574, 49, 262, 7, 34, "Output",ExpressionUUID->"a05c7437-5497-40a8-9be1-5a99feccdd51"],
+Cell[1839, 58, 139, 3, 34, "Output",ExpressionUUID->"93448772-8964-482d-a1cc-199c5cd23305"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1663, 57, 382, 10, 30, "Input",ExpressionUUID->"437c6f0c-cfae-4bab-8ec8-bd19b95ff850"],
-Cell[2048, 69, 139, 3, 92, "Output",ExpressionUUID->"d7040b74-fa68-460c-9fbb-29974a515959"]
+Cell[2015, 66, 570, 15, 52, "Input",ExpressionUUID->"437c6f0c-cfae-4bab-8ec8-bd19b95ff850"],
+Cell[2588, 83, 139, 3, 34, "Output",ExpressionUUID->"d7040b74-fa68-460c-9fbb-29974a515959"]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
