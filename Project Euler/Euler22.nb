@@ -10,14 +10,16 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      5151,        127]
-NotebookOptionsPosition[      4839,        113]
-NotebookOutlinePosition[      5198,        129]
-CellTagsIndexPosition[      5155,        126]
+NotebookDataLength[      5630,        142]
+NotebookOptionsPosition[      5191,        125]
+NotebookOutlinePosition[      5550,        141]
+CellTagsIndexPosition[      5507,        138]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+
+Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{
   RowBox[{"(*", " ", 
@@ -90,7 +92,10 @@ Cell[BoxData[
         RowBox[{
         "\"\</Users/matt/GitHub Clones/Mathematica/Project \
 Euler/p022_names.txt\>\"", ",", "\"\<CSV\>\""}], "]"}]}]}]}], ";"}], 
-   "\[IndentingNewLine]", "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"nameNumbers", "=", 
+     RowBox[{"GetNameValue", "/@", "data"}]}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
      RowBox[{"GetNameValue", "/@", "data"}], "*", 
@@ -107,9 +112,16 @@ Euler/p022_names.txt\>\"", ",", "\"\<CSV\>\""}], "]"}]}]}]}], ";"}],
   3.7200988136196957`*^9, 3.720098815372046*^9}, {3.720099166683488*^9, 
   3.7200991977180967`*^9}, {3.720099237118959*^9, 3.7200992397706833`*^9}, {
   3.720099455269516*^9, 3.720099468928307*^9}, {3.720099507860941*^9, 
-  3.7200995086860228`*^9}, {3.720099598281896*^9, 
-  3.72009965393338*^9}},ExpressionUUID->"ce733c4d-8f94-448f-b6de-\
-032b4dcc4e82"]
+  3.7200995086860228`*^9}, {3.720099598281896*^9, 3.72009965393338*^9}, {
+  3.7203632091145477`*^9, 
+  3.720363249738432*^9}},ExpressionUUID->"ce733c4d-8f94-448f-b6de-\
+032b4dcc4e82"],
+
+Cell[BoxData["871198282"], "Output",
+ CellChangeTimes->{{3.7203632148897552`*^9, 
+  3.720363251912554*^9}},ExpressionUUID->"fc1a1476-4002-493c-a891-\
+641a33d71eef"]
+}, Open  ]]
 },
 WindowSize->{808, 867},
 WindowMargins->{{20, Automatic}, {Automatic, 44}},
@@ -128,7 +140,10 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 4277, 91, 472, "Input",ExpressionUUID->"ce733c4d-8f94-448f-b6de-032b4dcc4e82"]
+Cell[CellGroupData[{
+Cell[580, 22, 4428, 95, 493, "Input",ExpressionUUID->"ce733c4d-8f94-448f-b6de-032b4dcc4e82"],
+Cell[5011, 119, 164, 3, 34, "Output",ExpressionUUID->"fc1a1476-4002-493c-a891-641a33d71eef"]
+}, Open  ]]
 }
 ]
 *)

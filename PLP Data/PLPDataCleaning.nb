@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     46261,        940]
-NotebookOptionsPosition[     44735,        906]
-NotebookOutlinePosition[     45094,        922]
-CellTagsIndexPosition[     45051,        919]
+NotebookDataLength[     46257,        928]
+NotebookOptionsPosition[     44921,        896]
+NotebookOutlinePosition[     45280,        912]
+CellTagsIndexPosition[     45237,        909]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -52,7 +52,7 @@ Cell[BoxData[{
     "\[IndentingNewLine]", 
     RowBox[{"(*", 
      RowBox[{"Dataset", "[", "data", "]"}], "*)"}], "\[IndentingNewLine]", 
-    "]"}]}], "\[IndentingNewLine]"}], "\n", 
+    "]"}]}], "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"CleanData", "[", "dataset_", "]"}], ":=", 
@@ -63,7 +63,7 @@ Cell[BoxData[{
       "\"\<Student Last\>\"", ",", "\"\<Student First\>\"", ",", 
        "\"\<Project Name\>\"", ",", "\"\<Status\>\"", ",", 
        "\"\<Submitted On\>\""}], "}"}]}], "]"}]}], 
-  "\[IndentingNewLine]"}], "\n", 
+  "\n"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"SortData", "[", "dataset_", "]"}], ":=", 
@@ -397,137 +397,127 @@ Cell["Make Report v2 -- Get all files", "Chapter",
   3.72035291444271*^9}},ExpressionUUID->"84322b4a-2e0c-4161-abfe-\
 f320d8a82cde"],
 
-Cell[BoxData[
- RowBox[{"files", "=", 
-  RowBox[{"FileNames", "[", 
-   RowBox[{
-   "\"\<*.csv\>\"", ",", 
-    "\"\</Users/matt/GitHub Clones/Mathematica/PLP Data/files/\>\""}], 
-   "]"}]}]], "Input",
- CellChangeTimes->{{3.72035216956092*^9, 3.720352223597928*^9}, {
-  3.72035231174384*^9, 3.720352313486112*^9}, {3.720352385038951*^9, 
-  3.720352386554957*^9}},ExpressionUUID->"83b1033a-c6d9-463e-88fa-\
-3b9c16ce3ce9"],
-
 Cell[CellGroupData[{
 
-Cell[BoxData[{
+Cell[BoxData[
  RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"Get", " ", "file", " ", "names"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{"importedFiles", "=", 
-    RowBox[{
+   RowBox[{
+    RowBox[{"files", "=", 
+     RowBox[{"FileNames", "[", 
+      RowBox[{
+      "\"\<*.csv\>\"", ",", 
+       "\"\</Users/matt/GitHub Clones/Mathematica/PLP Data/files/\>\""}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"import", " ", "files", " ", "from", " ", "directory"}], " ", 
+    "*)"}], "\n", 
+   RowBox[{
+    RowBox[{"importedFiles", "=", 
      RowBox[{
-      RowBox[{"SortData", "@", 
-       RowBox[{"CleanData", "@", 
-        RowBox[{"GetData", "[", "#", "]"}]}]}], "&"}], "/@", "files"}]}], 
-   ";"}], "\n"}], "\n", 
- RowBox[{
-  RowBox[{"Clear", "[", 
-   RowBox[{"i", ",", "j", ",", "result"}], "]"}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"result", "=", 
-   RowBox[{"{", "}"}]}], "\[IndentingNewLine]", 
-  RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"SortData", "@", 
+        RowBox[{"CleanData", "@", 
+         RowBox[{"GetData", "[", "#", "]"}]}]}], "&"}], "/@", "files"}]}], 
+    ";"}], "\n", "\n", 
+   RowBox[{
+    RowBox[{"Clear", "[", 
+     RowBox[{"i", ",", "j", ",", "result"}], "]"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"result", "=", 
+     RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "put", " ", "first", " ", "file", " ", "in", " ", "importedFiles", " ", 
+     "into", " ", "result"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"AppendTo", "[", 
      RowBox[{"result", ",", 
       RowBox[{"Normal", "@", 
-       RowBox[{"clcOctober", "[", 
+       RowBox[{
+        RowBox[{"importedFiles", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "[", 
         RowBox[{"All", ",", 
          RowBox[{"{", 
           RowBox[{
           "\"\<Student Last\>\"", ",", "\"\<Student First\>\"", ",", 
            "\"\<Project Name\>\"", ",", "\"\<Submitted On\>\""}], "}"}]}], 
-        "]"}]}]}], "]"}], ";"}], "*)"}]}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"AppendTo", "[", 
-   RowBox[{"result", ",", 
-    RowBox[{"Normal", "@", 
-     RowBox[{
-      RowBox[{"importedFiles", "[", 
-       RowBox[{"[", "1", "]"}], "]"}], "[", 
-      RowBox[{"All", ",", 
-       RowBox[{"{", 
-        RowBox[{
-        "\"\<Student Last\>\"", ",", "\"\<Student First\>\"", ",", 
-         "\"\<Project Name\>\"", ",", "\"\<Submitted On\>\""}], "}"}]}], 
-      "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"result", "=", 
-   RowBox[{"Flatten", "@", "result"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"For", "[", 
-  RowBox[{
-   RowBox[{"i", "=", "2"}], ",", 
-   RowBox[{"i", "\[LessEqual]", 
-    RowBox[{"Length", "[", "importedFiles", "]"}]}], ",", 
-   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+        "]"}]}]}], "]"}], ";"}], "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{"result", "=", 
-     RowBox[{"CombineScores", "[", 
-      RowBox[{"result", ",", 
-       RowBox[{"importedFiles", "[", 
-        RowBox[{"[", "i", "]"}], "]"}], ",", "i"}], "]"}]}], ";"}]}], 
-  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"result", "//", "Dataset"}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Clear", "[", 
-   RowBox[{"i", ",", "report"}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"report", "=", 
-    RowBox[{"{", 
+     RowBox[{"Flatten", "@", "result"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "iterate", " ", "over", " ", "all", " ", "files", " ", "and", " ", 
+     "combine", " ", "them", " ", "into", " ", "one"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"For", "[", 
+    RowBox[{
+     RowBox[{"i", "=", "2"}], ",", 
+     RowBox[{"i", "\[LessEqual]", 
+      RowBox[{"Length", "[", "importedFiles", "]"}]}], ",", 
+     RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"Keys", "[", "result", "]"}], "[", 
-      RowBox[{"[", "1", "]"}], "]"}], "}"}]}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{"For", "[", 
-  RowBox[{
-   RowBox[{"i", "=", "1"}], ",", 
-   RowBox[{"i", "\[LessEqual]", 
-    RowBox[{"Length", "[", "result", "]"}]}], ",", 
-   RowBox[{"i", "++"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"result", "=", 
+       RowBox[{"CombineScores", "[", 
+        RowBox[{"result", ",", 
+         RowBox[{"importedFiles", "[", 
+          RowBox[{"[", "i", "]"}], "]"}], ",", "i"}], "]"}]}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "change", " ", "format", " ", "to", " ", "strip", " ", "out", " ", 
+     "values", " ", "from", " ", 
+     RowBox[{"association", ".", "  ", "Needed"}], " ", "for", " ", "export", 
+     " ", "as", " ", "CSV"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"AppendTo", "[", 
+    RowBox[{"report", "=", 
+     RowBox[{"Values", "/@", "result"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"PrependTo", "[", 
      RowBox[{"report", ",", 
-      RowBox[{"Values", "[", 
-       RowBox[{"result", "[", 
-        RowBox[{"[", "i", "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
-  "\[IndentingNewLine]", "]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"report", "//", "TableForm"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"nowTime", "=", 
-   RowBox[{"DateString", "[", 
-    RowBox[{"{", 
-     RowBox[{
-     "\"\<Month\>\"", ",", "\"\<_\>\"", ",", "\"\<Day\>\"", ",", "\"\<_\>\"", 
-      ",", "\"\<Year\>\""}], "}"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-  "location", "=", 
-   "\"\</Users/matt/GitHub Clones/Mathematica/PLP Data/\>\""}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{"Export", "[", 
+      RowBox[{
+       RowBox[{"Keys", "[", "result", "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"export", " ", "report"}], " ", "*)"}], "\[IndentingNewLine]", 
    RowBox[{
-    RowBox[{"StringJoin", "[", 
-     RowBox[{"location", ",", "nowTime", ",", "\"\<.csv\>\""}], "]"}], ",", 
-    "report", ",", "\"\<CSV\>\""}], "]"}], ";"}]}], "Input",
- CellChangeTimes->{{3.7203522912649097`*^9, 3.720352335052569*^9}, {
-  3.72035242002586*^9, 3.7203524518957767`*^9}, {3.720353022655201*^9, 
-  3.720353027508091*^9}},ExpressionUUID->"6f0bd6d6-8d79-40fc-bc1c-\
-adb0ea130e40"],
-
-Cell[BoxData[
- RowBox[{"{", "}"}]], "Output",
- CellChangeTimes->{{3.720353031082694*^9, 
-  3.7203530417057867`*^9}},ExpressionUUID->"fc059f82-0f9f-4bea-ba4d-\
-0d8ffae2d2ca"],
+    RowBox[{"nowTime", "=", 
+     RowBox[{"DateString", "[", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Month\>\"", ",", "\"\<_\>\"", ",", "\"\<Day\>\"", ",", 
+        "\"\<_\>\"", ",", "\"\<Year\>\""}], "}"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+    "location", "=", 
+     "\"\</Users/matt/GitHub Clones/Mathematica/PLP Data/\>\""}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"Export", "[", 
+     RowBox[{
+      RowBox[{"StringJoin", "[", 
+       RowBox[{"location", ",", "nowTime", ",", "\"\<.csv\>\""}], "]"}], ",", 
+      "report", ",", "\"\<CSV\>\""}], "]"}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"report", "//", "TableForm"}]}]}]], "Input",
+ CellChangeTimes->{{3.72035216956092*^9, 3.720352223597928*^9}, {
+   3.72035231174384*^9, 3.720352313486112*^9}, {3.720352385038951*^9, 
+   3.720352386554957*^9}, {3.720357687465098*^9, 3.720357826752565*^9}, {
+   3.720357938973138*^9, 3.720357998778277*^9}, {3.72035820414198*^9, 
+   3.720358212238697*^9}, 3.7203582473624363`*^9, {3.7203582779614563`*^9, 
+   3.7203583731028547`*^9}, {3.720358403221676*^9, 
+   3.720358413220107*^9}},ExpressionUUID->"83b1033a-c6d9-463e-88fa-\
+3b9c16ce3ce9"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -898,9 +888,9 @@ Establishing Rhetorical Position and Making Data Visual\"\>", "\<\"2017-11-06\
        Offset[0.2]}, "RowsIndexed" -> {}}],
   Function[BoxForm`e$, 
    TableForm[BoxForm`e$]]]], "Output",
- CellChangeTimes->{{3.720353031082694*^9, 
-  3.720353041888431*^9}},ExpressionUUID->"cef2ad66-d450-49b6-accf-\
-742ffb91bf69"]
+ CellChangeTimes->{{3.720358300891135*^9, 3.7203583248148212`*^9}, 
+   3.720358374401387*^9},ExpressionUUID->"59e88df4-db1c-48cf-8fbc-\
+e745f817c07c"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -935,11 +925,9 @@ Cell[13643, 371, 637, 17, 52, "Input",ExpressionUUID->"7d3fe03f-f16c-4efc-9e53-6
 }, Closed]],
 Cell[CellGroupData[{
 Cell[14317, 393, 273, 4, 58, "Chapter",ExpressionUUID->"84322b4a-2e0c-4161-abfe-f320d8a82cde"],
-Cell[14593, 399, 417, 10, 30, "Input",ExpressionUUID->"83b1033a-c6d9-463e-88fa-3b9c16ce3ce9"],
 Cell[CellGroupData[{
-Cell[15035, 413, 3805, 110, 493, "Input",ExpressionUUID->"6f0bd6d6-8d79-40fc-bc1c-adb0ea130e40"],
-Cell[18843, 525, 173, 4, 34, "Output",ExpressionUUID->"fc059f82-0f9f-4bea-ba4d-0d8ffae2d2ca"],
-Cell[19019, 531, 25688, 371, 782, "Output",ExpressionUUID->"cef2ad66-d450-49b6-accf-742ffb91bf69"]
+Cell[14615, 401, 4562, 118, 619, "Input",ExpressionUUID->"83b1033a-c6d9-463e-88fa-3b9c16ce3ce9"],
+Cell[19180, 521, 25713, 371, 782, "Output",ExpressionUUID->"59e88df4-db1c-48cf-8fbc-e745f817c07c"]
 }, Open  ]]
 }, Open  ]]
 }
