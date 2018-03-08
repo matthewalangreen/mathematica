@@ -1,0 +1,140 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4441,        132]
+NotebookOptionsPosition[      3884,        113]
+NotebookOutlinePosition[      4241,        129]
+CellTagsIndexPosition[      4198,        126]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"MakeFun", "[", 
+    RowBox[{"a_", ",", "b_", ",", "n_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{"n", "^", "2"}], "+", 
+    RowBox[{"a", "*", "n"}], "+", "b"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"ListPrimes", "[", 
+    RowBox[{"a0_", ",", "b0_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"a", "=", "a0"}], ",", 
+       RowBox[{"b", "=", "b0"}], ",", 
+       RowBox[{"n", "=", "0"}]}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"PrimeQ", "[", 
+         RowBox[{"MakeFun", "[", 
+          RowBox[{"a", ",", "b", ",", "n"}], "]"}], "]"}], ",", 
+        RowBox[{"n", "++"}]}], "]"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"<|", 
+       RowBox[{
+        RowBox[{"a", "*", "b"}], "->", "n"}], "|>"}]}]}], 
+    "\[IndentingNewLine]", "]"}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"KeepPrimes", "[", 
+   RowBox[{"a_", ",", "b_"}], "]"}], ":=", 
+  RowBox[{"If", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"First", "[", 
+      RowBox[{"Values", "[", 
+       RowBox[{"ListPrimes", "[", 
+        RowBox[{"a", ",", "b"}], "]"}], "]"}], "]"}], "\[GreaterEqual]", " ", 
+     "40"}], ",", "True", ",", "False"}], "]"}]}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.729436410950447*^9, 3.729436534129044*^9}, {
+  3.72943660650467*^9, 3.72943662812339*^9}, {3.729436662613186*^9, 
+  3.729436677270088*^9}, {3.729437521262645*^9, 3.7294375690112753`*^9}, {
+  3.7294376229850607`*^9, 3.729437623514531*^9}, {3.729438348512179*^9, 
+  3.729438358033716*^9}, {3.729438690143426*^9, 3.729438706360765*^9}, {
+  3.72943883113151*^9, 3.729438840421493*^9}, {3.7294424953023167`*^9, 
+  3.7294425199049253`*^9}, {3.7294430347191563`*^9, 
+  3.7294430356849203`*^9}},ExpressionUUID->"fa52905b-2dbc-4017-9cb5-\
+6d2773af901c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"list", "=", 
+   RowBox[{"Sort", "[", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{"Table", "[", 
+      RowBox[{
+       RowBox[{"If", "[", 
+        RowBox[{
+         RowBox[{"KeepPrimes", "[", 
+          RowBox[{"i", ",", "j"}], "]"}], ",", 
+         RowBox[{"ListPrimes", "[", 
+          RowBox[{"i", ",", "j"}], "]"}], ",", "Nothing"}], "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"i", ",", 
+         RowBox[{"-", "999"}], ",", "999"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"j", ",", 
+         RowBox[{"-", "1000"}], ",", "1000"}], "}"}]}], "]"}], "]"}], "]"}]}],
+   ";"}], "\[IndentingNewLine]", 
+ RowBox[{"First", "@", "list"}]}], "Input",
+ CellChangeTimes->{{3.7294425401682453`*^9, 3.729442650396978*^9}, {
+  3.729442778635083*^9, 3.729442788295388*^9}, {3.729442844489912*^9, 
+  3.729442855818501*^9}},ExpressionUUID->"1645029e-7dd1-42c4-8279-\
+4d02afdd8dfc"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"-", "59231"}], "\[Rule]", "71"}], 
+  "\[RightAssociation]"}]], "Output",
+ CellChangeTimes->{{3.729442594902195*^9, 3.729442616841938*^9}, 
+   3.729442699857388*^9, 3.729442837499667*^9, 3.729442907153193*^9, 
+   3.72944310020505*^9},ExpressionUUID->"dd7bf6ec-eeab-40a8-961a-\
+1d7447a67611"]
+}, Open  ]]
+},
+WindowSize->{840, 967},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+FrontEndVersion->"11.2 for Mac OS X x86 (32-bit, 64-bit Kernel) (September \
+10, 2017)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2005, 52, 215, "Input",ExpressionUUID->"fa52905b-2dbc-4017-9cb5-6d2773af901c",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[2588, 76, 918, 24, 94, "Input",ExpressionUUID->"1645029e-7dd1-42c4-8279-4d02afdd8dfc"],
+Cell[3509, 102, 359, 8, 68, "Output",ExpressionUUID->"dd7bf6ec-eeab-40a8-961a-1d7447a67611"]
+}, Open  ]]
+}
+]
+*)
+
