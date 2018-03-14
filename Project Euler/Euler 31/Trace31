@@ -1,0 +1,26 @@
+start                                        t[] =  {1,0,0,0,0,0}
+
+i = 0   j = 1    t[1]+=t[1-1]; += t[0]; t[1]=0+1=1  {1,1,0,0,0,0}
+        j = 2    t[2]+=t[2-1]; += t[1]; t[2]=0+1=1  {1,1,1,0,0,0}
+        j = 3    t[3]+=t[3-1]; += t[2]; t[3]=0+1=1  {1,1,1,1,0,0}
+        j = 4    t[4]+=t[4-1]; += t[3]; t[4]=0+1=1  {1,1,1,1,1,0}
+        j = 5    t[5]+=t[5-1]; += t[4]; t[5]=0+1=1  {1,1,1,1,1,1}
+
+i = 1   j = 2    t[2]+=t[2-2]; += t[0]; t[2]=1+1=2  {1,1,2,1,1,1}
+        j = 3    t[3]+=t[3-2]; += t[1]; t[3]=1+1=2  {1,1,2,2,1,1}
+        j = 4    t[4]+=t[4-2]; += t[2]; t[4]=1+2=3  {1,1,2,2,3,1}
+        j = 5    t[5]+=t[5-2]; += t[3]; t[5]=1=2=3  {1,1,2,2,3,3}
+
+i = 2   j = 5    t[5]+=t[5-5]; += t[0]; t[5]=3+1=4  {1,1,2,2,3,4}
+
+
+
+//t[] keeps track of the number of ways you can make given sum
+// the "distance" between the value of j and the index of the t value
+// being added is as always a set distance for each value of i
+// i = 0, distance = 1
+// i = 1, distance = 2
+// i = 2, distance = 5
+// the distance is the same as the coin value for each round
+
+// the index of t[] is the same as the value of the coin...

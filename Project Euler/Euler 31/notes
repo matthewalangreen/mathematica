@@ -1,0 +1,5 @@
+This algorithm counts
+It never counts twice.
+
+If it need to get results its already calculated, it
+gets them without recalculating
